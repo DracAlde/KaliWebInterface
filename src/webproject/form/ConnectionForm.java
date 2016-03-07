@@ -83,7 +83,7 @@ public class ConnectionForm {
 		}
 	}
 
-	/*
+	/**
 	 * Ajoute un message correspondant au champ spécifié à la map des erreurs.
 	 */
 	private void setError( String champ, String message ) {
