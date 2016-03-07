@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	
+	<listener>
+		<listener-class>webproject.config.InitializationDaoFactory</listener-class>
+	</listener>
+	
+	<servlet>
+		<servlet-name>Main</servlet-name>
+		<servlet-class>webproject.main.Main</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Inscription</servlet-name>
+		<servlet-class>webproject.main.Inscription</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Connection</servlet-name>
+		<servlet-class>webproject.main.Connection</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Home</servlet-name>
+		<servlet-class>webproject.main.Home</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Disconnection</servlet-name>
+		<servlet-class>webproject.main.Disconnection</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Main</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Inscription</servlet-name>
+		<url-pattern>/inscription.html</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Connection</servlet-name>
+		<url-pattern>/connection.html</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Home</servlet-name>
+		<url-pattern>/home.html</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Disconnection</servlet-name>
+		<url-pattern>/disconnection.html</url-pattern>
+	</servlet-mapping>
+</web-app>
