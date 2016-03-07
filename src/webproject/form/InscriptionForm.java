@@ -40,8 +40,6 @@ public class InscriptionForm {
 		String confirmation = getValeurChamp(request, Constants.CONFIRMATION_FIELD);
 		String username = getValeurChamp(request, Constants.USERNAME_FIELD);
 
-		System.out.println("Email : "+email+"\nPassword : "+password+"\nConfirmation : "+confirmation+"\nUsername : "+username);
-
 		User user = new User();
 
 		try {
