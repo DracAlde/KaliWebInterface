@@ -3,9 +3,13 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
 	
+    <!--                                                              LISTENERS -->
+    
 	<listener>
 		<listener-class>webproject.config.InitializationDaoFactory</listener-class>
 	</listener>
+	
+	<!--                                                              SERVLETS -->
 	
 	<servlet>
 		<servlet-name>Main</servlet-name>
@@ -32,6 +36,8 @@
 		<servlet-class>webproject.main.Disconnection</servlet-class>
 	</servlet>
 	
+	<!--                                                              SERVLET-MAPPING -->
+	
 	<servlet-mapping>
 		<servlet-name>Main</servlet-name>
 		<url-pattern>/</url-pattern>
@@ -56,4 +62,23 @@
 		<servlet-name>Disconnection</servlet-name>
 		<url-pattern>/disconnection.html</url-pattern>
 	</servlet-mapping>
+	
+	<!--                                                              FILTERS -->
+	
+	<filter>
+		<filter-name>RestrictionFilter</filter-name>
+		<filter-class>webproject.filters.RestrictionFilter</filter-class>
+	</filter>
+	
+	<!--                                                              FILTERS-MAPPING -->
+	
+	<filter-mapping>
+		<filter-name>RestrictionFilter</filter-name>
+		<url-pattern>/restricted/*</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>RestrictionFilter</filter-name>
+		<url-pattern>/home.html</url-pattern>
+	</filter-mapping>
 </web-app>

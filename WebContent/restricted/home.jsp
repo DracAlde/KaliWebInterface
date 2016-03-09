@@ -8,6 +8,6 @@
 	</head>
 	<body>
 		<p>Home page</p>
-		<a href="localhost:8080/WebProject/disconnection.html">Déconnexion</a>
+		<a href="http://localhost:8080/WebProject/disconnection.html">Déconnexion</a>
 	</body>
 </html>

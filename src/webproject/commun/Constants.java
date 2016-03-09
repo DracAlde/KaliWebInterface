@@ -18,7 +18,7 @@ public class Constants {
 	public static final String VIEW_INDEX       = "/WEB-INF/index.jsp";
 	public static final String VIEW_INSCRIPTION = "/WEB-INF/inscription.jsp";
 	public static final String VIEW_CONNECTION  = "/WEB-INF/connection.jsp";
-	public static final String VIEW_HOME        = "/WEB-INF/home.jsp";
+	public static final String VIEW_HOME        = "/restricted/home.jsp";
 	
 	/**
 	 * Constantes des addresses URL

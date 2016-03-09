@@ -86,16 +86,16 @@ public class ConnectionForm {
 	/**
 	 * Ajoute un message correspondant au champ spécifié à la map des erreurs.
 	 */
-	private void setError( String champ, String message ) {
-		error.put( champ, message );
+	private void setError(String field, String message) {
+		error.put(field, message);
 	}
 
 	/**
 	 * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
 	 * sinon.
 	 */
-	private static String getValeurChamp( HttpServletRequest request, String nomChamp ) {
-		String valeur = request.getParameter( nomChamp );
+	private static String getValeurChamp(HttpServletRequest request, String nomChamp) {
+		String valeur = request.getParameter(nomChamp);
 		if ( valeur == null || valeur.trim().length() == 0 ) {
 			return null;
 		} else {
