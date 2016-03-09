@@ -66,19 +66,19 @@
 	<!--                                                              FILTERS -->
 	
 	<filter>
-		<filter-name>RestrictionFilter</filter-name>
-		<filter-class>webproject.filters.RestrictionFilter</filter-class>
+		<filter-name>ConnectionFilter</filter-name>
+		<filter-class>webproject.filters.ConnectionFilter</filter-class>
 	</filter>
 	
 	<!--                                                              FILTERS-MAPPING -->
 	
 	<filter-mapping>
-		<filter-name>RestrictionFilter</filter-name>
+		<filter-name>ConnectionFilter</filter-name>
 		<url-pattern>/restricted/*</url-pattern>
 	</filter-mapping>
 	
 	<filter-mapping>
-		<filter-name>RestrictionFilter</filter-name>
+		<filter-name>ConnectionFilter</filter-name>
 		<url-pattern>/home.html</url-pattern>
 	</filter-mapping>
 </web-app>

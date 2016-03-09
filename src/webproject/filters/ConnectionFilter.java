@@ -14,10 +14,22 @@ import javax.servlet.http.HttpSession;
 
 import webproject.commun.Constants;
 
-public class RestrictionFilter implements Filter {
+/**
+ * Filtre qui vérifie qu'un utilisateur est connecté avant d'accèder à une ressoure.
+ * Redirige vers la page de connexion si l'user n'est pas connecté.
+ * @author kilian
+ *
+ */
+
+public class ConnectionFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
     }
 
+    /**
+     * Vérifie qu'un utilisateur est conncté ou pas.
+     * S'il est connecté, l'utilisateur accède à la ressource demandée
+     * sinon, affiche le formulaire de connection
+     */
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException,
             ServletException {
         HttpServletRequest request = (HttpServletRequest) req;

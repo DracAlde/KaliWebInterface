@@ -14,6 +14,12 @@ import webproject.database.DAOFactory;
 import webproject.database.UserDao;
 import webproject.form.ConnectionForm;
 
+/**
+ * Gère la connexion des utilisateurs de l'application
+ * @author kilian
+ *
+ */
+
 public class Connection extends HttpServlet {
 	
 	/**
@@ -23,26 +29,31 @@ public class Connection extends HttpServlet {
 
 	private UserDao userDao;
 
+	/**
+	 * Initie une connection à la BDD
+	 */
     public void init() throws ServletException {
-    	System.out.println("Connection initialized");
         this.userDao = ((DAOFactory) getServletContext().getAttribute(Constants.CONF_DAO_FACTORY)).getUserDao();
     }
 	
-	public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher(Constants.VIEW_CONNECTION).forward( request, response );
+    /**
+     * Affiche le formulaire de connection
+     */
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		this.getServletContext().getRequestDispatcher(Constants.VIEW_CONNECTION).forward(request, response);
 	}
 
+	/**
+	 * Reçoit les résultat du formulaire de connection. 
+	 * S'il est correct, ajoute l'utilisateur à la session
+	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ConnectionForm form = new ConnectionForm(userDao);
 
 		User user = form.connectUser(request);
 
 		HttpSession session = request.getSession();
-
-		/**
-		 * Si aucune erreur de validation n'a eu lieu, alors ajout du bean
-		 * Utilisateur à la session, sinon suppression du bean de la session.
-		 */
+		
 		if (form.getErreurs().isEmpty()) {
 			session.setAttribute(Constants.ATT_SESSION_USER, user);
 		} else {

@@ -1,9 +1,24 @@
 package webproject.commun;
 
+import javax.servlet.http.HttpServletRequest;
+
+/**
+ * Divers outils qui pourront être utilisés dans les autres classes
+ * Parce que la répétition du code, c'est mal.
+ * @author kilian
+ *
+ */
+
 public class Tools {
 
 	final protected static char[] hexArray = "0123456789ABCDEF".toCharArray();
 	
+	/**
+	 * Converti byte[] en String hexadécimal incluant uniquement les caractères
+	 * 0123456789ABCDEF
+	 * @param bytes
+	 * @return
+	 */
 	public static String bytesToHex(byte[] bytes) {
 	    char[] hexChars = new char[bytes.length * 2];
 	    for ( int j = 0; j < bytes.length; j++ ) {
@@ -13,5 +28,17 @@ public class Tools {
 	    }
 	    return new String(hexChars);
 	}
-	
+
+	/**
+	 * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
+	 * sinon.
+	 */
+	public static String getFieldValue(HttpServletRequest request, String nomChamp) {
+		String valeur = request.getParameter(nomChamp);
+		if ( valeur == null || valeur.trim().length() == 0 ) {
+			return null;
+		} else {
+			return valeur;
+		}
+	}
 }

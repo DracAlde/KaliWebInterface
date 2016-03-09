@@ -1,5 +1,12 @@
 package webproject.commun;
 
+/**
+ * Classe contenant toutes les constantes qui seront utilisée dans le projet.
+ * Les autres classe ne devraient contenir aucune constantes
+ * @author kilian
+ *
+ */
+
 public class Constants {
 	
 	/**

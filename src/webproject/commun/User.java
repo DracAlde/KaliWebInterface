@@ -4,6 +4,12 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * Modèle de l'objet utilisateur
+ * @author kilian
+ *
+ */
+
 public class User {
 
 	private long id;
@@ -50,6 +56,14 @@ public class User {
 		return password;
 	}
 
+	/**
+	 * Définit le mot de passe de l'utilisateur.
+	 * Si hash est vrai, le mot de passe sera hashé
+	 * sinon, le mot de passe sera défini tel quel
+	 * @param password
+	 * @param hash
+	 */
+	
 	public void setPassword(String password, Boolean hash) {
 		if(hash){
 			this.password = hashPassword(password);

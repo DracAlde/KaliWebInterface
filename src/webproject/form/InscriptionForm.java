@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import webproject.commun.Constants;
+import webproject.commun.Tools;
 import webproject.commun.User;
 import webproject.database.DAOException;
 import webproject.database.UserDao;
@@ -35,10 +36,10 @@ public class InscriptionForm {
 	 * @return
 	 */
 	public User createUser(HttpServletRequest request) {
-		String email = getValeurChamp(request, Constants.EMAIL_FIELD);
-		String password = getValeurChamp(request, Constants.PASSWORD_FIELD);
-		String confirmation = getValeurChamp(request, Constants.CONFIRMATION_FIELD);
-		String username = getValeurChamp(request, Constants.USERNAME_FIELD);
+		String email = Tools.getFieldValue(request, Constants.EMAIL_FIELD);
+		String password = Tools.getFieldValue(request, Constants.PASSWORD_FIELD);
+		String confirmation = Tools.getFieldValue(request, Constants.CONFIRMATION_FIELD);
+		String username = Tools.getFieldValue(request, Constants.USERNAME_FIELD);
 
 		User user = new User();
 
@@ -138,18 +139,5 @@ public class InscriptionForm {
 	 */
 	private void setErreur(String field, String message) {
 		erreurs.put(field, message);
-	}
-
-	/**
-	 * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
-	 * sinon.
-	 */
-	private static String getValeurChamp(HttpServletRequest request, String fieldName ) {
-		String value = request.getParameter(fieldName);
-		if (value == null || value.trim().length() == 0) {
-			return null;
-		} else {
-			return value.trim();
-		}
 	}
 }

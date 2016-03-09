@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import webproject.commun.Constants;
+import webproject.commun.Tools;
 import webproject.commun.User;
 import webproject.database.UserDao;
 
@@ -30,8 +31,8 @@ public class ConnectionForm {
 	}
 
 	public User connectUser( HttpServletRequest request ) {
-		String email = getValeurChamp(request, Constants.EMAIL_FIELD);
-		String password = getValeurChamp(request, Constants.PASSWORD_FIELD);
+		String email = Tools.getFieldValue(request, Constants.EMAIL_FIELD);
+		String password = Tools.getFieldValue(request, Constants.PASSWORD_FIELD);
 
 		try {
 			validationEmail(email);
@@ -88,18 +89,5 @@ public class ConnectionForm {
 	 */
 	private void setError(String field, String message) {
 		error.put(field, message);
-	}
-
-	/**
-	 * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
-	 * sinon.
-	 */
-	private static String getValeurChamp(HttpServletRequest request, String nomChamp) {
-		String valeur = request.getParameter(nomChamp);
-		if ( valeur == null || valeur.trim().length() == 0 ) {
-			return null;
-		} else {
-			return valeur;
-		}
 	}
 }
