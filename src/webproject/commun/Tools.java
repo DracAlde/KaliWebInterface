@@ -33,12 +33,12 @@ public class Tools {
 	 * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
 	 * sinon.
 	 */
-	public static String getFieldValue(HttpServletRequest request, String nomChamp) {
-		String valeur = request.getParameter(nomChamp);
-		if ( valeur == null || valeur.trim().length() == 0 ) {
+	public static String getFieldValue(HttpServletRequest request, String fieldName) {
+		String value = request.getParameter(fieldName);
+		if ( value == null || value.trim().length() == 0 ) {
 			return null;
 		} else {
-			return valeur;
+			return value;
 		}
 	}
 }
