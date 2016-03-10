@@ -50,7 +50,6 @@ public class DAOFactory {
 		}
 
 		try {
-			System.out.println("Driver : "+driver);
 			Class.forName(driver);
 		} catch ( ClassNotFoundException e ) {
 			throw new DAOConfigurationException( "Le driver est introuvable dans le classpath.", e );

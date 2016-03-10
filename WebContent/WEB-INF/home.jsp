@@ -5,7 +5,7 @@
 	<c:import url="head.jsp" />
 	<body>
 		<c:import url="header.jsp" />
-		<c:import url="nav.jsp" />
-		<p>Welcome to my WebProject</p>
+		<c:import url="connected_nav.jsp" />
+		<p>Home page</p>
 	</body>
 </html>

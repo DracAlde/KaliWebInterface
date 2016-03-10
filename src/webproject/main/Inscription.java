@@ -29,7 +29,6 @@ public class Inscription extends HttpServlet {
 	private UserDao userDao;
 
     public void init() throws ServletException {
-    	System.out.println("Inscription initialized");
         this.userDao = ((DAOFactory) getServletContext().getAttribute(Constants.CONF_DAO_FACTORY)).getUserDao();
     }
 	

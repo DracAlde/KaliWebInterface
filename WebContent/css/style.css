@@ -1,6 +1,8 @@
 @CHARSET "UTF-8";
 
 body {
+	font-family: Arial;
+	background-image: url("../img/body_background.png");
 }
 
 header {
@@ -9,10 +11,11 @@ header {
 	margin-left: -8px;
 	margin-right: -8px;
 	background-image: url("../img/blue-and-white-texture.jpg");
+	margin-top: -8px;
 }
 
 nav {
-	height : 42px;
+	height: 42px;
 	margin-left: -8px;
 	margin-right: -8px;
 	background-image: url("../img/menu_background.png");
@@ -20,13 +23,50 @@ nav {
 
 .menu_button {
 	height: 42px;
-	line-height: 42px; 
+	line-height: 42px;
 	text-align: center;
-	width: 100px;
+	width: 150px;
+	float: left;
 	background-image: url("../img/button.png");
+}
+
+.menu_button:hover {
+	background-image: url("../img/button_mouse_hover.png");
+}
+
+.menu_button_right {
+	height: 42px;
+	line-height: 42px;
+	text-align: center;
+	width: 150px;
+	float: right;
+	background-image: url("../img/button_right.png");
+}
+
+.menu_button_right:hover {
+	background-image: url("../img/button_mouse_hover_right.png");
 }
 
 .button_title {
 	color: white;
-	font-family: arial;
+	font-family: Impact, Arial;
+}
+
+a {
+	text-decoration: none;
+}
+
+form {
+	background-color: white;
+	margin: auto;
+	max-width: 800px;
+	border: 1px solid grey;
+	padding: 10px;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.form_title {
+	margin: auto;
+	font-size: 20px;
 }
