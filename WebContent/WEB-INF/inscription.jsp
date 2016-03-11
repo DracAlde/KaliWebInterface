@@ -27,7 +27,8 @@
 	
 	        <input type="text" id="username" name="username" placeholder="pseudo" size="20" maxlength="128" />
 	        <span class="erreur">${form.erreurs['username']}</span>
-	        <br /><br />
+	        <p style="color:red;">* tous le champs sont obligatoires</p>
+	        <br />
 	
 	        <input type="submit" value="Inscription" class="sansLabel" />
 	        <br />

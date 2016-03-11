@@ -70,3 +70,21 @@ form {
 	margin: auto;
 	font-size: 20px;
 }
+
+.left_panel {
+	width: 38%;
+	float: left;
+}
+
+.right_panel {
+	height: 80%;
+	width: 59%;
+	float: right;
+}
+
+.left_panel, .right_panel {
+	margin-top: 10px;
+	padding: 10px;
+	border: solid black 1px;
+	background-color: white;
+}

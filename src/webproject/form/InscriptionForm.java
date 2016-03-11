@@ -58,10 +58,15 @@ public class InscriptionForm {
 		user.setUsername(username);
 
 		try {
-			passworValidation(password, confirmation);
+			passworValidation(password);
 		} catch (Exception e) {
 			setErreur(Constants.PASSWORD_FIELD, e.getMessage());
-			setErreur(Constants.CONFIRMATION_FIELD, null);
+		}
+		
+		try {
+			confirmationValidation(password, confirmation);
+		} catch (Exception e) {
+			setErreur(Constants.CONFIRMATION_FIELD, e.getMessage());
 		}
 		user.setPassword(password, true);
 
@@ -101,15 +106,28 @@ public class InscriptionForm {
 	/**
 	 * 
 	 * @param password
+	 * @throws Exception
+	 */
+	private void passworValidation(String password) throws Exception {
+		if (password != null) {
+			if (password.length() < 3) {
+				throw new Exception( "Les mots de passe doivent contenir au moins 3 caractères." );
+			}
+		} else {
+			throw new Exception( "Merci de saisir et confirmer votre mot de passe." );
+		}
+	}
+	
+	/**
+	 * 
+	 * @param password
 	 * @param confirmation
 	 * @throws Exception
 	 */
-	private void passworValidation(String password, String confirmation) throws Exception {
+	private void confirmationValidation(String password, String confirmation) throws Exception {
 		if (password != null && confirmation != null) {
 			if (!password.equals(confirmation)) {
 				throw new Exception( "Les mots de passe entrés sont différents, merci de les saisir à nouveau." );
-			} else if (password.length() < 3) {
-				throw new Exception( "Les mots de passe doivent contenir au moins 3 caractères." );
 			}
 		} else {
 			throw new Exception( "Merci de saisir et confirmer votre mot de passe." );
@@ -138,6 +156,6 @@ public class InscriptionForm {
 	 * Ajoute un message correspondant au champ spécifié à la map des erreurs.
 	 */
 	private void setErreur(String field, String message) {
-		erreurs.put(field, message);
+		erreurs.put(field, "<br />"+message);
 	}
 }

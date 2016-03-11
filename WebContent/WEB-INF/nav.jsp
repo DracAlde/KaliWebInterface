@@ -1,11 +1,11 @@
 <nav>
 	<a href="http://localhost:8080/WebProject/">
-		<div class="menu_button">
+		<div class="menu_button" id="button1">
 			<span class="button_title">ACCUEIL</span>
 		</div>
 	</a>
 	<a href="http://localhost:8080/WebProject/">
-		<div class="menu_button">
+		<div class="menu_button" id="button2">
 			<span class="button_title">BUTTON 2</span>
 		</div>
 	</a>
