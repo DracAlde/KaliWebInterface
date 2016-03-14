@@ -71,9 +71,9 @@ public class ConnectionForm {
 	/**
 	 * Valide le mot de passe saisi.
 	 */
-	private void validationMotDePasse( String password ) throws Exception {
-		if ( password != null ) {
-			if ( password.length() < 3 ) {
+	private void validationMotDePasse(String password) throws Exception {
+		if (password != null) {
+			if (password.length() < 3) {
 				throw new Exception("Le mot de passe doit contenir au moins 3 caractères.");
 			}
 			if (!user.testPassword(password)){

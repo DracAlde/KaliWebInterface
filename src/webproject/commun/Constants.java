@@ -26,6 +26,7 @@ public class Constants {
 	public static final String VIEW_INSCRIPTION = "/WEB-INF/inscription.jsp";
 	public static final String VIEW_CONNECTION  = "/WEB-INF/connection.jsp";
 	public static final String VIEW_HOME        = "/WEB-INF/home.jsp";
+	public static final String VIEW_ADMIN       = "/WEB-INF/admin.jsp";
 	
 	/**
 	 * Constantes des addresses URL
@@ -34,6 +35,7 @@ public class Constants {
 	public static final String ADDR_INSCRIPTION = "/inscription.html";
 	public static final String ADDR_CONNECTION  = "/connection.html";
 	public static final String ADDR_HOME        = "/home.html";
+	public static final String ADDR_ADMIN       = "/admin.html";
 	
 	/**
 	 * Constantes des attributs

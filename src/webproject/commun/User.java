@@ -16,6 +16,8 @@ public class User {
 	private String username;
 	private String password;
 	private String email;
+	private String creationDate;
+	private Level level;
 
 	public User(String username, String password, String email) {
 		super();
@@ -91,6 +93,22 @@ public class User {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(String creationDate) {
+		this.creationDate = creationDate;
+	}
+
+	public Level getLevel() {
+		return level;
+	}
+
+	public void setLevel(Level level) {
+		this.level = level;
 	}
 
 	/**

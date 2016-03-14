@@ -6,33 +6,25 @@
     <body>
 		<c:import url="header.jsp" />
 		<c:import url="nav.jsp" />
-        <form method="post" action="inscription.html">
+        <form class="inscription_form" method="post" action="inscription.html">
         	<img src="img/kali.png" />
         	<br />
         	<span class="form_title">Inscription</span>
-	
 			<br /><br />
-	
-	        <input type="email" id="email" name="email" placeholder="email" size="20" maxlength="256" />
+	        <input type="email" id="email" name="email" placeholder="email" size="20" maxlength="256" title="Votre email servira à vous connecter" required/>
 	        <span class="erreur">${form.erreurs['email']}</span>
 	        <br />
-	
-	        <input type="password" id="password" name="password" placeholder="password" size="20" maxlength="128" />
+	        <input type="password" id="password" name="password" placeholder="password" size="20" maxlength="128" required/>
 	        <span class="erreur">${form.erreurs['password']}</span>
 	        <br />
-	
-	        <input type="password" id="confirmation" name="confirmation" placeholder="confirmation" size="20" maxlength="128" />
+	        <input type="password" id="confirmation" name="confirmation" placeholder="confirmation" size="20" maxlength="128" required/>
 	        <span class="erreur">${form.erreurs['confirmation']}</span>
 	        <br />
-	
-	        <input type="text" id="username" name="username" placeholder="pseudo" size="20" maxlength="128" />
+	        <input type="text" id="username" name="username" placeholder="pseudo" size="20" maxlength="128" required/>
 	        <span class="erreur">${form.erreurs['username']}</span>
 	        <p style="color:red;">* tous le champs sont obligatoires</p>
-	        <br />
-	
 	        <input type="submit" value="Inscription" class="sansLabel" />
 	        <br />
-	        
 	        <p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
         </form>
     </body>

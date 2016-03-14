@@ -36,6 +36,11 @@
 		<servlet-class>webproject.main.Disconnection</servlet-class>
 	</servlet>
 	
+	<servlet>
+		<servlet-name>Administration</servlet-name>
+		<servlet-class>webproject.main.Administration</servlet-class>
+	</servlet>
+	
 	<!--                                                              SERVLET-MAPPING -->
 	
 	<servlet-mapping>
@@ -61,6 +66,11 @@
 	<servlet-mapping>
 		<servlet-name>Disconnection</servlet-name>
 		<url-pattern>/disconnection.html</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Administration</servlet-name>
+		<url-pattern>/admin.html</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
@@ -90,6 +100,11 @@
 		<filter-class>webproject.filters.NoConnectionFilter</filter-class>
 	</filter>
 	
+	<filter>
+		<filter-name>AdminFilter</filter-name>
+		<filter-class>webproject.filters.AdminFilter</filter-class>
+	</filter>
+	
 	<!--                                                              FILTERS-MAPPING -->
 	
 	<filter-mapping>
@@ -110,5 +125,10 @@
 	<filter-mapping>
 		<filter-name>NoConnectionFilter</filter-name>
 		<url-pattern>/inscription.html</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>AdminFilter</filter-name>
+		<url-pattern>/admin.html</url-pattern>
 	</filter-mapping>
 </web-app>

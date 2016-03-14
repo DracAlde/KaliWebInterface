@@ -6,18 +6,20 @@ body {
 }
 
 header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
 	height: 64px;
-	margin-top: -8px;
-	margin-left: -8px;
-	margin-right: -8px;
 	background-image: url("../img/blue-and-white-texture.jpg");
-	margin-top: -8px;
 }
 
 nav {
+	position: fixed;
+	top: 64px;
+	left: 0px;
+	right: 0px;
 	height: 42px;
-	margin-left: -8px;
-	margin-right: -8px;
 	background-image: url("../img/menu_background.png");
 }
 
@@ -49,21 +51,21 @@ nav {
 
 .button_title {
 	color: white;
-	font-family: Impact, Arial;
+	font-family: Arial;
 }
 
 a {
 	text-decoration: none;
 }
 
-form {
+.inscription_form, .connection_form {
 	background-color: white;
 	margin: auto;
-	max-width: 800px;
 	border: 1px solid grey;
 	padding: 10px;
-	margin-top: 20px;
+	margin-top: 116px;
 	text-align: center;
+	width: 610px;
 }
 
 .form_title {
@@ -71,20 +73,35 @@ form {
 	font-size: 20px;
 }
 
+.page_pannel {
+	margin-top: 116px;
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .left_panel {
-	width: 38%;
-	float: left;
+	width: 30%;
+	height: 100%;
 }
 
 .right_panel {
+	margin-left: 10px;
 	height: 80%;
-	width: 59%;
-	float: right;
+    flex: 1;
 }
 
 .left_panel, .right_panel {
-	margin-top: 10px;
 	padding: 10px;
 	border: solid black 1px;
 	background-color: white;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 5px;
 }

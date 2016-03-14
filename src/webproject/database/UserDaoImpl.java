@@ -4,16 +4,20 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
 
+import webproject.commun.Level;
 import webproject.commun.User;
 
 public class UserDaoImpl implements UserDao {
 
 	private DAOFactory daoFactory;
 
-	private static final String SQL_SELECT_BY_EMAIL = "SELECT id, email, username, password FROM USERS WHERE email = ?";
+	private static final String SQL_SELECT_BY_EMAIL = "SELECT id, email, username, password, creation_date, level FROM USERS WHERE email = ?";
 	private static final String SQL_INSERT = "INSERT INTO USERS (email, password, username) VALUES (?, ?, ?)";
-	private static final String SQL_SELECT_BY_USERNAME = "SELECT id, email, username, password FROM USERS WHERE username = ?";
+	private static final String SQL_SELECT_BY_USERNAME = "SELECT id, email, username, password, creation_date, level FROM USERS WHERE username = ?";
+	private static final String SQL_SELECT_ALL = "SELECT * FROM USERS;";
+	private static final String DELETE_USER_BY_USERNAME = "DELETE FROM USERS WHERE username = ?";
 
 	UserDaoImpl(DAOFactory daoFactory) {
 		this.daoFactory = daoFactory;
@@ -25,12 +29,14 @@ public class UserDaoImpl implements UserDao {
 	 * ResultSet) et un bean Utilisateur.
 	 */
 	private static User map( ResultSet resultSet ) throws SQLException {
-		User utilisateur = new User();
-		utilisateur.setId(resultSet.getLong( "id" ));
-		utilisateur.setEmail(resultSet.getString("email"));
-		utilisateur.setUsername(resultSet.getString("username"));
-		utilisateur.setPassword(resultSet.getString("password"), false);
-		return utilisateur;
+		User user = new User();
+		user.setId(resultSet.getLong( "id" ));
+		user.setEmail(resultSet.getString("email"));
+		user.setUsername(resultSet.getString("username"));
+		user.setPassword(resultSet.getString("password"), false);
+		user.setCreationDate(resultSet.getString("creation_date"));
+		user.setLevel(Level.valueOf(resultSet.getString("level")));
+		return user;
 	}
 
 	/**
@@ -134,5 +140,42 @@ public class UserDaoImpl implements UserDao {
 			DAOTools.close( resultSet, preparedStatement, connexion );
 		}
 		return false;
+	}
+	
+	public LinkedList<User> getAllUsers(){
+		LinkedList<User> list = new LinkedList<User>();
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+
+		try {
+			connexion = daoFactory.getConnection();
+			preparedStatement = DAOTools.getPreparedStatment(connexion, SQL_SELECT_ALL, false);
+			resultSet = preparedStatement.executeQuery();
+
+			while(resultSet.next()) {
+				list.add(map(resultSet));
+			}
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		} finally {
+			DAOTools.close(resultSet, preparedStatement, connexion);
+		}
+		
+		return list;
+	}
+
+	public void removeUser(String username) throws DAOException {
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+		try {
+			connexion = daoFactory.getConnection();
+			preparedStatement = DAOTools.getPreparedStatment(connexion, DELETE_USER_BY_USERNAME, false, username);
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		} finally {
+			DAOTools.close(preparedStatement, connexion);
+		}
 	}
 }

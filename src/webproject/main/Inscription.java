@@ -36,7 +36,7 @@ public class Inscription extends HttpServlet {
 	 * Affiche inscription.jsp
 	 */
 	
-	public void doGet(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		this.getServletContext().getRequestDispatcher(Constants.VIEW_INSCRIPTION).forward(request, response );
 	}
 
@@ -46,7 +46,7 @@ public class Inscription extends HttpServlet {
 	 * Affiche inscription.jsp avec un message d'erreur ou de succes
 	 */
 	
-	public void doPost(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		InscriptionForm form = new InscriptionForm(userDao);
 		User user = form.createUser(request);
 		
