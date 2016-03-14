@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Lun 07 Mars 2016 à 20:13
+-- Généré le: Lun 14 Mars 2016 à 17:28
 -- Version du serveur: 5.5.47-0ubuntu0.14.04.1
 -- Version de PHP: 5.5.9-1ubuntu4.14
 
@@ -31,12 +31,21 @@ CREATE TABLE IF NOT EXISTS `USERS` (
   `username` varchar(64) NOT NULL,
   `password` varchar(256) NOT NULL,
   `email` varchar(256) NOT NULL,
+  `creation_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `level` varchar(16) DEFAULT 'USER',
   PRIMARY KEY (`id`),
   UNIQUE KEY `password` (`password`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+
+--
+-- Contenu de la table `USERS`
+--
+
+INSERT INTO `USERS` (`id`, `username`, `password`, `email`, `creation_date`, `level`) VALUES
+(12, 'kilian', '494FA3C2FE79C2D6045AF612381654ADD0289FDABF8124A13437550DDE84F855', 'kilianseznec@yahoo.com', '2016-03-14 08:26:53', 'ADMIN');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
