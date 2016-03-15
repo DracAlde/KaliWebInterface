@@ -20,7 +20,7 @@
             <span>${form.erreurs['password']}</span>
             <br /><br />
 
-            <input type="submit" value="Connexion" class="sansLabel" />
+            <input type="submit" value="Connexion" class="sansLabel"/>
             <br />
             
             <p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.result}</p>
