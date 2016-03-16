@@ -36,19 +36,6 @@ nav {
 	background-image: url("../img/button_mouse_hover.png");
 }
 
-.menu_button_right {
-	height: 42px;
-	line-height: 42px;
-	text-align: center;
-	width: 150px;
-	float: right;
-	background-image: url("../img/button_right.png");
-}
-
-.menu_button_right:hover {
-	background-image: url("../img/button_mouse_hover_right.png");
-}
-
 .button_title {
 	color: white;
 	font-family: Arial;
@@ -56,16 +43,6 @@ nav {
 
 a {
 	text-decoration: none;
-}
-
-.inscription_form, .connection_form {
-	background-color: white;
-	margin: auto;
-	border: 1px solid grey;
-	padding: 10px;
-	margin-top: 116px;
-	text-align: center;
-	width: 610px;
 }
 
 .form_title {
