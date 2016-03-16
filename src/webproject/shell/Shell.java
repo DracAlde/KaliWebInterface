@@ -1,12 +1,12 @@
 package webproject.shell;
 
-import javax.swing.JOptionPane;
-
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 import com.jcraft.jsch.UIKeyboardInteractive;
 import com.jcraft.jsch.UserInfo;
+
+import webproject.commun.Constants;
 
 public class Shell{
 	public static void main(String[] arg){
@@ -16,44 +16,14 @@ public class Shell{
 
 			//jsch.setKnownHosts("/home/foo/.ssh/known_hosts");
 
-			String host=null;
-			if(arg.length>0){
-				host=arg[0];
-			}
-			else{
-				host=JOptionPane.showInputDialog("Enter username@hostname",
-						System.getProperty("user.name")+
-						"@localhost"); 
-			}
-			String user=host.substring(0, host.indexOf('@'));
-			host=host.substring(host.indexOf('@')+1);
+			Session session=jsch.getSession(Constants.SSH_USERNAME, Constants.SSH_HOST, 22);
 
-			Session session=jsch.getSession(user, host, 22);
-
-			String passwd = JOptionPane.showInputDialog("Enter password");
-			session.setPassword(passwd);
+			session.setPassword(Constants.SSH_PASSWORD);
 
 			UserInfo ui = new MyUserInfo(){
-				public void showMessage(String message){
-					JOptionPane.showMessageDialog(null, message);
-				}
 				public boolean promptYesNo(String message){
-					Object[] options={ "yes", "no" };
-					int foo=JOptionPane.showOptionDialog(null, 
-							message,
-							"Warning", 
-							JOptionPane.DEFAULT_OPTION, 
-							JOptionPane.WARNING_MESSAGE,
-							null, options, options[0]);
-					return foo==0;
+					return true;
 				}
-
-				// If password is not given before the invocation of Session#connect(),
-				// implement also following methods,
-				//   * UserInfo#getPassword(),
-				//   * UserInfo#promptPassword(String message) and
-				//   * UIKeyboardInteractive#promptKeyboardInteractive()
-
 			};
 
 			session.setUserInfo(ui);

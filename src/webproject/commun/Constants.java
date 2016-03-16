@@ -1,8 +1,7 @@
 package webproject.commun;
 
 /**
- * Classe contenant toutes les constantes qui seront utilisée dans le projet.
- * Les autres classe ne devraient contenir aucune constantes
+ * Constants used in other class of the project
  * @author kilian
  *
  */
@@ -10,7 +9,7 @@ package webproject.commun;
 public class Constants {
 	
 	/**
-	 * Constantes de configuration de la BDD
+	 * DB config constants
 	 */
 	public static final String PROPERTIES_FILE   = "/WEB-INF/config.properties";
 	public static final String PROPERTY_URL      = "url";
@@ -20,7 +19,7 @@ public class Constants {
     public static final String CONF_DAO_FACTORY  = "daofactory";
 	
 	/**
-	 * Constantes de chemins JSP
+	 * JSP path constants
 	 */
 	public static final String VIEW_INDEX       = "/WEB-INF/index.jsp";
 	public static final String VIEW_INSCRIPTION = "/WEB-INF/inscription.jsp";
@@ -29,7 +28,7 @@ public class Constants {
 	public static final String VIEW_ADMIN       = "/WEB-INF/admin.jsp";
 	
 	/**
-	 * Constantes des addresses URL
+	 * URL address constants
 	 */
 	public static final String ADDR_INDEX       = "/";
 	public static final String ADDR_INSCRIPTION = "/inscription.html";
@@ -38,7 +37,7 @@ public class Constants {
 	public static final String ADDR_ADMIN       = "/admin.html";
 	
 	/**
-	 * Constantes des attributs
+	 * Parameters name constants
 	 */
 	public static final String ATT_USER         = "user";
 	public static final String ATT_FORM         = "form";
@@ -46,10 +45,17 @@ public class Constants {
 	public static final String ATT_SESSION_USER = "userSession";
 	
 	/**
-	 * Constantes des champs de formulaire
+	 * Form field name constants
 	 */
 	public static final String EMAIL_FIELD        = "email";
 	public static final String PASSWORD_FIELD     = "password";
 	public static final String CONFIRMATION_FIELD = "confirmation";
 	public static final String USERNAME_FIELD     = "username";
+	
+	/**
+	 * SSH session constants
+	 */
+	public static final String SSH_USERNAME = "username";
+	public static final String SSH_HOST     = "127.0.0.1";
+	public static final String SSH_PASSWORD = "password";
 }

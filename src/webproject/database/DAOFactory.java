@@ -29,44 +29,44 @@ public class DAOFactory {
 		Properties properties = new Properties();
 		String url;
 		String driver;
-		String nomUtilisateur;
-		String motDePasse;
+		String username;
+		String password;
 		BoneCP connectionPool = null;
 
-		InputStream fichierProperties = context.getResourceAsStream(Constants.PROPERTIES_FILE);
+		InputStream propertiesFile = context.getResourceAsStream(Constants.PROPERTIES_FILE);
 
-		if ( fichierProperties == null ) {
-			throw new DAOConfigurationException( "Le fichier properties " + Constants.PROPERTIES_FILE + " est introuvable." );
+		if ( propertiesFile == null ) {
+			throw new DAOConfigurationException( "Properties file " + Constants.PROPERTIES_FILE + " unfound." );
 		}
 
 		try {
-			properties.load( fichierProperties );
+			properties.load( propertiesFile );
 			url = properties.getProperty(Constants.PROPERTY_URL);
 			driver = properties.getProperty(Constants.PROPERTY_DRIVER);
-			nomUtilisateur = properties.getProperty(Constants.PROPERTY_USERNAME);
-			motDePasse = properties.getProperty(Constants.PROPERTY_PASSWORD);
+			username = properties.getProperty(Constants.PROPERTY_USERNAME);
+			password = properties.getProperty(Constants.PROPERTY_PASSWORD);
 		} catch ( IOException e ) {
-			throw new DAOConfigurationException( "Impossible de charger le fichier properties " + Constants.PROPERTIES_FILE, e );
+			throw new DAOConfigurationException( "Failed to load properties file " + Constants.PROPERTIES_FILE, e );
 		}
 
 		try {
 			Class.forName(driver);
 		} catch ( ClassNotFoundException e ) {
-			throw new DAOConfigurationException( "Le driver est introuvable dans le classpath.", e );
+			throw new DAOConfigurationException( "Driver unfound in classpath.", e );
 		}
 
 		try {
 			BoneCPConfig config = new BoneCPConfig();
 			config.setJdbcUrl(url);
-			config.setUsername(nomUtilisateur);
-			config.setPassword(motDePasse);
+			config.setUsername(username);
+			config.setPassword(password);
 			config.setMinConnectionsPerPartition(5);
 			config.setMaxConnectionsPerPartition(10);
 			config.setPartitionCount(2);
 			connectionPool = new BoneCP(config);
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new DAOConfigurationException( "Erreur de configuration du pool de connexions.", e );
+			throw new DAOConfigurationException( "Failed to configure connection pool.", e );
 		}
 
 		DAOFactory instance = new DAOFactory(connectionPool);

@@ -6,6 +6,12 @@ import javax.servlet.ServletContextListener;
 
 import webproject.database.DAOFactory;
 
+/**
+ * Used to initialized the DAOFactory at the begenning
+ * @author kilian
+ *
+ */
+
 public class InitializationDaoFactory implements ServletContextListener {
     private static final String ATT_DAO_FACTORY = "daofactory";
 
@@ -20,6 +26,6 @@ public class InitializationDaoFactory implements ServletContextListener {
 
     @Override
     public void contextDestroyed( ServletContextEvent event ) {
-        /* Rien à réaliser lors de la fermeture de l'application... */
+        //nothing
     }
 }

@@ -5,7 +5,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * Modèle de l'objet utilisateur
+ * User model
  * @author kilian
  *
  */
@@ -59,9 +59,7 @@ public class User {
 	}
 
 	/**
-	 * Définit le mot de passe de l'utilisateur.
-	 * Si hash est vrai, le mot de passe sera hashé
-	 * sinon, le mot de passe sera défini tel quel
+	 * If hash is true, the password will be hashed
 	 * @param password
 	 * @param hash
 	 */
@@ -112,7 +110,7 @@ public class User {
 	}
 
 	/**
-	 * Hash le mot de passe en entrée avec SHA-256 et le retourne en hexadecimal
+	 * Hash the password with SHA-256 and return an hexa String
 	 * @param password
 	 * @return
 	 */

@@ -3,8 +3,8 @@ package webproject.commun;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Divers outils qui pourront être utilisés dans les autres classes
- * Parce que la répétition du code, c'est mal.
+ * Tools witch can be used in other classes
+ * Code repetition is the devil
  * @author kilian
  *
  */
@@ -14,8 +14,7 @@ public class Tools {
 	final protected static char[] hexArray = "0123456789ABCDEF".toCharArray();
 	
 	/**
-	 * Converti byte[] en String hexadécimal incluant uniquement les caractères
-	 * 0123456789ABCDEF
+	 * Convert byte[] in String hexadecimal including only 0123456789ABCDEF
 	 * @param bytes
 	 * @return
 	 */
@@ -30,8 +29,7 @@ public class Tools {
 	}
 
 	/**
-	 * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
-	 * sinon.
+	 * Return null if the field is empty or his value
 	 */
 	public static String getFieldValue(HttpServletRequest request, String fieldName) {
 		String value = request.getParameter(fieldName);
