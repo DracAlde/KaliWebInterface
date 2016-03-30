@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>Bootstrap 101 Template</title>
+<title>Shiva 0.1</title>
 
 <!-- Bootstrap -->
 <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -36,22 +36,22 @@
 			
 			<li role="separator" class="separator"></li>
 
-			<li><a href="#"> <i class="fa fa-user fa-lg"></i> Nikto
+			<li><a href="<c:url value="/nikto.html"></c:url>"> <i class="fa fa-user fa-lg"></i> Nikto
 			</a></li>
 
-			<li><a href="#"> <i class="fa fa-users fa-lg"></i> Zenmap
+			<li><a href="<c:url value="/zenmap.html"></c:url>"> <i class="fa fa-users fa-lg"></i> Zenmap
 			</a></li>
 			
-			<li><a href="#"> <i class="fa fa-users fa-lg"></i> The Harvester
+			<li><a href="<c:url value="/theharvester.html"></c:url>"> <i class="fa fa-users fa-lg"></i> The Harvester
 			</a></li>
 			
-			<li><a href="#"> <i class="fa fa-users fa-lg"></i> TLS Sled
+			<li><a href="<c:url value="/tlssled.html"></c:url>"> <i class="fa fa-users fa-lg"></i> TLS Sled
 			</a></li>
 			
-			<li><a href="#"> <i class="fa fa-users fa-lg"></i> Hydra
+			<li><a href="<c:url value="/hydra.html"></c:url>"> <i class="fa fa-users fa-lg"></i> Hydra
 			</a></li>
 			
-			<li><a href="#"> <i class="fa fa-users fa-lg"></i> DNS Recon
+			<li><a href="<c:url value="/dnsrecon.html"></c:url>"> <i class="fa fa-users fa-lg"></i> DNS Recon
 			</a></li>
 		</ul>
 	</div>

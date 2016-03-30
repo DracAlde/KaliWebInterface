@@ -10,11 +10,71 @@
 		<servlet-class>webproject.main.Home</servlet-class>
 	</servlet>
 	
+	<servlet>
+		<servlet-name>Nikto</servlet-name>
+		<servlet-class>webproject.main.Nikto</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Zenmap</servlet-name>
+		<servlet-class>webproject.main.Zenmap</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>TheHarvester</servlet-name>
+		<servlet-class>webproject.main.TheHarvester</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>TlsSled</servlet-name>
+		<servlet-class>webproject.main.TlsSled</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Hydra</servlet-name>
+		<servlet-class>webproject.main.Hydra</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>DnsRecon</servlet-name>
+		<servlet-class>webproject.main.DnsRecon</servlet-class>
+	</servlet>
+	
 	<!--                                                              SERVLET-MAPPING -->
 	
 	<servlet-mapping>
 		<servlet-name>Home</servlet-name>
 		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Nikto</servlet-name>
+		<url-pattern>/nikto.html</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Zenmap</servlet-name>
+		<url-pattern>/zenmap.html</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>TheHarvester</servlet-name>
+		<url-pattern>/theharvester.html</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>TlsSled</servlet-name>
+		<url-pattern>/tlssled.html</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Hydra</servlet-name>
+		<url-pattern>/hydra.html</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>DnsRecon</servlet-name>
+		<url-pattern>/dnsrecon.html</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
