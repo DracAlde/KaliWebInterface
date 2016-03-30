@@ -36,4 +36,5 @@
 	    <servlet-name>default</servlet-name>
 	    <url-pattern>/bootstrap/*</url-pattern>
 	</servlet-mapping>
+	
 </web-app>
