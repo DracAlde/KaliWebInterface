@@ -16,7 +16,6 @@
 <link href="css/nav.css" rel="stylesheet"> 
 
 </head>
-<body>
 
 <!-- http://bootsnipp.com/snippets/featured/responsive-navigation-menu -->
 
