@@ -97,4 +97,9 @@
 	    <url-pattern>/bootstrap/*</url-pattern>
 	</servlet-mapping>
 	
+	<servlet-mapping>
+	    <servlet-name>default</servlet-name>
+	    <url-pattern>/font-awesome/*</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

@@ -14,6 +14,7 @@
 <!-- Bootstrap -->
 <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="css/nav.css" rel="stylesheet"> 
+<link href="font-awesome/css/font-awesome.css" rel="stylesheet"> 
 
 </head>
 
@@ -35,22 +36,22 @@
 			
 			<li role="separator" class="separator"></li>
 
-			<li><a href="<c:url value="/nikto.html"></c:url>"> <i class="fa fa-user fa-lg"></i> Nikto
+			<li><a href="<c:url value="/nikto.html"></c:url>"> Nikto
 			</a></li>
 
-			<li><a href="<c:url value="/zenmap.html"></c:url>"> <i class="fa fa-users fa-lg"></i> Zenmap
+			<li><a href="<c:url value="/zenmap.html"></c:url>"> <i class="fa fa-eye fa-lg"></i> Zenmap
 			</a></li>
 			
-			<li><a href="<c:url value="/theharvester.html"></c:url>"> <i class="fa fa-users fa-lg"></i> The Harvester
+			<li><a href="<c:url value="/theharvester.html"></c:url>"> The Harvester
 			</a></li>
 			
-			<li><a href="<c:url value="/tlssled.html"></c:url>"> <i class="fa fa-users fa-lg"></i> TLS Sled
+			<li><a href="<c:url value="/tlssled.html"></c:url>"> <i class="fa fa-lock fa-lg"></i> TLS Sled
 			</a></li>
 			
-			<li><a href="<c:url value="/hydra.html"></c:url>"> <i class="fa fa-users fa-lg"></i> Hydra
+			<li><a href="<c:url value="/hydra.html"></c:url>"> Hydra
 			</a></li>
 			
-			<li><a href="<c:url value="/dnsrecon.html"></c:url>"> <i class="fa fa-users fa-lg"></i> DNS Recon
+			<li><a href="<c:url value="/dnsrecon.html"></c:url>"> DNS Recon
 			</a></li>
 		</ul>
 	</div>

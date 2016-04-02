@@ -5,7 +5,15 @@
 <c:import url="nav.jsp"></c:import>
 <body>
 	<section>
-		<div class=col-lg-3></div>
+		<div class="row">
+			<div class="col-md-6"
+				style="border: 1px solid black;">
+				<h3>Informations</h3>
+				<p>Nikto est le meilleur logiciel du monde parce que ceci ou
+					cela</p>
+			</div>
+			<c:import url="history.jsp"></c:import>
+		</div>
 		<h1 class=col-lg-3>Nikto page</h1>
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

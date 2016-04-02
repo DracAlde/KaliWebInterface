@@ -5,7 +5,6 @@
 <c:import url="nav.jsp"></c:import>
 <body>
 	<section>
-		<div class=col-lg-5></div>
 		<h1 class=col-lg-1>Zenmap page</h1>
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

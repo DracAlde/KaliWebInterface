@@ -8,10 +8,7 @@
 <c:import url="nav.jsp"></c:import>
 <body>
 	<section>
-	<div class="col-md-12" style="border: 1px solid black;">
-		test
-	</div>
-	<h1 class=col-lg-1>Hello, world!</h1>
+	<h1 class="col-lg-3">Hello, world!</h1>
 	</section>
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
