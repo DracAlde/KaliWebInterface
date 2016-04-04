@@ -38,6 +38,8 @@ public class Constants {
 	/**
 	 * Form field name constants
 	 */
+	public static final String FIELD_HOSTNAME = "hostname";
+	public static final String FIELD_PORT = "port";
 	
 	/**
 	 * SSH session constants

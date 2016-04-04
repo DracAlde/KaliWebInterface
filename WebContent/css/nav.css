@@ -165,3 +165,7 @@ body {
   overflow: hidden;
   background-color: #e5e5e5;
 }
+
+#title_link:hover{
+	text-decoration:none;
+}

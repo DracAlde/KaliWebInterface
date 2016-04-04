@@ -1,5 +1,7 @@
 package webproject.commun;
 
+import java.util.regex.Pattern;
+
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -11,7 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 
 public class Tools {
 
-	final protected static char[] hexArray = "0123456789ABCDEF".toCharArray();
+	final protected static char[] hexArray = "0123456789ABCDEF".toCharArray();private static final Pattern PATTERN = Pattern.compile("^(([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$");
+	
 	
 	/**
 	 * Convert byte[] in String hexadecimal including only 0123456789ABCDEF
@@ -38,5 +41,9 @@ public class Tools {
 		} else {
 			return value;
 		}
+	}
+
+	public static boolean validateIP(String ip) {
+	    return PATTERN.matcher(ip).matches();
 	}
 }

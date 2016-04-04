@@ -19,4 +19,11 @@ public class TlsSled extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		this.getServletContext().getRequestDispatcher(Constants.VIEW_TLS_SLED).forward(request, response);
 	}
+	
+
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		
+		this.getServletContext().getRequestDispatcher(Constants.VIEW_TLS_SLED).forward(request, response);
+	}
 }

@@ -23,7 +23,7 @@
 <!-- http://bootsnipp.com/snippets/featured/responsive-navigation-menu -->
 
 <div class="nav-side-menu">
-	<a href="<c:url value="/"></c:url>">
+	<a id="title_link" href="<c:url value="/"></c:url>">
 		<div class="brand">
 			<img src="img/kali_logo.png"> SHIVA
 		</div>
