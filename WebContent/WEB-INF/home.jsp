@@ -10,14 +10,23 @@
 	<section>
 		<h1 class="col-lg-3">Hello, world!</h1>
 	</section>
-
-	<p class="col-lg-5">
-	This text is just a trying one permitting to test Help Tip CSS feature !
-	<div class="help-tip">
+	
+	<section class="col-lg-10">
+		<div class="help-tip">
 		<p>This is the inline help tip! It can contain all kinds of HTML.
 			Style it as you please.</p>
-	</div>
-	</p>
+		</div>
+		
+		<p class="col-lg-9">
+		This text is just a trying one permitting to test Help Tip CSS feature !
+		This text is just a trying one permitting to test Help Tip CSS feature !
+		This text is just a trying one permitting to test Help Tip CSS feature !
+		This text is just a trying one permitting to test Help Tip CSS feature !
+		This text is just a trying one permitting to test Help Tip CSS feature !
+		This text is just a trying one permitting to test Help Tip CSS feature !
+		This text is just a trying one permitting to test Help Tip CSS feature !
+		</p>
+	</section>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script
