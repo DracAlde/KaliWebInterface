@@ -56,6 +56,8 @@
 
 			<li><img src="img/dnsrecon.png"><a href="<c:url value="/dnsrecon.html"></c:url>"> DNS
 					Recon </a></li>
+					
+			<li><img src="img/terminal.png"><a href="<c:url value="/dnsrecon.html"></c:url>">Terminal</a></li>
 		</ul>
 	</div>
 </div>
