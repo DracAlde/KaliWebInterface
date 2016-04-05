@@ -39,22 +39,22 @@
 
 			<li role="separator" class="separator"></li>
 
-			<li><a href="<c:url value="/nikto.html"></c:url>"> Nikto </a></li>
+			<li><img src="img/nikto.png"><a href="<c:url value="/nikto.html"></c:url>"> Nikto </a></li>
 
 			<li><a href="<c:url value="/zenmap.html"></c:url>"> <i
 					class="fa fa-eye fa-lg"></i> Zenmap
 			</a></li>
 
-			<li><a href="<c:url value="/theharvester.html"></c:url>">
+			<li><img src="img/harvester.png"><a href="<c:url value="/theharvester.html"></c:url>">
 					The Harvester </a></li>
 
 			<li><a href="<c:url value="/tlssled.html"></c:url>"> <i
 					class="fa fa-lock fa-lg"></i> TLS Sled
 			</a></li>
 
-			<li><a href="<c:url value="/hydra.html"></c:url>"> Hydra </a></li>
+			<li><img src="img/hydra.png"><a href="<c:url value="/hydra.html"></c:url>"> Hydra </a></li>
 
-			<li><a href="<c:url value="/dnsrecon.html"></c:url>"> DNS
+			<li><img src="img/dnsrecon.png"><a href="<c:url value="/dnsrecon.html"></c:url>"> DNS
 					Recon </a></li>
 		</ul>
 	</div>
