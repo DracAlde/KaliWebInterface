@@ -45,7 +45,7 @@ public class TlsSledForm {
 		if (errors.isEmpty()) {
 			// pas d'erreur, on envois la requete
 			String command = "tlssled "+ hostname+" "+port;
-			
+			System.out.println(command);
 			
 			
 			result="";

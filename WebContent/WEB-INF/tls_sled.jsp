@@ -4,15 +4,18 @@
 
 <c:import url="nav.jsp"></c:import>
 <body>
-	<section style="padding-left=20px;">
+	<section>
 		<div class="row">
 			<h1 class=col-lg-5>TLS Sled page</h1>
 		</div>
 		<div class="row">
 			<form class=col-lg-5 method="POST" action="<c:url value="/tls_sled.jsp" ></c:url>">
-				<label for="hostname">Hostname ou IP</label><br />
+				<label for="hostname">Hostname ou IP</label>
+				<br />
 				<input type="text" name="hostname"id="hostname"/>
-				<label for="port">Port</label><br />
+				<br />
+				<label for="port">Port</label>
+				<br />
 				<input type="number" name="port" id="port" value="443" />
 				<br />
 				<input type="submit" value="Envoyer" />

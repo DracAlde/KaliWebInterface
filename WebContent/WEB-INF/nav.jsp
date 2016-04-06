@@ -33,31 +33,55 @@
 	<div class="menu-list">
 
 		<ul id="menu-content" class="menu-content collapse out">
-			<li><a href="<c:url value="/"></c:url>"> <i
-					class="fa fa-dashboard fa-lg"></i> <strong>Accueil</strong>
-			</a></li>
+			<a href="<c:url value="/"></c:url>">
+				<li>
+					<i class="fa fa-dashboard fa-lg"></i><strong>Accueil</strong>
+				</li>
+			</a>
 
 			<li role="separator" class="separator"></li>
 
-			<li><img src="img/nikto.png"><a href="<c:url value="/nikto.html"></c:url>"> Nikto </a></li>
+			<a href="<c:url value="/nikto.html"></c:url>">
+				<li>
+					<img src="img/nikto.png">Nikto 
+				</li>
+			</a>
 
-			<li><a href="<c:url value="/zenmap.html"></c:url>"> <i
-					class="fa fa-eye fa-lg"></i> Zenmap
-			</a></li>
+			<a href="<c:url value="/zenmap.html"></c:url>">
+				<li> 
+					<i class="fa fa-eye fa-lg"></i>Zenmap
+				</li>
+			</a>
 
-			<li><img src="img/harvester.png"><a href="<c:url value="/theharvester.html"></c:url>">
-					The Harvester </a></li>
+			<a href="<c:url value="/theharvester.html"></c:url>">
+				<li>
+					<img src="img/harvester.png">The Harvester
+				</li>
+			</a>
 
-			<li><a href="<c:url value="/tlssled.html"></c:url>"> <i
-					class="fa fa-lock fa-lg"></i> TLS Sled
-			</a></li>
+			<a href="<c:url value="/tlssled.html"></c:url>">
+				<li>
+					<i class="fa fa-lock fa-lg"></i>TLS Sled
+				</li>
+			</a>
 
-			<li><img src="img/hydra.png"><a href="<c:url value="/hydra.html"></c:url>"> Hydra </a></li>
+			<a href="<c:url value="/hydra.html"></c:url>">
+				<li>
+					<img src="img/hydra.png">Hydra
+				</li>
+			</a>
 
-			<li><img src="img/dnsrecon.png"><a href="<c:url value="/dnsrecon.html"></c:url>"> DNS
-					Recon </a></li>
-					
-			<li><img src="img/terminal.png"><a href="<c:url value="/dnsrecon.html"></c:url>">Terminal</a></li>
+			<a href="<c:url value="/dnsrecon.html"></c:url>">
+				<li>
+					<img src="img/dnsrecon.png">DNS Recon
+				</li>
+			</a>
+
+			<a href="<c:url value="/dnsrecon.html"></c:url>">
+				<li>
+					<img src="img/terminal.png">Terminal
+				</li>
+			</a>
 		</ul>
 	</div>
 </div>
