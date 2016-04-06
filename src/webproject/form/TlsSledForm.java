@@ -9,20 +9,22 @@ import org.apache.commons.validator.routines.DomainValidator;
 import org.apache.commons.validator.routines.InetAddressValidator;
 
 import webproject.commun.Constants;
+import webproject.commun.History;
+import webproject.commun.ToolName;
 import webproject.commun.Tools;
 
 public class TlsSledForm {
 
-	private String result;
+	private String 				result = "";
 	private Map<String, String> errors = new HashMap<String, String>();
 
 	public TlsSledForm(){}
 
-	public String getResultat() {
+	public String getResult() {
 		return result;
 	}
 
-	public Map<String, String> getErreurs() {
+	public Map<String, String> getErrors() {
 		return errors;
 	}
 
@@ -47,8 +49,12 @@ public class TlsSledForm {
 			String command = "tlssled "+ hostname+" "+port;
 			System.out.println(command);
 			
+			//add this command to history
+			History history = new History(ToolName.TlsSled);
+			history.setArguments(Constants.FIELD_HOSTNAME, hostname);
+			history.setArguments(Constants.FIELD_PORT, port);
 			
-			result="";
+			result = "Succ�s de la commande";
 		} else {
 			result = "Echec de la commande";
 		}
@@ -73,7 +79,7 @@ public class TlsSledForm {
 	 * Ajoute un message correspondant au champ spécifié à la map des erreurs.
 	 */
 	private void setError(String field, String message) {
-		errors.put(field, "<br />"+message);
+		errors.put(field, message);
 	}
 
 }

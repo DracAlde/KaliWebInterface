@@ -1,7 +1,8 @@
 @CHARSET "UTF-8";
 
 section{
-	margin-left:200px;
+	margin: 5px;
+	margin-left:205px;
 }
 .nav-side-menu {
   overflow: auto;
@@ -118,7 +119,7 @@ section{
 }
 @media (max-width: 767px) {
 	section{
-		margin-left: 0px;
+		margin-left: 5px;
 	}
   .nav-side-menu {
     position: relative;
@@ -151,7 +152,7 @@ section{
   }
   
 	section{
-		margin-left:200px;
+		margin-left:205px;
 	}
 }
 body {
@@ -168,6 +169,23 @@ body {
 
 #title_link:hover{
 	text-decoration:none;
+}
+
+.error{
+	text-style:italic;
+	color:red;
+	font-size:12px;
+}
+
+.succes{
+	color:green;
+}
+
+.command{
+	background-color: black;
+	color: #00FF00;
+	font-family: monospace;
+    word-wrap: break-word;
 }
 
 /* .bold { */

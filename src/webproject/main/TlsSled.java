@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import webproject.commun.Constants;
+import webproject.form.TlsSledForm;
 
 public class TlsSled extends HttpServlet{
 	
@@ -23,7 +24,9 @@ public class TlsSled extends HttpServlet{
 
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		
+		TlsSledForm form = new TlsSledForm();
+		form.validateTlsSled(request);
+		request.setAttribute(Constants.ATT_FORM,form);
 		this.getServletContext().getRequestDispatcher(Constants.VIEW_TLS_SLED).forward(request, response);
 	}
 }
