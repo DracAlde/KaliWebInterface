@@ -3,21 +3,58 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:import url="nav.jsp"></c:import>
-<body onload="updateCommand()">
+<body>
 	<section>
 		<div class="panel panel-default col-md-12 col-lg-12" style="padding:0px;">
 		  <div class="panel-body">
 			<ul class="nav nav-pills">
-			  <li id="history_btn" role="presentation" class="active" onclick="changeHead()"><a href="#">History <span class="badge">4</span></a></li>
-			  <li id="desc_btn" role="presentation" onclick="changeHead()"><a href="#">Description</a></li>
+			  <li id="history_btn" role="presentation" class="active" onclick="changeHead(this)">
+			  	<a>
+			  		History 
+			  		<span class="badge">
+			  			<c:out value="${history['history'].size()}" />
+			  			<c:if test="${empty history}">
+			  				0
+			  			</c:if>
+			  		</span>
+			  	</a>
+			  </li>
+			  <li id="desc_btn" role="presentation" onclick="changeHead(this)">
+			  	<a>
+			  		Description
+			  	</a>
+			  </li>
 			</ul>
-			<div>
-				L'historique de malade dans lequel je vais faire des truc de ouf ! =)
+			<br>
+			<div id="history">
+				<div class="list-group" style="max-height: 100px; overflow: auto;">
+					<c:forEach items="${history['history']}" var="command">
+					
+							<c:if test="${command.isSuccess()}">
+							    <a class="list-group-item list-group-item-success">
+							</c:if>
+							<c:if test="${!command.isSuccess()}">
+								<a class="list-group-item list-group-item-danger">
+							</c:if>
+						
+							<c:out value="${command['tool']}" />
+							hostname=<c:out value="${command.getArguments()['hostname']}" />
+							port=<c:out value="${command.getArguments()['port']}" />
+						</a>
+					</c:forEach>
+				</div>
+			</div>
+			<div id="desc">
+				<div class="panel panel-default">
+				  <div class="panel-body" style="max-height: 100px; overflow: auto;">
+						Description <br>de tsl sled,<br> quand il est apparu,<br> qui l'a créé,<br> à quoi il sert,<br> dans quel contexte <br>on l'utilise ... =)
+				  </div>
+				</div>
 			</div>
 		  </div>
 		  <div class="panel-footer">
 			<div class="row">
-				<h1 class=col-lg-5>TLS Sled page</h1>
+				<h1 class=col-lg-5>TLS Sled</h1>
 			</div>
 			<form method="POST" action="<c:url value="/tlssled.html" ></c:url>">
 				<div>
@@ -47,25 +84,41 @@
 			</form>
 		  </div>
 		</div>
+		
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="bootstrap/js/bootstrap.js"></script>
+		
 		<script>
 			var hostname = document.getElementById('hostname'),
 				port = document.getElementById('port'),
 				command = document.getElementById('command');
 				history_btn = document.getElementById('history_btn');
 				desc_btn = document.getElementById('desc_btn');
+				history = document.getElementById('history');
+				desc = document.getElementById('desc');
 			
 			function updateCommand(){
 				var command_string ='> tlssled ' + hostname.value + ' ' + port.value;
 				command.innerHTML = command_string ;
 			}
 			
-			function changeHead(){
-				
+			function changeHead(e){
+				if(desc_btn == e){
+					desc_btn.className = 'active';
+					history_btn.className = '';
+					desc.style.display = 'block';
+					history.style.display = 'none';
+				}else{
+					history_btn.className = 'active';
+					desc_btn.className = '';
+					history.style.display = 'block';
+					desc.style.display = 'none';
+				}
 			}
+			
+			updateCommand();
 		</script>
 	</section>
 </body>

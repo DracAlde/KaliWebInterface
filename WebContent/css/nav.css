@@ -186,8 +186,13 @@ body {
 	color: #00FF00;
 	font-family: monospace;
     word-wrap: break-word;
+    padding: 3px;
+    border-radius: 4px;
 }
 
+.hidden{
+	display: none;
+}
 /* .bold { */
 /*     font-weight: bold; */
 /* } */

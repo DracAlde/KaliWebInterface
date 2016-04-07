@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.validator.routines.DomainValidator;
 import org.apache.commons.validator.routines.InetAddressValidator;
 
+import webproject.commun.Command;
 import webproject.commun.Constants;
-import webproject.commun.History;
 import webproject.commun.ToolName;
 import webproject.commun.Tools;
 
@@ -28,7 +28,7 @@ public class TlsSledForm {
 		return errors;
 	}
 
-	public void validateTlsSled(HttpServletRequest request){
+	public Command validateTlsSled(HttpServletRequest request){
 		String hostname = Tools.getFieldValue(request, Constants.FIELD_HOSTNAME);
 		String port = Tools.getFieldValue(request, Constants.FIELD_PORT);
 
@@ -44,21 +44,25 @@ public class TlsSledForm {
 			setError(Constants.FIELD_PORT, "Le numÃ©ro de port n'est pas un nombre entier");
 		}
 
+		
+		//add this command to history
+		Command command = new Command(ToolName.TlsSled);
+		command.setArguments(Constants.FIELD_HOSTNAME, hostname);
+		command.setArguments(Constants.FIELD_PORT, port);
+		
 		if (errors.isEmpty()) {
 			// pas d'erreur, on envois la requete
-			String command = "tlssled "+ hostname+" "+port;
-			System.out.println(command);
+			String commandString = "tlssled "+ hostname+" "+port;
+			System.out.println(commandString);
 			
-			//add this command to history
-			History history = new History(ToolName.TlsSled);
-			history.setArguments(Constants.FIELD_HOSTNAME, hostname);
-			history.setArguments(Constants.FIELD_PORT, port);
-			
+			command.setSuccess(true);
 			result = "Succès de la commande";
 		} else {
+			command.setSuccess(false);
 			result = "Echec de la commande";
 		}
 
+		return command;
 	}
 
 	private void hostnameValidation(String hostname) throws Exception {

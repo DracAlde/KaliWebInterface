@@ -33,7 +33,9 @@ public class Constants {
 	/**
 	 * Parameters name constants
 	 */
-	public static final String ATT_FORM         = "form";
+	public static final String ATT_FORM            = "form";
+	public static final String ATT_SESSION_HISTORY = "history";
+	
 	
 	/**
 	 * Form field name constants
