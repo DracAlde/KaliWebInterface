@@ -79,7 +79,7 @@
 
 			<a href="<c:url value="/dnsrecon.html"></c:url>">
 				<li>
-					<img src="img/terminal.png">Terminal
+					<i class="fa fa-terminal fa-lg"></i>Terminal
 				</li>
 			</a>
 		</ul>

@@ -30,7 +30,8 @@
 			<br>
 			
 			<div id="history_panel">
-				<div class="list-group" style="max-height: 100px; overflow: auto;">
+			<div class="panel panel-default">
+				<div class="list-group" style="height: 150px; overflow: auto;">
 					<c:forEach items="${history['history']}" var="command">
 						<c:if test="${command.isSuccess()}">
 						    <a class="list-group-item list-group-item-success">
@@ -38,23 +39,24 @@
 						<c:if test="${!command.isSuccess()}">
 							<a class="list-group-item list-group-item-danger">
 						</c:if>
-							<c:out value="${command['tool']}" />
-							hostname = <c:out value="${command.getArguments()['hostname']}" />
-							port = <c:out value="${command.getArguments()['port']}" />
+							<strong><c:out value="${command['tool']}" /></strong>
+							hostname = <strong><c:out value="${command.getArguments()['hostname']}" /></strong>
+							port = <strong><c:out value="${command.getArguments()['port']}" /></strong>
 						</a>
 					</c:forEach>
+				</div>
 				</div>
 			</div>
 			
 			<div id="desc" class="hidden">
 				<div class="panel panel-default">
-				  <div class="panel-body" style="max-height: 100px; overflow: auto;">
+				  <div class="panel-body" style="height: 150px; overflow: auto;">
 						Description de tsl sled,<br>
 						quand il est apparu,<br>
 						qui l'a créé,<br>
 						à quoi il sert,<br>
 						dans quel contexte on l'utilise ... =)<br>
-						On peut aussi mettre la description dans l'info-bulle près du titre !
+						On peut aussi mettre la description dans l'info-bulle du point d'interrogration près du titre !
 				  </div>
 				</div>
 			</div>
@@ -63,15 +65,18 @@
 		  <div class="panel-footer">
 			<div class="row">
 			
-				<h3 class=col-lg-12>TLS Sled 
+				<h3 class=col-lg-12>
+					<span	data-toggle="tooltip" 
+							title="Description de tsl sled, quand il est apparu, qui l'a créé, à quoi il sert, dans quel contexte on l'utilise ... =) On peut aussi mettre la description dans l'onglet Description en haut de la page"
+							data-placement="right">
+							
+						TLS Sled
+						
+					</span>
+					
 					<div class="help-picture"
 						data-toggle="tooltip" 
-						title="Description de tsl sled,
-						quand il est apparu,
-						qui l'a créé,
-						à quoi il sert,
-						dans quel contexte on l'utilise ... =)
-						On peut aussi mettre la description dans l'onglet Description en haut de la page !"
+						title="Description de tsl sled, quand il est apparu, qui l'a créé, à quoi il sert, dans quel contexte on l'utilise ... =) On peut aussi mettre la description dans l'info-bulle qui apparait quand on passe sur le titre avec la souris"
 						data-placement="left">
 					</div>
 				</h3>
@@ -81,12 +86,18 @@
 				<div>
 					<label 	for="hostname" 
 							data-toggle="tooltip" 
-							title="Text that will be displayed when someone hover the label"
+							title="Des informations sur le champs à remplir, à quoi il sert, comment le remplir ... =) On peut aussi utiliser un bouton '?'"
 							data-placement="right">
 							Hostname ou IP
 					</label>
-					<div class="input-group">
-					  <input type="text" class="form-control" placeholder="Hostname" aria-describedby="basic-addon1" name="hostname" id="hostname" onkeyup="updateCommand()">
+					<div class="input-group col-lg-2 col-mg-4 col-sm-6">
+					  	<input type="text" class="form-control" placeholder="Hostname" name="hostname" id="hostname" onkeyup="updateCommand()" onselect="updateCommand()" autofocus required>
+				    	<span 	class="input-group-addon" id="basic-addon2"
+				    			data-toggle="tooltip" 
+								title="Des informations sur le champs à remplir, à quoi il sert, comment le remplir ... =) On peut aussi l'info-bulle du label !"
+								data-placement="bottom">
+							<i class="fa fa-question fa-lg"></i>
+						</span>
 					</div>
 					<p class="error">${form.errors['hostname']}</p>
 					
@@ -96,13 +107,24 @@
 							data-placement="right">
 							Port
 					</label>
-					<div class="input-group">
-						<input type="number"  class="form-control" placeholder="Port" name="port" id="port" value="443" onkeyup="updateCommand()" onchange="updateCommand()">
+					<div class="input-group col-lg-2">
+						<input type="number"  class="form-control" placeholder="Port" name="port" id="port" value="443" onkeyup="updateCommand()" onchange="updateCommand()" required>
+						<span 	class="input-group-addon" id="basic-addon2"
+					    		data-toggle="tooltip" 
+								title="Des informations sur le champs à remplir, à quoi il sert, comment le remplir ... =) On peut aussi l'info-bulle du label !"
+								data-placement="bottom">
+							<i class="fa fa-question fa-lg"></i>
+						</span>
 					</div>
 					<p class="error">${form.errors['port']}</p>
 				</div>
 				
-				<div class=command id=command >
+				<br>
+				
+				<div 	class=command id=command 
+						data-toggle="tooltip" 
+						title="C'est la ligne qui sera envoyée dans le terminal de notre système Kali Linux"
+						data-placement="bottom">
 					> tlssled
 				</div>
 				
