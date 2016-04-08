@@ -192,6 +192,25 @@ body {
 
 .hidden{
 	display: none;
+	visibility: hidden;
+}
+
+.help-picture{
+	text-align: center;
+	background-color: #BCDBEA;
+	border-radius: 50%;
+	width: 24px;
+	height: 24px;
+	font-size: 14px;
+	line-height: 26px;
+	cursor: default;
+	float: right;
+}
+
+.help-picture:before{
+	content:'?';
+	font-weight: bold;
+	color:#fff;
 }
 /* .bold { */
 /*     font-weight: bold; */
