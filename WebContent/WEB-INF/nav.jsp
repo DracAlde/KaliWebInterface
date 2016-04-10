@@ -1,3 +1,4 @@
+<%@page import="webproject.commun.Constants"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -20,6 +21,8 @@
 
 </head>
 
+<script type="text/javascript" src="js/xml_parser.js"></script>
+
 <!-- http://bootsnipp.com/snippets/featured/responsive-navigation-menu -->
 
 <div class="nav-side-menu">
@@ -35,7 +38,10 @@
 		<ul id="menu-content" class="menu-content collapse out">
 			<a href="<c:url value="/"></c:url>">
 				<li>
-					<i class="fa fa-dashboard fa-lg"></i><strong>Accueil</strong>
+					<i class="fa fa-dashboard fa-lg"></i><strong>
+					<script type="text/javascript">
+						loadXMLDoc("<%= Constants.LANG_PATH_EN %>", "site/nav/accueil");
+					</script></strong>
 				</li>
 			</a>
 

@@ -20,6 +20,13 @@ public class Constants {
 	public static final String VIEW_DNS_RECON    = "/WEB-INF/dns_recon.jsp";
 	
 	/**
+	 * Language constants
+	 */
+	public String LANGUAGE						= "EN";
+	public static final String LANG_PATH_FR 	= "lang/fr.xml";
+	public static final String LANG_PATH_EN		= "file:///home/arn0f/Mod%C3%A8les/Workspace/Eclipse%20JEE/git/KaliWebInterface/WebContent/js/lang/en.xml";
+	
+	/**
 	 * URL address constants
 	 */
 	public static final String ADDR_HOME         = "/";
@@ -49,4 +56,34 @@ public class Constants {
 	public static final String SSH_USERNAME = "username";
 	public static final String SSH_HOST     = "127.0.0.1";
 	public static final String SSH_PASSWORD = "password";
+	
+	
+	
+	/**
+	 * Return the language chosen by the user or the default one
+	 * @return language chosen
+	 */
+	public String getLang()
+	{
+		return LANGUAGE;
+	}
+	
+	/**
+	 * Set the variable language value correctly
+	 * @param lang 		language to set
+	 * @return 			return <b>0</b> if the language as correctly be set or <b>-1</b> if not
+	 */
+	public int setLang(String lang)
+	{
+		this.LANGUAGE = lang;
+		
+		if (lang.equals(this.LANGUAGE))
+		{
+			return 0;
+		}
+		else 
+		{
+			return -1;
+		}
+	}
 }
