@@ -1,16 +1,24 @@
+<%@page import="webproject.commun.Language"%>
+<%@page import="webproject.commun.Constants"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:import url="nav.jsp"></c:import>
 <body>
+
+	<% 
+		Language language = new Language(); //class must be instancied each time we want to use the language parser
+		Constants langSelected = new Constants();
+	%>
+	
 	<section>
 		<div class="panel panel-default col-md-12 col-lg-12" style="padding:0px;">
 		  <div class="panel-body">
 			<ul class="nav nav-pills">
 			  <li id="history_btn" role="presentation" class="active" onclick="changeHead(this)">
 			  	<a>
-			  		History 
+			  		<%= language.getLanguageValue("/site/tools/tls-sled/historique") %> 
 			  		<span class="badge">
 			  			<c:out value="${history['history'].size()}" />
 			  			<c:if test="${empty history}">
@@ -22,7 +30,7 @@
 			  
 			  <li id="desc_btn" role="presentation" onclick="changeHead(this)">
 			  	<a>
-			  		Description
+			  		<%= language.getLanguageValue("/site/tools/tls-sled/description") %> 
 			  	</a>
 			  </li>
 			</ul>
@@ -50,14 +58,9 @@
 			
 			<div id="desc" class="hidden">
 				<div class="panel panel-default">
-				  <div class="panel-body" style="height: 150px; overflow: auto;">
-						Description de tsl sled,<br>
-						quand il est apparu,<br>
-						qui l'a créé,<br>
-						à quoi il sert,<br>
-						dans quel contexte on l'utilise ... =)<br>
-						On peut aussi mettre la description dans l'info-bulle du point d'interrogration près du titre !
-				  </div>
+				  	<div class="panel-body" style="height: 150px; overflow: auto;">
+						<%= language.getLanguageValue("/site/tools/tls-sled/desc-tool") %> 
+					</div>
 				</div>
 			</div>
 		  </div>
@@ -86,15 +89,15 @@
 				<div>
 					<label 	for="hostname" 
 							data-toggle="tooltip" 
-							title="Des informations sur le champs à remplir, à quoi il sert, comment le remplir ... =) On peut aussi utiliser un bouton '?'"
+							title="<%= language.getLanguageValue("/site/tools/tls-sled/aide/cible") %>"
 							data-placement="right">
-							Hostname ou IP
+							<%= language.getLanguageValue("/site/tools/tls-sled/options/cible") %> 
 					</label>
 					<div class="input-group col-lg-2 col-mg-4 col-sm-6">
 					  	<input type="text" class="form-control" placeholder="Hostname" name="hostname" id="hostname" onkeyup="updateCommand()" onselect="updateCommand()" autofocus required>
 				    	<span 	class="input-group-addon" id="basic-addon2"
 				    			data-toggle="tooltip" 
-								title="Des informations sur le champs à remplir, à quoi il sert, comment le remplir ... =) On peut aussi l'info-bulle du label !"
+								title="<%= language.getLanguageValue("/site/tools/tls-sled/aide/cible") %>"
 								data-placement="bottom">
 							<i class="fa fa-question fa-lg"></i>
 						</span>
@@ -103,15 +106,15 @@
 					
 					<label 	for="port"
 							data-toggle="tooltip" 
-							title="Text that will be displayed when someone hover the label"
+							title="<%= language.getLanguageValue("/site/tools/tls-sled/aide/port") %>"
 							data-placement="right">
-							Port
+							<%= language.getLanguageValue("/site/tools/tls-sled/options/port") %> 
 					</label>
 					<div class="input-group col-lg-2">
 						<input type="number"  class="form-control" placeholder="Port" name="port" id="port" value="443" onkeyup="updateCommand()" onchange="updateCommand()" required>
 						<span 	class="input-group-addon" id="basic-addon2"
 					    		data-toggle="tooltip" 
-								title="Des informations sur le champs à remplir, à quoi il sert, comment le remplir ... =) On peut aussi l'info-bulle du label !"
+								title="<%= language.getLanguageValue("/site/tools/tls-sled/aide/port") %>"
 								data-placement="bottom">
 							<i class="fa fa-question fa-lg"></i>
 						</span>
@@ -131,7 +134,7 @@
 				<div style="text-align:right">
 					<br>
 					<button type="submit" class="btn btn-default" aria-label="Right Align">
-						Envoyer
+						<%= language.getLanguageValue("/site/tools/tls-sled/actions/bouton-envoyer") %>
 					</button>
 				</div>
 				
