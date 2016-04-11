@@ -22,9 +22,11 @@ public class Constants {
 	/**
 	 * Language constants
 	 */
-	public String LANGUAGE						= "EN";
-	public static final String LANG_PATH_FR 	= "lang/fr.xml";
-	public static final String LANG_PATH_EN		= "./WebContent/lang/en.xml";
+	public String LANGUAGE						= "FR";
+	public static final String LANG_PATH_FR 	= "/WebContent/lang/fr.xml";
+	public static final String LANG_PATH_EN		= "/WebContent/lang/en.xml";
+	/* TO BE REPLACED IN THE FUTURE */
+	public static final String MY_PROJECT_PATH	= "/home/arn0f/Modèles/Workspace/Eclipse JEE/git/KaliWebInterface";
 	
 	/**
 	 * URL address constants

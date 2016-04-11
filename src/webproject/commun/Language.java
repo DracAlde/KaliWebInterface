@@ -9,14 +9,40 @@ import javax.xml.parsers.*;
 import javax.xml.xpath.*;
 import webproject.commun.Constants;
 
+/**
+ * That class is defined to permits loading of language terms from XML files
+ * @author arn0f
+ *
+ */
 public class Language {
 
+	/**
+	 * Method permitting to get language term from several configs file
+	 * The term associated is searched from the appropriate config file
+	 * in function of the attribute given to the method.
+	 * 
+	 * You need to provide the path to the node and the method return the 
+	 * value associated to that path: e.g.
+	 * <pre>
+	 * {@code
+	 * <test>
+	 * 	<node_to_value> value associated </node_to_value>
+	 * </test>
+	 * }
+	 * </pre>
+	 * If you want to access "value associated" you need to provide following 
+	 * path : "/test/node_to_value"
+	 * @param valueAttribute		the value needed is the path to the node
+	 * @return						the value of the node attribute
+	 */
 	public String getLanguageValue(String valueAttribute)
 	{
-		System.out.println("Entering in Language");
 		Constants constantLang = new Constants();
 		String langPath = Constants.LANG_PATH_FR;
-		String result = null;
+		String longPath = Constants.MY_PROJECT_PATH; /* That line must be replaced in the future
+		* by an automatic means to get the full project path
+		*/
+		String result = "Constants -> MY_PROJETC_PATH";
 
 
 		if ("EN".equals(constantLang.getLang()))
@@ -29,12 +55,10 @@ public class Language {
 		}
 
 		try {
-			//InputStream inputFile = getClass().getResourceAsStream(langPath);
-			String res = getClass().getClassLoader().getResource(".").toString();
-			System.out.println(res);
-			String basePath = new File(res).getAbsolutePath();
-			System.out.println(basePath);
-			File inputFile = new File(langPath);
+			
+			longPath += langPath;
+						
+			File inputFile = new File(longPath);
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder;
 
@@ -59,6 +83,5 @@ public class Language {
 		}
 
 		return result;
-
 	}
 }

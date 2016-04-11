@@ -37,14 +37,13 @@
 	<div class="menu-list">
 	<% 
 	Language language = new Language();
-	String path = "/site/nav/accueil";
 	%>
 
 		<ul id="menu-content" class="menu-content collapse out">
 			<a href="<c:url value="/"></c:url>">
 				<li>
 					<i class="fa fa-dashboard fa-lg"></i><strong>
-					<%= language.getLanguageValue(path) %>
+					<%= language.getLanguageValue("/site/nav/accueil") %>
 				</li>
 			</a>
 
@@ -52,43 +51,43 @@
 
 			<a href="<c:url value="/nikto.html"></c:url>">
 				<li>
-					<img src="img/nikto.png">Nikto 
+					<img src="img/nikto.png"><%= language.getLanguageValue("/site/nav/nikto") %> 
 				</li>
 			</a>
 
 			<a href="<c:url value="/zenmap.html"></c:url>">
 				<li> 
-					<i class="fa fa-eye fa-lg"></i>Zenmap
+					<i class="fa fa-eye fa-lg"></i><%= language.getLanguageValue("/site/nav/zenmap") %>
 				</li>
 			</a>
 
 			<a href="<c:url value="/theharvester.html"></c:url>">
 				<li>
-					<img src="img/harvester.png">The Harvester
+					<img src="img/harvester.png"><%= language.getLanguageValue("/site/nav/the-harvester") %>
 				</li>
 			</a>
 
 			<a href="<c:url value="/tlssled.html"></c:url>">
 				<li>
-					<i class="fa fa-lock fa-lg"></i>TLS Sled
+					<i class="fa fa-lock fa-lg"></i><%= language.getLanguageValue("/site/nav/tls-sled") %>
 				</li>
 			</a>
 
 			<a href="<c:url value="/hydra.html"></c:url>">
 				<li>
-					<img src="img/hydra.png">Hydra
+					<img src="img/hydra.png"><%= language.getLanguageValue("/site/nav/hydra") %>
 				</li>
 			</a>
 
 			<a href="<c:url value="/dnsrecon.html"></c:url>">
 				<li>
-					<img src="img/dnsrecon.png">DNS Recon
+					<img src="img/dnsrecon.png"><%= language.getLanguageValue("/site/nav/dns-recon") %>
 				</li>
 			</a>
 
 			<a href="<c:url value="/dnsrecon.html"></c:url>">
 				<li>
-					<i class="fa fa-terminal fa-lg"></i>Terminal
+					<i class="fa fa-terminal fa-lg"></i><%= language.getLanguageValue("/site/nav/terminal") %>
 				</li>
 			</a>
 		</ul>
