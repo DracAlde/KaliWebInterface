@@ -157,7 +157,24 @@
 				desc = document.getElementById('desc');
 			
 			function updateCommand(){
-				var command_string ='> tlssled ' + hostname.value + ' ' + port.value;
+				
+				var hostname_txt = '';
+				var port_txt = '';
+				var command_string = '';
+					
+				if(hostname.value.length == 0){
+					hostname_txt = '&lt;hostname&gt;';
+				}else{
+					hostname_txt = hostname.value;
+				}
+				
+				if(port.value.length == 0){
+					port_txt = '&lt;port&gt;';
+				}else{
+					port_txt = port.value;
+				}
+				
+				command_string ='> tlssled ' + hostname_txt + ' ' + port_txt;
 				command.innerHTML = command_string ;
 			}
 			
