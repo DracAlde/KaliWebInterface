@@ -1,3 +1,4 @@
+<%@page import="webproject.commun.Language"%>
 <%@page import="webproject.commun.Constants"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -21,7 +22,7 @@
 
 </head>
 
-<script type="text/javascript" src="js/xml_parser.js"></script>
+<!-- <script type="text/javascript" src="js/xml_parser.js"></script> -->
 
 <!-- http://bootsnipp.com/snippets/featured/responsive-navigation-menu -->
 
@@ -34,14 +35,16 @@
 		data-target="#menu-content"></i>
 
 	<div class="menu-list">
+	<% 
+	Language language = new Language();
+	String path = "/site/nav/accueil";
+	%>
 
 		<ul id="menu-content" class="menu-content collapse out">
 			<a href="<c:url value="/"></c:url>">
 				<li>
 					<i class="fa fa-dashboard fa-lg"></i><strong>
-					<script type="text/javascript">
-						loadXMLDoc("<%= Constants.LANG_PATH_EN %>", "site/nav/accueil");
-					</script></strong>
+					<%= language.getLanguageValue(path) %>
 				</li>
 			</a>
 

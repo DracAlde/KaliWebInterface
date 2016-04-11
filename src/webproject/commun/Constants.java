@@ -24,7 +24,7 @@ public class Constants {
 	 */
 	public String LANGUAGE						= "EN";
 	public static final String LANG_PATH_FR 	= "lang/fr.xml";
-	public static final String LANG_PATH_EN		= "file:///home/arn0f/Mod%C3%A8les/Workspace/Eclipse%20JEE/git/KaliWebInterface/WebContent/js/lang/en.xml";
+	public static final String LANG_PATH_EN		= "./WebContent/lang/en.xml";
 	
 	/**
 	 * URL address constants
