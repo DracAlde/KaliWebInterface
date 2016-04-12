@@ -16,6 +16,31 @@ import webproject.commun.Constants;
  */
 public class Language {
 
+	
+	private static String determineLanguagePath()
+	{
+		Constants constantLang = new Constants();
+		String langPath = Constants.LANG_PATH_FR;
+		String longPath = Constants.MY_PROJECT_PATH; /* That line must be replaced in the future
+		* by an automatic means to get the full project path
+		*/
+
+
+		if ("EN".equals(constantLang.getLang()))
+		{
+			langPath = Constants.LANG_PATH_EN;
+		}
+		else
+		{
+			langPath = Constants.LANG_PATH_FR;
+		}
+
+		longPath += langPath;
+		
+		return longPath;
+	}
+	
+	
 	/**
 	 * Method permitting to get language term from several configs file
 	 * The term associated is searched from the appropriate config file
@@ -37,26 +62,10 @@ public class Language {
 	 */
 	public String getLanguageValue(String valueAttribute)
 	{
-		Constants constantLang = new Constants();
-		String langPath = Constants.LANG_PATH_FR;
-		String longPath = Constants.MY_PROJECT_PATH; /* That line must be replaced in the future
-		* by an automatic means to get the full project path
-		*/
 		String result = "Constants -> MY_PROJETC_PATH";
-
-
-		if ("EN".equals(constantLang.getLang()))
-		{
-			langPath = Constants.LANG_PATH_EN;
-		}
-		else
-		{
-			langPath = Constants.LANG_PATH_FR;
-		}
+		String longPath = determineLanguagePath();
 
 		try {
-			
-			longPath += langPath;
 						
 			File inputFile = new File(longPath);
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();

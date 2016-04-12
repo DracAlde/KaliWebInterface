@@ -11,4 +11,22 @@
 		<dns-recon>DNS Recon</dns-recon>
 		<terminal>Terminal</terminal>
 	</nav>
+	<tools>
+		<tls-sled>
+			<historique>History</historique>
+			<description>Description</description>
+			<desc-tool>Description de tsl sled, quand il est apparu, qui l'a créé, à quoi il sert, quel contexte on l'utilise ... =) On peut aussi mettre la description dans l'info-bulle du point d'interrogration près du titre !</desc-tool>
+			<options>
+				<cible>Target or IP address</cible>
+				<port>Port</port>
+			</options>
+			<aide>
+				<cible>Precise the IP address (192.168.0.1) or target hostname (target.com)</cible>
+				<port>Indicate port to target (between 0 and 65535). Default port is 443</port>
+			</aide>
+			<actions>
+				<bouton-envoyer>Send</bouton-envoyer>
+			</actions>
+		</tls-sled>
+	</tools>
 </site>

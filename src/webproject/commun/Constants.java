@@ -22,7 +22,7 @@ public class Constants {
 	/**
 	 * Language constants
 	 */
-	public String LANGUAGE						= "FR";
+	public String LANGUAGE						= "EN";
 	public static final String LANG_PATH_FR 	= "/WebContent/lang/fr.xml";
 	public static final String LANG_PATH_EN		= "/WebContent/lang/en.xml";
 	/* TO BE REPLACED IN THE FUTURE */
