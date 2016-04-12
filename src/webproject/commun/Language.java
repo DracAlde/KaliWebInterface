@@ -16,7 +16,36 @@ import webproject.commun.Constants;
  */
 public class Language {
 
+	private String currentToolLanguage = null;
 	
+	
+	/**
+	 * Permits to replace the "$tool" value in a defined path by the tool name
+	 * use in the view to translate
+	 * @param pathToolized		node path containing the value "$tool" in
+	 * @return					correct path associated to the tool
+	 */
+	private String getPathAssociatedTool(String pathToolized)
+	{
+		if (this.currentToolLanguage.equals(null))
+		{
+			return "/site/erreur";
+		}
+		else
+		{
+			pathToolized = pathToolized.replace("$tool", this.currentToolLanguage);
+			return pathToolized;
+		}
+	}
+	
+	/**
+	 * That method permits to determine the language path. Its means the xml
+	 * file containing the language description. For now, there is only two file:
+	 * "fr.xml" and "en.xml". In the future, if required, newest language descriptions
+	 * could be added
+	 * @return		The <b>absolute</b> path associated to the language selected 
+	 * by the user
+	 */
 	private static String determineLanguagePath()
 	{
 		Constants constantLang = new Constants();
@@ -64,6 +93,12 @@ public class Language {
 	{
 		String result = "Constants -> MY_PROJETC_PATH";
 		String longPath = determineLanguagePath();
+		
+		if (valueAttribute.contains("$tool"))
+		{	
+			valueAttribute = getPathAssociatedTool(valueAttribute);
+		}
+		
 
 		try {
 						
@@ -92,5 +127,15 @@ public class Language {
 		}
 
 		return result;
+	}
+	
+	
+	/**
+	 * Set the value of the current tool path
+	 * @param currentTool		the current tool name (e.g. "hydra")
+	 */
+	public void setCurrentTool(String currentTool)
+	{
+		this.currentToolLanguage = currentTool;
 	}
 }

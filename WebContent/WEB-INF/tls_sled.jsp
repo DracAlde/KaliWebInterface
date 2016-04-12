@@ -9,6 +9,7 @@
 
 	<% 
 		Language language = new Language(); //class must be instancied each time we want to use the language parser
+		language.setCurrentTool(Constants.TOOL_TLS_SLED);
 		Constants langSelected = new Constants();
 	%>
 	
@@ -18,7 +19,7 @@
 			<ul class="nav nav-pills">
 			  <li id="history_btn" role="presentation" class="active" onclick="changeHead(this)">
 			  	<a>
-			  		<%= language.getLanguageValue("/site/tools/tls-sled/historique") %> 
+			  		<%= language.getLanguageValue("/site/tools/$tool/historique") %> 
 			  		<span class="badge">
 			  			<c:out value="${history['history'].size()}" />
 			  			<c:if test="${empty history}">
@@ -30,7 +31,7 @@
 			  
 			  <li id="desc_btn" role="presentation" onclick="changeHead(this)">
 			  	<a>
-			  		<%= language.getLanguageValue("/site/tools/tls-sled/description") %> 
+			  		<%= language.getLanguageValue("/site/tools/$tool/description") %> 
 			  	</a>
 			  </li>
 			</ul>
@@ -59,7 +60,7 @@
 			<div id="desc" class="hidden">
 				<div class="panel panel-default">
 				  	<div class="panel-body" style="height: 150px; overflow: auto;">
-						<%= language.getLanguageValue("/site/tools/tls-sled/desc-tool") %> 
+						<%= language.getLanguageValue("/site/tools/$tool/desc-tool") %> 
 					</div>
 				</div>
 			</div>
@@ -89,15 +90,15 @@
 				<div>
 					<label 	for="hostname" 
 							data-toggle="tooltip" 
-							title="<%= language.getLanguageValue("/site/tools/tls-sled/aide/cible") %>"
+							title="<%= language.getLanguageValue("/site/tools/$tool/aide/cible") %>"
 							data-placement="right">
-							<%= language.getLanguageValue("/site/tools/tls-sled/options/cible") %> 
+							<%= language.getLanguageValue("/site/tools/$tool/options/cible") %> 
 					</label>
 					<div class="input-group col-lg-2 col-mg-4 col-sm-6">
 					  	<input type="text" class="form-control" placeholder="Hostname" name="hostname" id="hostname" onkeyup="updateCommand()" onselect="updateCommand()" autofocus required>
 				    	<span 	class="input-group-addon" id="basic-addon2"
 				    			data-toggle="tooltip" 
-								title="<%= language.getLanguageValue("/site/tools/tls-sled/aide/cible") %>"
+								title="<%= language.getLanguageValue("/site/tools/$tool/aide/cible") %>"
 								data-placement="bottom">
 							<i class="fa fa-question fa-lg"></i>
 						</span>
@@ -106,15 +107,15 @@
 					
 					<label 	for="port"
 							data-toggle="tooltip" 
-							title="<%= language.getLanguageValue("/site/tools/tls-sled/aide/port") %>"
+							title="<%= language.getLanguageValue("/site/tools/$tool/aide/port") %>"
 							data-placement="right">
-							<%= language.getLanguageValue("/site/tools/tls-sled/options/port") %> 
+							<%= language.getLanguageValue("/site/tools/$tool/options/port") %> 
 					</label>
 					<div class="input-group col-lg-2">
 						<input type="number"  class="form-control" placeholder="Port" name="port" id="port" value="443" onkeyup="updateCommand()" onchange="updateCommand()" required>
 						<span 	class="input-group-addon" id="basic-addon2"
 					    		data-toggle="tooltip" 
-								title="<%= language.getLanguageValue("/site/tools/tls-sled/aide/port") %>"
+								title="<%= language.getLanguageValue("/site/tools/$tool/aide/port") %>"
 								data-placement="bottom">
 							<i class="fa fa-question fa-lg"></i>
 						</span>
@@ -134,7 +135,7 @@
 				<div style="text-align:right">
 					<br>
 					<button type="submit" class="btn btn-default" aria-label="Right Align">
-						<%= language.getLanguageValue("/site/tools/tls-sled/actions/bouton-envoyer") %>
+						<%= language.getLanguageValue("/site/tools/$tool/actions/bouton-envoyer") %>
 					</button>
 				</div>
 				

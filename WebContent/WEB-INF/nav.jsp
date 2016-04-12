@@ -24,12 +24,42 @@
 
 <!-- http://bootsnipp.com/snippets/featured/responsive-navigation-menu -->
 
+<!-- <div class="info-board">
+
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+			<img class="status-connection" src="img/earth-BR.png" width="12px"
+				height="12px"> 
+			<img class="status-connection hidden"
+				src="img/earth-BB.png" width="12px" height="12px"> 
+			<img
+				class="status-connection hidden" src="img/earth-BG.png" width="12px"
+				height="12px">
+		</div>
+		
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+			<li data-toggle="collapse" data-target="#service" class="collapsed language">
+				FR <span class="arrow"></span>
+			</li>
+			<ul class="sub-menu collapse" id="service">
+				<li>FR</li>
+				<li>EN</li>
+			</ul>
+		</div>
+		
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+			<span class="settings glyphicon glyphicon-cog"></span>
+		</div>
+		
+</div> -->
+
 <div class="nav-side-menu">
 	<a id="title_link" href="<c:url value="/"></c:url>">
 		<div class="brand">
-			<img src="img/kali_logo.png"> SHIVA
+			<img src="img/shiva_logoR.png" width="40px" height="60px"> SHIVA
 		</div>
-	</a> <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse"
+	</a>
+
+	<i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse"
 		data-target="#menu-content"></i>
 
 	<div class="menu-list">
@@ -39,6 +69,7 @@
 		%>
 
 		<ul id="menu-content" class="menu-content collapse out">
+						
 			<a href="<c:url value="/"></c:url>">
 				<li><i class="fa fa-dashboard fa-lg"></i><strong> <%= language.getLanguageValue("/site/nav/accueil") %></li>
 			</a>
