@@ -4,6 +4,8 @@ import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 
+import webproject.main.Home;
+
 /**
  * Tools witch can be used in other classes
  * Code repetition is the devil
@@ -45,5 +47,14 @@ public class Tools {
 
 	public static boolean validateIP(String ip) {
 	    return PATTERN.matcher(ip).matches();
+	}
+	
+	/**
+	 * initiate the path to project
+	 * used to find language files
+	 * @param request
+	 */
+	public static void initiatePath(HttpServletRequest request){
+		Home.path = request.getSession().getServletContext().getRealPath("");
 	}
 }

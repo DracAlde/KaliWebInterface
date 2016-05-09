@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import webproject.commun.Command;
 import webproject.commun.Constants;
 import webproject.commun.History;
+import webproject.commun.Tools;
 import webproject.form.TlsSledForm;
 
 public class TlsSled extends HttpServlet{
@@ -19,14 +20,18 @@ public class TlsSled extends HttpServlet{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	public static String path = "";
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		Tools.initiatePath(request);
 		this.getServletContext().getRequestDispatcher(Constants.VIEW_TLS_SLED).forward(request, response);
 	}
 	
 
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		Tools.initiatePath(request);
+		
 		TlsSledForm form = new TlsSledForm();
 		
 		Command command = form.validateTlsSled(request);

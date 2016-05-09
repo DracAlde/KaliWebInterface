@@ -8,6 +8,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.*;
 import javax.xml.xpath.*;
 import webproject.commun.Constants;
+import webproject.main.Home;
 
 /**
  * That class is defined to permits loading of language terms from XML files
@@ -50,9 +51,7 @@ public class Language {
 	{
 		Constants constantLang = new Constants();
 		String langPath = Constants.LANG_PATH_FR;
-		String longPath = Constants.MY_PROJECT_PATH; /* That line must be replaced in the future
-		* by an automatic means to get the full project path
-		*/
+		String longPath = Home.path;
 
 
 		if ("EN".equals(constantLang.getLang()))

@@ -15,56 +15,8 @@
 	
 	<section>
 		<div class="panel panel-default col-md-12 col-lg-12" style="padding:0px;">
-		  <div class="panel-body">
-			<ul class="nav nav-pills">
-			  <li id="history_btn" role="presentation" class="active" onclick="changeHead(this)">
-			  	<a>
-			  		<%= language.getLanguageValue("/site/tools/$tool/historique") %> 
-			  		<span class="badge">
-			  			<c:out value="${history['history'].size()}" />
-			  			<c:if test="${empty history}">
-			  				0
-			  			</c:if>
-			  		</span>
-			  	</a>
-			  </li>
-			  
-			  <li id="desc_btn" role="presentation" onclick="changeHead(this)">
-			  	<a>
-			  		<%= language.getLanguageValue("/site/tools/$tool/description") %> 
-			  	</a>
-			  </li>
-			</ul>
-			
-			<br>
-			
-			<div id="history_panel">
-			<div class="panel panel-default">
-				<div class="list-group" style="height: 150px; overflow: auto;">
-					<c:forEach items="${history['history']}" var="command">
-						<c:if test="${command.isSuccess()}">
-						    <a class="list-group-item list-group-item-success">
-						</c:if>
-						<c:if test="${!command.isSuccess()}">
-							<a class="list-group-item list-group-item-danger">
-						</c:if>
-							<strong><c:out value="${command['tool']}" /></strong>
-							hostname = <strong><c:out value="${command.getArguments()['hostname']}" /></strong>
-							port = <strong><c:out value="${command.getArguments()['port']}" /></strong>
-						</a>
-					</c:forEach>
-				</div>
-				</div>
-			</div>
-			
-			<div id="desc" class="hidden">
-				<div class="panel panel-default">
-				  	<div class="panel-body" style="height: 150px; overflow: auto;">
-						<%= language.getLanguageValue("/site/tools/$tool/desc-tool") %> 
-					</div>
-				</div>
-			</div>
-		  </div>
+		  
+		  <c:import url="top_page.jsp"></c:import>
 		  
 		  <div class="panel-footer">
 			<div class="row">
@@ -155,10 +107,6 @@
 			var hostname = document.getElementById('hostname'),
 				port = document.getElementById('port'),
 				command = document.getElementById('command');
-				history_btn = document.getElementById('history_btn');
-				desc_btn = document.getElementById('desc_btn');
-				history_panel = document.getElementById('history_panel');
-				desc = document.getElementById('desc');
 			
 			function updateCommand(){
 				
@@ -180,20 +128,6 @@
 				
 				command_string ='> tlssled ' + hostname_txt + ' ' + port_txt;
 				command.innerHTML = command_string ;
-			}
-			
-			function changeHead(e){
-				if(desc_btn == e){
-					desc_btn.className = 'active';
-					history_btn.className = '';
-					desc.className = '';
-					history_panel.className = 'hidden';
-				}else{
-					history_btn.className = 'active';
-					desc_btn.className = '';
-					history_panel.className = '';
-					desc.className = 'hidden';
-				}
 			}
 			
 			updateCommand();
