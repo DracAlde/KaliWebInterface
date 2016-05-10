@@ -211,9 +211,8 @@ body {
 }
 
 .info-board{
-	width: 200px;
  	padding-bottom: 3px;
- 	height: 30px;
+/*  	height: 30px; */
 	background-color: #c2c2c2;
 	color: #4c4c4c;
 	overflow: auto;
@@ -222,8 +221,8 @@ body {
 	font-weight: 200;
 	background-color: #2e353d;
 	position: fixed;
-	top: 0px;
-	width: 200px;
+/* 	top: 0px; */
+	width: 100%;
 }
 
 .settings {
