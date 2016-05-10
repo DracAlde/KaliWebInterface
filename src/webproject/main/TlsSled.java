@@ -15,37 +15,37 @@ import webproject.commun.Tools;
 import webproject.form.TlsSledForm;
 
 public class TlsSled extends HttpServlet{
-	
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public static String path = "";
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Tools.initiatePath(request);
+		System.out.println(Tools.detectLocale(request));
 		this.getServletContext().getRequestDispatcher(Constants.VIEW_TLS_SLED).forward(request, response);
 	}
-	
+
 
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Tools.initiatePath(request);
-		
+
 		TlsSledForm form = new TlsSledForm();
-		
+
 		Command command = form.validateTlsSled(request);
-		
+
 		HttpSession session = request.getSession();
 		History history = (History) session.getAttribute(Constants.ATT_SESSION_HISTORY);
-		
+
 		if( history == null){
 			history = new History();
 		}
-		
+
 		history.addCommand(command);
 		session.setAttribute(Constants.ATT_SESSION_HISTORY, history);
-		
+
 		request.setAttribute(Constants.ATT_FORM,form);
 		this.getServletContext().getRequestDispatcher(Constants.VIEW_TLS_SLED).forward(request, response);
 	}

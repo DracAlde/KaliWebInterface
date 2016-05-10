@@ -55,7 +55,7 @@
 <div class="nav-side-menu">
 	<a id="title_link" href="<c:url value="/"></c:url>">
 		<div class="brand">
-			<img src="img/shiva_logoR.png" width="40px" height="60px"> SHIVA
+			<img src="img/kali_logo.png" width="40px" height="60px"> SHIVA
 		</div>
 	</a>
 
