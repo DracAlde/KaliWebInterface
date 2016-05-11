@@ -28,6 +28,23 @@
 				<bouton-envoyer>Envoyer</bouton-envoyer>
 			</actions>
 		</tls-sled>
+		
+		<zenmap>
+			<historique>Historique</historique>
+			<description>Description</description>
+			<desc-tool>Description de zenmap, quand il est apparu, qui l'a créé, à quoi il sert, quel contexte on l'utilise ... =) On peut aussi mettre la description dans l'info-bulle du point d'interrogration près du titre !</desc-tool>
+			<options>
+				<cible>Cible ou adresse IP</cible>
+				<scan-type>Type de scan</scan-type>
+			</options>
+			<aide>
+				<cible>Veuillez indiquer l'adresse IP (192.168.0.1) ou le nom de la machine à cibler (target.com)</cible>
+				<scan-type>Veuillez indiquer le type de scan souhaité</scan-type>
+			</aide>
+			<actions>
+				<bouton-envoyer>Envoyer</bouton-envoyer>
+			</actions>
+		</zenmap>
 	</tools>
 	<erreur>Pas d'outils indiqué</erreur>
 </site>

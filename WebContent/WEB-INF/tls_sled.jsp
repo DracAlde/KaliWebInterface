@@ -23,7 +23,7 @@
 			
 				<h3 class=col-lg-12>
 					<span	data-toggle="tooltip" 
-							title="Description de tsl sled, quand il est apparu, qui l'a créé, à quoi il sert, dans quel contexte on l'utilise ... =) On peut aussi mettre la description dans l'onglet Description en haut de la page"
+							title="<%= language.getLanguageValue("/site/tools/$tool/desc-tool") %>"
 							data-placement="right">
 							
 						TLS Sled
@@ -32,7 +32,7 @@
 					
 					<div class="help-picture"
 						data-toggle="tooltip" 
-						title="Description de tsl sled, quand il est apparu, qui l'a créé, à quoi il sert, dans quel contexte on l'utilise ... =) On peut aussi mettre la description dans l'info-bulle qui apparait quand on passe sur le titre avec la souris"
+						title="<%= language.getLanguageValue("/site/tools/$tool/desc-tool") %>"
 						data-placement="left">
 					</div>
 				</h3>
