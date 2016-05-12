@@ -40,6 +40,11 @@
 		<servlet-class>webproject.main.DnsRecon</servlet-class>
 	</servlet>
 	
+	<servlet>
+		<servlet-name>ChangeLanguage</servlet-name>
+		<servlet-class>webproject.main.ChangeLanguage</servlet-class>
+	</servlet>
+	
 	<!--                                                              SERVLET-MAPPING -->
 	
 	<servlet-mapping>
@@ -75,6 +80,11 @@
 	<servlet-mapping>
 		<servlet-name>DnsRecon</servlet-name>
 		<url-pattern>/dnsrecon.html</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ChangeLanguage</servlet-name>
+		<url-pattern>/changelanguage.html</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>

@@ -55,7 +55,7 @@
 <div class="nav-side-menu">
 	<a id="title_link" href="<c:url value="/"></c:url>">
 		<div class="brand">
-			<img src="img/kali_logo.png" width="40px" height="60px"> SHIVA
+			<img src="img/kali_logo.png" width="60px" height="60px"> SHIVA
 		</div>
 	</a>
 
@@ -63,51 +63,47 @@
 		data-target="#menu-content"></i>
 
 	<div class="menu-list">
-		<% 
-			Language language = new Language(); //class must be instancied each time we want to use the language parser
-			Constants langSelected = new Constants();
-		%>
 
 		<ul id="menu-content" class="menu-content collapse out">
 						
 			<a href="<c:url value="/"></c:url>">
-				<li><i class="fa fa-dashboard fa-lg"></i><strong> <%= language.getLanguageValue("/site/nav/accueil") %></li>
+				<li><i class="fa fa-dashboard fa-lg"></i><strong><c:out value="${language.getLanguageValue('/site/nav/accueil')}" /></li>
 			</a>
 
 			<li role="separator" class="separator"></li>
 
 			<a href="<c:url value="/nikto.html"></c:url>">
-				<li><img src="img/nikto.png"><%= language.getLanguageValue("/site/nav/nikto") %>
+				<li><img src="img/nikto.png"><c:out value="${language.getLanguageValue('/site/nav/nikto')}" />
 			</li>
 			</a>
 
 			<a href="<c:url value="/zenmap.html"></c:url>">
-				<li><i class="fa fa-eye fa-lg"></i><%= language.getLanguageValue("/site/nav/zenmap") %>
+				<li><i class="fa fa-eye fa-lg"></i><c:out value="${language.getLanguageValue('/site/nav/zenmap')}" />
 			</li>
 			</a>
 
 			<a href="<c:url value="/theharvester.html"></c:url>">
-				<li><img src="img/harvester.png"><%= language.getLanguageValue("/site/nav/the-harvester") %>
+				<li><img src="img/harvester.png"><c:out value="${language.getLanguageValue('/site/nav/the-harvester')}" />
 			</li>
 			</a>
 
 			<a href="<c:url value="/tlssled.html"></c:url>">
-				<li><i class="fa fa-lock fa-lg"></i><%= language.getLanguageValue("/site/nav/tls-sled") %>
+				<li><i class="fa fa-lock fa-lg"></i><c:out value="${language.getLanguageValue('/site/nav/tls-sled')}" />
 			</li>
 			</a>
 
 			<a href="<c:url value="/hydra.html"></c:url>">
-				<li><img src="img/hydra.png"><%= language.getLanguageValue("/site/nav/hydra") %>
+				<li><img src="img/hydra.png"><c:out value="${language.getLanguageValue('/site/nav/hydra')}" />
 			</li>
 			</a>
 
 			<a href="<c:url value="/dnsrecon.html"></c:url>">
-				<li><img src="img/dnsrecon.png"><%= language.getLanguageValue("/site/nav/dns-recon") %>
+				<li><img src="img/dnsrecon.png"><c:out value="${language.getLanguageValue('/site/nav/dns-recon')}" />
 			</li>
 			</a>
 
 			<a href="<c:url value="/dnsrecon.html"></c:url>">
-				<li><i class="fa fa-terminal fa-lg"></i><%= language.getLanguageValue("/site/nav/terminal") %>
+				<li><i class="fa fa-terminal fa-lg"></i><c:out value="${language.getLanguageValue('/site/nav/terminal')}" />
 			</li>
 			</a>
 		</ul>
@@ -142,7 +138,7 @@
 		<div class="language-box">
 			<button class="btn btn-default btn-xs dropdown-toggle" type="button"
 				data-toggle="dropdown">
-				<%= langSelected.getLang() %><span class="caret"></span>
+				<c:out value="${language.language}" /><span class="caret"></span>
 			</button>
 			<ul class="dropdown-menu dropdown-menu-right">
 				<li><a href="#">FR</a></li>

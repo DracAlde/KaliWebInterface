@@ -75,7 +75,7 @@ public class Tools {
 			supportedLanguages.put("EN", Locale.US);
 			supportedLanguages.put("FR", Locale.FRENCH);
 			//Default
-			requestLocale = (Locale) supportedLanguages.get("FR");
+			requestLocale = (Locale) supportedLanguages.get("EN");
 		}
 
 		Enumeration<Locale> locales = request.getLocales();
@@ -86,7 +86,7 @@ public class Tools {
 				break;
 			}
 		}
-
+		
 		return requestLocale.getLanguage();
 	}
 }

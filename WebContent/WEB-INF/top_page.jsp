@@ -3,16 +3,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<% 
-	Language language = new Language(); //class must be instancied each time we want to use the language parser
-	language.setCurrentTool(Constants.TOOL_TLS_SLED);
-	Constants langSelected = new Constants();
-%>
 
 <div class="panel-body">
 	<ul class="nav nav-pills">
 		<li id="history_btn" role="presentation" class="active"
-			onclick="changeHead(this)"><a> <%= language.getLanguageValue("/site/tools/$tool/historique") %>
+			onclick="changeHead(this)"><a> <c:out value="${language.getLanguageValue('/site/tools/$tool/historique')}" />
 				<span class="badge"> <c:out
 						value="${history['history'].size()}" /> <c:if
 						test="${empty history}">
@@ -22,7 +17,7 @@
 		</a></li>
 
 		<li id="desc_btn" role="presentation" onclick="changeHead(this)">
-			<a> <%= language.getLanguageValue("/site/tools/$tool/description") %>
+			<a> <c:out value="${language.getLanguageValue('/site/tools/$tool/description')}" />
 		</a>
 		</li>
 	</ul>

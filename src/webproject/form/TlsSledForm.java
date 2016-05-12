@@ -56,7 +56,7 @@ public class TlsSledForm {
 			System.out.println(commandString);
 			
 			command.setSuccess(true);
-			result = "Succès de la commande";
+			result = "SuccÃ¨s de la commande";
 		} else {
 			command.setSuccess(false);
 			result = "Echec de la commande";

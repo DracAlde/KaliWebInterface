@@ -43,6 +43,10 @@ public class Constants {
 	public static final String ATT_FORM            = "form";
 	public static final String ATT_SESSION_HISTORY = "history";
 	
+	/**
+	 * Session parameters Constants
+	 */
+	public static final String SESS_LANG            = "language";
 	
 	/**
 	 * Form field name constants
@@ -66,34 +70,4 @@ public class Constants {
 	public static final String TOOL_TLS_SLED		= "tls-sled";
 	public static final String TOOL_HYDRA			= "hydra";
 	public static final String TOOL_DNS_RECON		= "dns-recon";
-	
-	
-	
-	/**
-	 * Return the language chosen by the user or the default one
-	 * @return language chosen
-	 */
-	public String getLang()
-	{
-		return LANGUAGE;
-	}
-	
-	/**
-	 * Set the variable language value correctly
-	 * @param lang 		language to set
-	 * @return 			return <b>0</b> if the language as correctly be set or <b>-1</b> if not
-	 */
-	public int setLang(String lang)
-	{
-		this.LANGUAGE = lang;
-		
-		if (lang.equals(this.LANGUAGE))
-		{
-			return 0;
-		}
-		else 
-		{
-			return -1;
-		}
-	}
 }

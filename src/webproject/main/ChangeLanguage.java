@@ -12,29 +12,21 @@ import webproject.commun.Constants;
 import webproject.commun.Language;
 import webproject.commun.Tools;
 
-/**
- * Page d'accueil d'une session connectée
- * @author kilian
- *
- */
-
-public class Home extends HttpServlet {
-
+public class ChangeLanguage extends HttpServlet{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 7607794654897494588L;
-	public static String path = "";
+	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Affiche la page d'accueil
-	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Tools.initiatePath(request);
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("language", new Language(request));
+		Language language = (Language) session.getAttribute(Constants.SESS_LANG);
+		language.switchLanguage();
+		session.setAttribute("language", language);
 		
+		System.out.println(Tools.detectLocale(request));
 		this.getServletContext().getRequestDispatcher(Constants.VIEW_HOME).forward(request, response);
 	}
 }

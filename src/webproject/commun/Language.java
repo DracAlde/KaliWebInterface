@@ -5,6 +5,8 @@ import java.io.IOException;
 
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.xml.parsers.*;
 import javax.xml.xpath.*;
 import webproject.commun.Constants;
@@ -18,6 +20,11 @@ import webproject.main.Home;
 public class Language {
 
 	private String currentToolLanguage = null;
+	private String language = "";
+	
+	public Language(HttpServletRequest request){
+		language = Tools.detectLocale(request);
+	}
 	
 	
 	/**
@@ -28,8 +35,9 @@ public class Language {
 	 */
 	private String getPathAssociatedTool(String pathToolized)
 	{
-		if (this.currentToolLanguage.equals(null))
+		if (currentToolLanguage == null)
 		{
+			System.out.println("ERROR : Language: currentToolLanguage == null");
 			return "/site/erreur";
 		}
 		else
@@ -47,14 +55,13 @@ public class Language {
 	 * @return		The <b>absolute</b> path associated to the language selected 
 	 * by the user
 	 */
-	private static String determineLanguagePath()
+	private String determineLanguagePath()
 	{
-		Constants constantLang = new Constants();
 		String langPath = Constants.LANG_PATH_FR;
 		String longPath = Home.path;
 
 
-		if ("EN".equals(constantLang.getLang()))
+		if ("en".equals(language))
 		{
 			langPath = Constants.LANG_PATH_EN;
 		}
@@ -123,6 +130,8 @@ public class Language {
 			e.printStackTrace();
 		} catch (XPathExpressionException e) {
 			e.printStackTrace();
+		} catch (Exception e){
+			e.printStackTrace();
 		}
 
 		return result;
@@ -136,5 +145,23 @@ public class Language {
 	public void setCurrentTool(String currentTool)
 	{
 		this.currentToolLanguage = currentTool;
+	}
+
+
+	public void switchLanguage() {
+		
+		if(language == null) return;
+		
+		if(language.equals("en")){
+			language = "fr";
+		}else if(language.equals("fr")){
+			language = "en";
+		}
+		
+	}
+
+
+	public String getLanguage() {
+		return language;
 	}
 }

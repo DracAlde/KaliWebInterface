@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import webproject.commun.Command;
 import webproject.commun.Constants;
 import webproject.commun.History;
+import webproject.commun.Language;
 import webproject.commun.Tools;
 import webproject.form.TlsSledForm;
 
@@ -23,6 +24,16 @@ public class TlsSled extends HttpServlet{
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Tools.initiatePath(request);
+
+		HttpSession session = request.getSession();
+		Language language = (Language) session.getAttribute(Constants.SESS_LANG);
+		if(language == null){
+			language = new Language(request);
+		}
+		language.setCurrentTool(Constants.TOOL_TLS_SLED);
+		session.setAttribute(Constants.SESS_LANG, language);
+
+
 		System.out.println(Tools.detectLocale(request));
 		this.getServletContext().getRequestDispatcher(Constants.VIEW_TLS_SLED).forward(request, response);
 	}
