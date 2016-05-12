@@ -61,26 +61,25 @@
 					<div>
 						<label for="scan_type" data-toggle="tooltip"
 							title="<%=language.getLanguageValue("/site/tools/$tool/aide/scan-type")%>"
-							data-placement="right"> <%=language.getLanguageValue("/site/tools/$tool/options/scan-type")%>
+							data-placement="right"> <%=language.getLanguageValue("/site/tools/$tool/options/scan-type/nom")%>
 						</label>
 						<div class="input-group col-lg-2 col-mg-4 col-sm-6">
 							<select class="form-control" name="scan_type" id="scan_type">
 								<optgroup label="Scan intense">
-									<option value="intense" id="intense">1</option>
-									<option value="intense_udp" id="intense_udp">2</option>
-									<option value="intense_tcp" id="intense_tcp">3</option>
-									<option value="intense_ping" id="intense_ping">4</option>
+									<option value="intense" id="intense" title="Test"><%=language.getLanguageValue("/site/tools/$tool/options/scan-type/intense")%></option>
+									<option value="intense_udp" id="intense_udp" title="Test"><%=language.getLanguageValue("/site/tools/$tool/options/scan-type/intense-udp")%></option>
+									<option value="intense_tcp" id="intense_tcp" title="Test"><%=language.getLanguageValue("/site/tools/$tool/options/scan-type/intense-tcp")%></option>
+									<option value="intense_ping" id="intense_ping" title="Test"><%=language.getLanguageValue("/site/tools/$tool/options/scan-type/intense-ping")%></option>
 								</optgroup>
 								<optgroup label="Scan rapide">
-									<option value="rapide" id="rapide">2</option>
-									<option value="rapide_plus" id="rapide_plus">3</option>
-									<option value="traceroute" id="traceroute">4</option>
+									<option value="rapide" id="rapide" title="Test"><%=language.getLanguageValue("/site/tools/$tool/options/scan-type/rapide")%></option>
+									<option value="rapide_plus" id="rapide_plus" title="Test"><%=language.getLanguageValue("/site/tools/$tool/options/scan-type/rapide-plus")%></option>
 								</optgroup>
 								<optgroup label="Scan classique">
-									<option value="ping" id="ping">1</option>
-									<option value="traceroute" id="traceroute">4</option>
-									<option value="ordinaire" id="ordinaire">1</option>
-									<option value="complet" id="complet">4</option>
+									<option value="ping" id="ping" title="Test"><%=language.getLanguageValue("/site/tools/$tool/options/scan-type/ping")%></option>
+									<option value="traceroute" id="traceroute" title="Test"><%=language.getLanguageValue("/site/tools/$tool/options/scan-type/traceroute")%></option>
+									<option value="ordinaire" id="ordinaire" title="Test"><%=language.getLanguageValue("/site/tools/$tool/options/scan-type/ordinaire")%></option>
+									<option value="complet" id="complet" title="Test"><%=language.getLanguageValue("/site/tools/$tool/options/scan-type/complet")%></option>
 								</optgroup>
 							</select>
 							<span
