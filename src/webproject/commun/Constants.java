@@ -53,6 +53,7 @@ public class Constants {
 	 */
 	public static final String FIELD_HOSTNAME 		= "hostname";
 	public static final String FIELD_PORT 			= "port";
+	public static final String FIELD_SCAN_TYPE		= "scan_type";
 	
 	/**
 	 * SSH session constants

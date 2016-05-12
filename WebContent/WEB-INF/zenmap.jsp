@@ -134,7 +134,6 @@
 				switch(scan_index)
 				{
 					case 0:
-						console.log(scan_index);
 						scan_txt = '-T4 -A -v';
 						break;
 					case 1:

@@ -13,7 +13,6 @@ import webproject.commun.Constants;
 import webproject.commun.History;
 import webproject.commun.Language;
 import webproject.commun.Tools;
-import webproject.form.TlsSledForm;
 import webproject.form.ZenmapForm;
 
 public class Zenmap extends HttpServlet{
@@ -39,12 +38,14 @@ public class Zenmap extends HttpServlet{
 		this.getServletContext().getRequestDispatcher(Constants.VIEW_ZENMAP).forward(request, response);
 	}
 	
+	
+	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Tools.initiatePath(request);
 
 		ZenmapForm form = new ZenmapForm();
 
-		//Command command = form.validateTlsSled(request);
+		Command command = form.validateZenmap(request);
 
 		HttpSession session = request.getSession();
 		History history = (History) session.getAttribute(Constants.ATT_SESSION_HISTORY);
@@ -53,7 +54,7 @@ public class Zenmap extends HttpServlet{
 			history = new History();
 		}
 
-		//history.addCommand(command);
+		history.addCommand(command);
 		session.setAttribute(Constants.ATT_SESSION_HISTORY, history);
 
 		request.setAttribute(Constants.ATT_FORM,form);

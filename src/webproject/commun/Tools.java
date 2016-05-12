@@ -7,6 +7,9 @@ import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.validator.routines.DomainValidator;
+import org.apache.commons.validator.routines.InetAddressValidator;
+
 import webproject.main.Home;
 
 /**
@@ -88,5 +91,66 @@ public class Tools {
 		}
 		
 		return requestLocale.getLanguage();
+	}
+	
+	public static int hostnameValidation(String hostname) throws Exception {
+		DomainValidator dv = DomainValidator.getInstance();
+		if(dv.isValid(hostname)){
+			return 0;
+		}
+
+		InetAddressValidator iav = InetAddressValidator.getInstance();
+		if(iav.isValid(hostname)){
+			return 0;
+		}
+
+		throw new Exception("Invalid hostname given");
+	}
+	
+	public static int portValidation(String port) throws Exception
+	{
+		int newPort;
+		
+		try{
+			newPort = Integer.parseInt(port);
+		} catch (Exception e) {
+			throw new Exception("Port given is not an integer");
+		}
+		
+		if (newPort < 0 && newPort > 65535)
+		{
+			throw new Exception("Port given must be between 0 and 65535");
+		}
+		
+		return 0;
+	}
+	
+	public static String scanValidation(String scan) throws Exception
+	{
+		
+		switch (scan) {
+		case "intense":
+			return "-T4 -A -v";
+		case "intense_udp":
+			return "-sS -sU T4 -A -v";
+		case "intense_tcp":
+			return "-p 1-65535 -T4 -A -v";
+		case "intense_no_ping":
+			return "-T4 -A -v -Pn";
+		case "rapide":
+			return "-T4 -F";
+		case "rapide_plus":
+			return "-sV -T4 -O -F --version-light";
+		case "ping":
+			return "-sn";
+		case "traceroute":
+			return "-sn --traceroute";
+		case "ordinaire":
+			return "-v";
+		case "complet":
+			return "S80,443 -PA3389 -PU4-sS -sU -T4 -A -v -PE -PP -P0125 -PY -g 53 --script \"default or (discovery and safe)\"";
+		default:
+			throw new Exception("Incorrect scan type given");
+		}
 	}
 }

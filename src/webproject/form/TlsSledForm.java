@@ -5,9 +5,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.validator.routines.DomainValidator;
-import org.apache.commons.validator.routines.InetAddressValidator;
-
 import webproject.commun.Command;
 import webproject.commun.Constants;
 import webproject.commun.ToolName;
@@ -33,15 +30,15 @@ public class TlsSledForm {
 		String port = Tools.getFieldValue(request, Constants.FIELD_PORT);
 
 		try{
-			hostnameValidation(hostname);
+			Tools.hostnameValidation(hostname);
 		} catch (Exception e) {
 			setError(Constants.FIELD_HOSTNAME, e.getMessage());
 		}
 
 		try{
-			Integer.parseInt(port);
+			Tools.portValidation(port);
 		} catch (Exception e) {
-			setError(Constants.FIELD_PORT, "Le numéro de port n'est pas un nombre entier");
+			setError(Constants.FIELD_PORT, "Port error: " + e);
 		}
 
 		
@@ -65,19 +62,19 @@ public class TlsSledForm {
 		return command;
 	}
 
-	private void hostnameValidation(String hostname) throws Exception {
-		DomainValidator dv = DomainValidator.getInstance();
-		if(dv.isValid(hostname)){
-			return;
-		}
-
-		InetAddressValidator iav = InetAddressValidator.getInstance();
-		if(iav.isValid(hostname)){
-			return;
-		}
-
-		throw new Exception("Cet hostname est invalide");
-	}
+//	private void hostnameValidation(String hostname) throws Exception {
+//		DomainValidator dv = DomainValidator.getInstance();
+//		if(dv.isValid(hostname)){
+//			return;
+//		}
+//
+//		InetAddressValidator iav = InetAddressValidator.getInstance();
+//		if(iav.isValid(hostname)){
+//			return;
+//		}
+//
+//		throw new Exception("Cet hostname est invalide");
+//	}
 
 	/**
 	 * Ajoute un message correspondant au champ spécifié à la map des erreurs.
