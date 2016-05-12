@@ -40,7 +40,7 @@
 					<intense>Intense</intense>
 					<intense-udp>Intense UDP</intense-udp>
 					<intense-tcp>Intense TCP</intense-tcp>
-					<intense-ping>Intense Ping</intense-ping>
+					<intense-ping>Intense without Ping</intense-ping>
 					<rapide>Fast</rapide>
 					<rapide-plus>Fast plus</rapide-plus>
 					<ping>Ping</ping>

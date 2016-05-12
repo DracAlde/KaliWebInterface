@@ -58,12 +58,12 @@
 							data-placement="right"> <c:out value="${language.getLanguageValue('/site/tools/$tool/options/scan-type/nom')}" />
 						</label>
 						<div class="input-group col-lg-2 col-mg-4 col-sm-6">
-							<select class="form-control" name="scan_type" id="scan_type">
+							<select class="form-control" name="scan_type" id="scan_type" onchange="updateCommand()" autofocus required>
 								<optgroup label="Scan intense">
 									<option value="intense" id="intense" title="Test"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/scan-type/intense')}" /></option>
 									<option value="intense_udp" id="intense_udp" title="Test"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/scan-type/intense-udp')}" /></option>
 									<option value="intense_tcp" id="intense_tcp" title="Test"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/scan-type/intense-tcp')}" /></option>
-									<option value="intense_ping" id="intense_ping" title="Test"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/scan-type/intense-ping')}" /></option>
+									<option value="intense_no_ping" id="intense_no_ping" title="Test"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/scan-type/intense-ping')}" /></option>
 								</optgroup>
 								<optgroup label="Scan rapide">
 									<option value="rapide" id="rapide" title="Test"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/scan-type/rapide')}" /></option>
@@ -91,7 +91,7 @@
 						data-toggle="tooltip" 
 						title="C'est la ligne qui sera envoyée dans le terminal de notre système Kali Linux"
 						data-placement="bottom">
-					> zenmap
+					> nmap
 				</div>
 				
 				<div style="text-align:right">
@@ -115,12 +115,15 @@
 		
 		<script>
 			var hostname = document.getElementById('hostname'),
+				scan_type = document.getElementById('scan_type'),
 				command = document.getElementById('command');
 			
 			function updateCommand(){
 				
 				var hostname_txt = '';
+				var scan_txt = '';
 				var command_string = '';
+				var scan_index = scan_type.selectedIndex;
 					
 				if(hostname.value.length == 0){
 					hostname_txt = '&lt;hostname&gt;';
@@ -128,7 +131,44 @@
 					hostname_txt = hostname.value;
 				}
 				
-				command_string ='> zenmap ' + hostname_txt;
+				switch(scan_index)
+				{
+					case 0:
+						console.log(scan_index);
+						scan_txt = '-T4 -A -v';
+						break;
+					case 1:
+						scan_txt = '-sS -sU T4 -A -v';
+						break;
+					case 2:
+						scan_txt = '-p 1-65535 -T4 -A -v';
+						break;
+					case 3:
+						scan_txt = '-T4 -A -v -Pn';
+						break;
+					case 4:
+						scan_txt = '-T4 -F';
+						break;
+					case 5:
+						scan_txt = '-sV -T4 -O -F --version-light';
+						break;
+					case 6:
+						scan_txt = '-sn';
+						break;
+					case 7:
+						scan_txt = '-sn --traceroute';
+						break;
+					case 8:
+						scan_txt = '-v';
+						break;
+					case 9:
+						scan_txt = 'S80,443 -PA3389 -PU4-sS -sU -T4 -A -v -PE -PP -P0125 -PY -g 53 --script "default or (discovery and safe)"';
+						break;
+					default:
+						scan_txt = '&lt;scan_type&gt;';
+				}
+				
+				command_string ='> nmap ' + hostname_txt + ' ' + scan_txt;
 				command.innerHTML = command_string ;
 			}
 			
