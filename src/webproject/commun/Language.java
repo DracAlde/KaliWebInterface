@@ -138,6 +138,11 @@ public class Language {
 	}
 	
 	
+	public String getCurrentToolLanguage() {
+		return currentToolLanguage;
+	}
+
+
 	/**
 	 * Set the value of the current tool path
 	 * @param currentTool		the current tool name (e.g. "hydra")

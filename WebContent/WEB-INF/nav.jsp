@@ -57,54 +57,65 @@
 		<div class="brand">
 			<img src="img/kali_logo.png" width="60px" height="60px"> SHIVA
 		</div>
-	</a>
-
-	<i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse"
+	</a> <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse"
 		data-target="#menu-content"></i>
 
 	<div class="menu-list">
 
 		<ul id="menu-content" class="menu-content collapse out">
-						
+
 			<a href="<c:url value="/"></c:url>">
-				<li><i class="fa fa-dashboard fa-lg"></i><strong><c:out value="${language.getLanguageValue('/site/nav/accueil')}" /></li>
+				<li><i class="fa fa-dashboard fa-lg"></i><strong><c:out
+							value="${language.getLanguageValue('/site/nav/accueil')}" /></li>
 			</a>
 
 			<li role="separator" class="separator"></li>
 
 			<a href="<c:url value="/nikto.html"></c:url>">
-				<li><img src="img/nikto.png"><c:out value="${language.getLanguageValue('/site/nav/nikto')}" />
-			</li>
+				<li><img src="img/nikto.png"> <c:out
+						value="${language.getLanguageValue('/site/nav/nikto')}" /></li>
 			</a>
 
 			<a href="<c:url value="/zenmap.html"></c:url>">
-				<li><i class="fa fa-eye fa-lg"></i><c:out value="${language.getLanguageValue('/site/nav/zenmap')}" />
-			</li>
+				<li><i class="fa fa-eye fa-lg"></i> <c:out
+						value="${language.getLanguageValue('/site/nav/zenmap')}" /></li>
 			</a>
 
 			<a href="<c:url value="/theharvester.html"></c:url>">
-				<li><img src="img/harvester.png"><c:out value="${language.getLanguageValue('/site/nav/the-harvester')}" />
+				<li><img src="img/harvester.png"> <c:out
+						value="${language.getLanguageValue('/site/nav/the-harvester')}" />
 			</li>
 			</a>
 
 			<a href="<c:url value="/tlssled.html"></c:url>">
-				<li><i class="fa fa-lock fa-lg"></i><c:out value="${language.getLanguageValue('/site/nav/tls-sled')}" />
-			</li>
+				<li><i class="fa fa-lock fa-lg"></i> <c:out
+						value="${language.getLanguageValue('/site/nav/tls-sled')}" /></li>
 			</a>
 
 			<a href="<c:url value="/hydra.html"></c:url>">
-				<li><img src="img/hydra.png"><c:out value="${language.getLanguageValue('/site/nav/hydra')}" />
-			</li>
+				<li><img src="img/hydra.png"> <c:out
+						value="${language.getLanguageValue('/site/nav/hydra')}" /></li>
 			</a>
 
 			<a href="<c:url value="/dnsrecon.html"></c:url>">
-				<li><img src="img/dnsrecon.png"><c:out value="${language.getLanguageValue('/site/nav/dns-recon')}" />
-			</li>
+				<li><img src="img/dnsrecon.png"> <c:out
+						value="${language.getLanguageValue('/site/nav/dns-recon')}" /></li>
 			</a>
 
 			<a href="<c:url value="/dnsrecon.html"></c:url>">
-				<li><i class="fa fa-terminal fa-lg"></i><c:out value="${language.getLanguageValue('/site/nav/terminal')}" />
-			</li>
+				<li><i class="fa fa-terminal fa-lg"></i> <c:out
+						value="${language.getLanguageValue('/site/nav/terminal')}" /></li>
+			</a>
+
+			<a href="<c:url value="/changelanguage.html"></c:url>">
+				<li>
+					<c:if test="${language.getLanguage().equals('en')}">
+    					<img src="img/button_en_20px.png"/>
+					</c:if>
+					<c:if test="${language.getLanguage().equals('fr')}">
+    					<img src="img/button_fr_20px.png"/>
+					</c:if>
+				</li>
 			</a>
 		</ul>
 	</div>
