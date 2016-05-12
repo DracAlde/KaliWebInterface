@@ -33,7 +33,12 @@ public class Home extends HttpServlet {
 		Tools.initiatePath(request);
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("language", new Language(request));
+		Language language = (Language) session.getAttribute(Constants.SESS_LANG);
+		if(language == null){
+			language = new Language(request);
+		}
+		language.setCurrentTool(null);
+		session.setAttribute(Constants.SESS_LANG, language);
 		
 		this.getServletContext().getRequestDispatcher(Constants.VIEW_HOME).forward(request, response);
 	}
