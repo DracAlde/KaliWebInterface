@@ -107,20 +107,34 @@
 						value="${language.getLanguageValue('/site/nav/terminal')}" /></li>
 			</a>
 
-			<a href="<c:url value="/changelanguage.html"></c:url>">
-				<li>
+<%-- 			<a href="<c:url value="/changelanguage.html"></c:url>">
+ --%>				<li>
+					<div class="onoffswitch">
 					<c:if test="${language.getLanguage().equals('en')}">
-    					<img src="img/button_en_20px.png"/>
+							<input type="checkbox" name="onoffswitch" onchange="updateLang()"
+								class="onoffswitch-checkbox" id="myonoffswitch">
 					</c:if>
 					<c:if test="${language.getLanguage().equals('fr')}">
-    					<img src="img/button_fr_20px.png"/>
+							<input type="checkbox" name="onoffswitch" onchange="updateLang()"
+								class="onoffswitch-checkbox" id="myonoffswitch" checked>
 					</c:if>
+							<label class="onoffswitch-label" for="myonoffswitch"> <span
+								class="onoffswitch-inner"></span> <span
+								class="onoffswitch-switch"></span>
+							</label>
+					</div>
 				</li>
-			</a>
-		</ul>
+<!-- 			</a>
+ -->		</ul>
 	</div>
 </div>
 
+<script type="text/javascript">
+
+function updateLang(){
+	window.document.location.href = "/WebProject/changelanguage.html";
+}
+</script>
 
 <!-- 
 

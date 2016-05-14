@@ -52,6 +52,7 @@
 						<p class="error">${form.errors['hostname']}</p>
 					</div>
 
+
 					<div>
 						<label for="scan_type" data-toggle="tooltip"
 							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/scan-type')}" />"
