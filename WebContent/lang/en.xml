@@ -57,6 +57,38 @@
 				<bouton-envoyer>Send</bouton-envoyer>
 			</actions>
 		</zenmap>
+		
+		<the-harvester>
+			<historique>History</historique>
+			<description>Description</description>
+			<desc-tool>Description de The Harvester, quand il est apparu, qui l'a créé, à quoi il sert, quel contexte on l'utilise ... =) On peut aussi mettre la description dans l'info-bulle du point d'interrogration près du titre !</desc-tool>
+			<options>
+				<domaine>Domain or company name</domaine>
+				<info-source>
+					<nom>Information source</nom>
+					<group-search-engine>Search engine</group-search-engine>
+					<google>Google</google>
+					<google-cse>Google CSE</google-cse>
+					<bing>Bing</bing>
+					<bing-api>Bing API</bing-api>
+					<group-social-network>Social network</group-social-network>
+					<pgp>PGP</pgp>
+					<linkedin>Linkedin</linkedin>
+					<google-profiles>Google profiles</google-profiles>
+					<jigsaw>Jigsaw</jigsaw>
+					<twitter>Twitter</twitter>
+					<google-plus>Google Plus</google-plus>
+					<all>All</all>
+				</info-source>
+			</options>
+			<aide>
+				<domaine>Precise the domain or company name to search in (e.g. www.google.com or Google)</domaine>
+				<info-source>Define the information source to use among ones available</info-source>
+			</aide>
+			<actions>
+				<bouton-envoyer>Send</bouton-envoyer>
+			</actions>
+		</the-harvester>
 	</tools>
 	<erreur>No tool given</erreur>
 </site>

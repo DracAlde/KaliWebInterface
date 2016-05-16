@@ -6,7 +6,7 @@
 
 <c:import url="nav.jsp"></c:import>
 <body>
-
+	
 	<section>
 		<div class="panel panel-default col-md-12 col-lg-12" style="padding:0px;">
 		  

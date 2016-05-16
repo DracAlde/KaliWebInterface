@@ -57,6 +57,35 @@
 				<bouton-envoyer>Envoyer</bouton-envoyer>
 			</actions>
 		</zenmap>
+		
+		<the-harvester>
+			<historique>History</historique>
+			<description>Description</description>
+			<desc-tool>Description de The Harvester, quand il est apparu, qui l'a créé, à quoi il sert, quel contexte on l'utilise ... =) On peut aussi mettre la description dans l'info-bulle du point d'interrogration près du titre !</desc-tool>
+			<options>
+				<domaine>Domaine ou non de société</domaine>
+				<scan-type>
+					<nom>Kind of scan</nom>
+					<intense>Intense</intense>
+					<intense-udp>Intense UDP</intense-udp>
+					<intense-tcp>Intense TCP</intense-tcp>
+					<intense-ping>Intense without Ping</intense-ping>
+					<rapide>Fast</rapide>
+					<rapide-plus>Fast plus</rapide-plus>
+					<ping>Ping</ping>
+					<traceroute>Traceroute</traceroute>
+					<ordinaire>Ordinary</ordinaire>
+					<complet>Full</complet>
+				</scan-type>
+			</options>
+			<aide>
+				<domaine>Indiquez le domaine ou le nom de la société sur laquelle vous souhaitez effectuer la recherche (ex: www.google.com ou Google)</domaine>
+				<scan-type>Select the scan type wanted within following ones</scan-type>
+			</aide>
+			<actions>
+				<bouton-envoyer>Send</bouton-envoyer>
+			</actions>
+		</the-harvester>
 	</tools>
 	<erreur>Pas d'outils indiqué</erreur>
 </site>
