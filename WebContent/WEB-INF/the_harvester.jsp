@@ -58,8 +58,20 @@
 							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/info-source')}" />"
 							data-placement="right"> <c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/nom')}" />
 						</label>
-						<div class="input-group col-lg-2 col-mg-4 col-sm-6">
-							<select class="form-control ui fluid dropdown input-group col-lg-12 col-mg-12 col-sm-12" name="info-source" id="info-source" onchange="updateCommand()" autofocus required multiple style="buttonWidth: 500px""">
+						
+						<div class="input-group col-lg-4 col-mg-4 col-sm-6 btn-group">
+							<span
+								class="input-group-addon" id="basic-addon2"
+								data-toggle="tooltip"
+								title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/cible')}" />"
+								data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
+							</span>
+							
+							<div class="btn-group">
+								<button type="button" id="unselect_all" name="unselect_all" value="unselect_all" class="btn btn-danger" onclick="removeAllItems()"><span class="glyphicon glyphicon-remove"></span> Remove all</button>
+							</div>
+							
+							<select name="info-source" class="glyphicon" id="info-source" onchange="updateCommand()" autofocus required multiple="multiple">
 								<optgroup label="${language.getLanguageValue('/site/tools/$tool/options/info-source/group-search-engine')}">
 									<option value="google" id="google"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/google')}" /></option>
 									<option value="google-cse" id="google-cse"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/google-cse')}" /></option>
@@ -67,22 +79,58 @@
 									<option value="bing-api" id="bing-api"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/bing-api')}" /></option>
 								</optgroup>
 								<optgroup label="${language.getLanguageValue('/site/tools/$tool/options/info-source/group-social-network')}">
-									<option value="pgp" id="pgp"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/pgp')}" /></option>
 									<option value="linkedin" id="linkedin"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/linkedin')}" /></option>
 									<option value="google-profiles" id="google-profiles"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/google-profiles')}" /></option>
 									<option value="jigsaw" id="jigsaw"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/jigsaw')}" /></option>
 									<option value="twitter" id="twitter"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/twitter')}" /></option>
 									<option value="google-plus" id="google-plus"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/google-plus')}" /></option>
 								</optgroup>
+								<optgroup label="${language.getLanguageValue('/site/tools/$tool/options/info-source/group-other')}">
+									<option value="pgp" id="pgp"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/pgp')}" /></option>
+								</optgroup>
 							</select>
-							<button type="button" id="select_all" name="select_all" class="btn btn-success">Select all</button>
-							<button type="button" id="select_all" name="select_all" class="btn btn-danger glyphicon glyphicon-remove"></button>
-							<span
-								class="input-group-addon" id="basic-addon2"
-								data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/cible')}" />"
-								data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
-							</span>
+						</div>
+						
+						<div>
+							
+							<br>
+							<label for="options" data-toggle="tooltip"
+							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/options')}" />"
+							data-placement="right"> <c:out value="${language.getLanguageValue('/site/tools/$tool/options/options/nom')}" />
+						</label>
+						
+						<div class="input-group col-lg-10 col-md-10 col-sm-10 btn-group">
+							
+							<label data-toggle="tooltip"
+							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/verify')}" />"
+							data-placement="right" class="checkbox-inline"><input type="checkbox" value="">${language.getLanguageValue('/site/tools/$tool/options/options/verify')}</label>
+							<label data-toggle="tooltip"
+							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/reverse-dns')}" />"
+							data-placement="right" class="checkbox-inline"><input type="checkbox" value="">${language.getLanguageValue('/site/tools/$tool/options/options/reverse-dns')}</label>
+							<label data-toggle="tooltip"
+							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/tld')}" />"
+							data-placement="right" class="checkbox-inline"><input type="checkbox" value="">${language.getLanguageValue('/site/tools/$tool/options/options/tld')}</label>
+							<label data-toggle="tooltip"
+							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/shodan')}" />"
+							data-placement="right" class="checkbox-inline"><input type="checkbox" value="">${language.getLanguageValue('/site/tools/$tool/options/options/shodan')}</label>
+							
+							<div class="checkbox input-group">
+							  <label><input type="checkbox" value="">Option 1
+							  <div class="checkbox input-group">
+								<input type="text" class="form-control" placeholder="Hostname"
+								name="" id="" onkeyup="updateCommand()"
+								onselect="updateCommand()" required> 								  
+								<span
+									class="input-group-addon" id="basic-addon2"
+									data-toggle="tooltip"
+									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/cible')}" />"
+									data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
+								</span>
+								</div>
+								</label>
+							</div>
+						</div>	
+						
 						</div>
 					</div>
 
@@ -122,6 +170,17 @@
 			var domain = document.getElementById('domain'),
 				scan_type = document.getElementById('info-source'),
 				command = document.getElementById('command');
+			
+			/*
+			* That function permits to unselect all items selected in the 'info-source'
+			* multiselect box
+			*/
+			function removeAllItems(){
+				  $('option', $('#info-source')).each(function(element) {
+					    $(this).removeAttr('selected').prop('selected', false);
+					  });
+					  $("#info-source").multiselect('refresh');
+			}
 			
 			function updateCommand(){
 				
@@ -183,11 +242,11 @@
 			});
 			
 		    $(document).ready(function() {
-		        $('#info-source').multiselect();
-		    });
-		    
-		    $('#select_all').click(function() {
-		        $('#info-source option').prop('selected', true);
+		        $('#info-source').multiselect({
+		            includeSelectAllOption: true,
+		            enableFiltering: true,
+		            enableCaseInsensitiveFiltering: true 
+		        });
 		    });
 		</script>
 	</section>
