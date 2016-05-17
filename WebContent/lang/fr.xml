@@ -58,6 +58,40 @@
 			</actions>
 		</zenmap>
 		
+		<hydra>
+			<historique>Historique</historique>
+			<description>Description</description>
+			<desc-tool>Description d'hydra, quand il est apparu, qui l'a créé, à quoi il sert, quel contexte on l'utilise ... =) On peut aussi mettre la description dans l'info-bulle du point d'interrogration près du titre !</desc-tool>
+			<options>
+				<cible>Cible ou adresse IP</cible>
+				<account-group>
+					<nom>Compte</nom>
+					<compte-connu>Compte connu</compte-connu>
+					<dictionnaire>Dictionnaire</dictionnaire>
+					<nom-compte>Nom du compte</nom-compte>
+				</account-group>
+				<password-group>
+					<nom>Mot de passe</nom>
+					<mdp-connu>Mot de passe connu</mdp-connu>
+					<dictionnaire>Dictionnaire</dictionnaire>
+					<mdp>Mot de passe</mdp>
+				</password-group>
+				<dictionnaire>
+					<nom>Dictionnaire</nom>
+					<grand-dico>Grand dictionnaire</grand-dico>
+					<dico>Dictionnaire moyen</dico>
+					<petit-dico>Petit dictionnaire</petit-dico>
+				</dictionnaire>
+			</options>
+			<aide>
+				<cible>Veuillez indiquer l'adresse IP (192.168.0.1) ou le nom de la machine à cibler (target.com)</cible>
+				<dico>Selectionnez la taille du dictionnaire</dico>
+			</aide>
+			<actions>
+				<bouton-envoyer>Envoyer</bouton-envoyer>
+			</actions>
+		</hydra>
+		
 		<the-harvester>
 			<historique>History</historique>
 			<description>Description</description>
