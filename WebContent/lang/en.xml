@@ -87,6 +87,9 @@
 					<reverse-dns>Reverse DNS</reverse-dns>
 					<tld>TLD discovery</tld>
 					<shodan>SHODAN database</shodan>
+					<start>Print result from X</start>
+					<use-dns>DNS server</use-dns>
+					<limit>Fix result limit</limit>
 				</options>
 			</options>
 			<aide>
@@ -97,6 +100,9 @@
 				<reverse-dns>Perform a DNS reverse query on all ranges discovered</reverse-dns>
 				<tld>Perform a DNS TLD expansion discovery</tld>
 				<shodan>Use SHODAN database to query discovered hosts</shodan>
+				<start>Start in result number X (default is 0)</start>
+				<use-dns>Use a specific DNS server (IP or URL)</use-dns>
+				<limit>Limit the number of result to work with</limit>
 			</aide>
 			<actions>
 				<bouton-envoyer>Send</bouton-envoyer>

@@ -63,7 +63,7 @@
 			<description>Description</description>
 			<desc-tool>Description de The Harvester, quand il est apparu, qui l'a créé, à quoi il sert, quel contexte on l'utilise ... =) On peut aussi mettre la description dans l'info-bulle du point d'interrogration près du titre !</desc-tool>
 			<options>
-				<domaine>Domaine ou non de société</domaine>
+				<domaine>Domaine ou nom de société</domaine>
 				<scan-type>
 					<nom>Kind of scan</nom>
 					<intense>Intense</intense>

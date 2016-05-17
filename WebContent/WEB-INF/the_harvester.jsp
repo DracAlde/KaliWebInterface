@@ -39,7 +39,7 @@
 							data-placement="right"> <c:out value="${language.getLanguageValue('/site/tools/$tool/options/domaine')}" />
 						</label>
 						<div class="input-group col-lg-2 col-mg-4 col-sm-6">
-							<input type="text" class="form-control" placeholder="Hostname"
+							<input type="text" class="form-control" placeholder="google.com"
 								name="domain" id="domain" onkeyup="updateCommand()"
 								onselect="updateCommand()" autofocus required> 
 							<span
@@ -90,47 +90,99 @@
 								</optgroup>
 							</select>
 						</div>
-						
+
 						<div>
-							
-							<br>
-							<label for="options" data-toggle="tooltip"
-							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/options')}" />"
-							data-placement="right"> <c:out value="${language.getLanguageValue('/site/tools/$tool/options/options/nom')}" />
-						</label>
-						
-						<div class="input-group col-lg-10 col-md-10 col-sm-10 btn-group">
-							
-							<label data-toggle="tooltip"
-							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/verify')}" />"
-							data-placement="right" class="checkbox-inline"><input type="checkbox" value="">${language.getLanguageValue('/site/tools/$tool/options/options/verify')}</label>
-							<label data-toggle="tooltip"
-							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/reverse-dns')}" />"
-							data-placement="right" class="checkbox-inline"><input type="checkbox" value="">${language.getLanguageValue('/site/tools/$tool/options/options/reverse-dns')}</label>
-							<label data-toggle="tooltip"
-							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/tld')}" />"
-							data-placement="right" class="checkbox-inline"><input type="checkbox" value="">${language.getLanguageValue('/site/tools/$tool/options/options/tld')}</label>
-							<label data-toggle="tooltip"
-							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/shodan')}" />"
-							data-placement="right" class="checkbox-inline"><input type="checkbox" value="">${language.getLanguageValue('/site/tools/$tool/options/options/shodan')}</label>
-							
-							<div class="checkbox input-group">
-							  <label><input type="checkbox" value="">Option 1
-							  <div class="checkbox input-group">
-								<input type="text" class="form-control" placeholder="Hostname"
-								name="" id="" onkeyup="updateCommand()"
-								onselect="updateCommand()" required> 								  
-								<span
-									class="input-group-addon" id="basic-addon2"
-									data-toggle="tooltip"
-									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/cible')}" />"
-									data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
-								</span>
+
+							<br> <label for="options" data-toggle="tooltip"
+								title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/options')}" />"
+								data-placement="right"> <c:out
+									value="${language.getLanguageValue('/site/tools/$tool/options/options/nom')}" />
+							</label>
+
+							<div class="input-group col-lg-10 col-md-10 col-sm-10 btn-group">
+
+								<div class="col-lg-2 col-md-2 col-sm-2">
+								<label data-toggle="tooltip"
+									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/verify')}" />"
+									data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
+									type="checkbox" id="verify-hostname" value="-v">${language.getLanguageValue('/site/tools/$tool/options/options/verify')}</label>
+									</div>
+									
+								<div class="col-lg-2 col-md-2 col-sm-2">
+								<label data-toggle="tooltip"
+									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/reverse-dns')}" />"
+									data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
+									type="checkbox" id="reverse-dns" value="-n">${language.getLanguageValue('/site/tools/$tool/options/options/reverse-dns')}</label>
+									</div>
+									
+								<div class="col-lg-2 col-md-2 col-sm-2">
+								<label data-toggle="tooltip"
+									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/tld')}" />"
+									data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
+									type="checkbox" id="tld-discovery" value="-t">${language.getLanguageValue('/site/tools/$tool/options/options/tld')}</label>
+									</div>
+									
+								<div class="col-lg-2 col-md-2 col-sm-2">
+								<label data-toggle="tooltip"
+									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/shodan')}" />"
+									data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
+									type="checkbox" id="shodan" value="-h">${language.getLanguageValue('/site/tools/$tool/options/options/shodan')}</label>
+									</div>
+
+								
+								<div class="col-lg-10 col-md-10 col-sm-10">
+								
+								<div class="checkbox input-group">
+									<label>
+									<input type="checkbox" id="startN-check" onclick="updateCommand()">${language.getLanguageValue('/site/tools/$tool/options/options/start')}</label>
+									<div class="input-group" id="start-result" style="display: none;">
+										<input type="number" min="0" max="10000" class="form-control"
+												placeholder="0" name="" id="start-number"
+												onkeyup="updateCommand()" onselect="updateCommand()"
+												> 
+												<span class="input-group-addon"
+												id="basic-addon2" data-toggle="tooltip"
+												title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/start')}" />"
+												data-placement="bottom"> <i
+												class="fa fa-question fa-lg"></i>
+											</span>
+									</div>
 								</div>
-								</label>
+									
+								<div class="checkbox input-group">
+									<label><input type="checkbox" id="use-dns" onclick="updateCommand()">${language.getLanguageValue('/site/tools/$tool/options/options/use-dns')}</label>
+									<div class="input-group" id="dns-name" style="display: none;">
+										<input type="text" placeholder="my-dns.com" class="form-control"
+												placeholder="0" name="" id="dns"
+												onkeyup="updateCommand()" onselect="updateCommand()"
+												> 
+												<span class="input-group-addon"
+												id="basic-addon2" data-toggle="tooltip"
+												title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/use-dns')}" />"
+												data-placement="bottom"> <i
+												class="fa fa-question fa-lg"></i>
+											</span>
+									</div>
+								</div>
+									
+								<div class="checkbox input-group">
+									<label><input type="checkbox" id="fix-limit" onclick="updateCommand()">${language.getLanguageValue('/site/tools/$tool/options/options/limit')}</label>
+									<div class="input-group" id="limit-number" style="display: none;">
+										<input type="number" min="0" max="10000" class="form-control"
+												placeholder="100" name="" id="max-number"
+												onkeyup="updateCommand()" onselect="updateCommand()"
+												> 
+												<span class="input-group-addon"
+												id="basic-addon2" data-toggle="tooltip"
+												title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/limit')}" />"
+												data-placement="bottom"> <i
+												class="fa fa-question fa-lg"></i>
+											</span>
+									</div>
+								</div>
+								</div>
 							</div>
-						</div>	
-						
+
 						</div>
 					</div>
 
@@ -140,7 +192,7 @@
 						data-toggle="tooltip" 
 						title="C'est la ligne qui sera envoyée dans le terminal de notre système Kali Linux"
 						data-placement="bottom">
-					> nmap
+					> theharvester
 				</div>
 				
 				<div style="text-align:right">
@@ -167,9 +219,6 @@
 		
 
 		<script>
-			var domain = document.getElementById('domain'),
-				scan_type = document.getElementById('info-source'),
-				command = document.getElementById('command');
 			
 			/*
 			* That function permits to unselect all items selected in the 'info-source'
@@ -180,58 +229,185 @@
 					    $(this).removeAttr('selected').prop('selected', false);
 					  });
 					  $("#info-source").multiselect('refresh');
+					  updateCommand();
+			}
+			
+			/*
+			* Print the input associated to the below checkboxes
+			* 
+			*/
+			$('#startN-check').click(function() {
+			    $("#start-result").toggle(this.checked);
+			});
+			
+			
+			$('#use-dns').click(function() {
+			    $("#dns-name").toggle(this.checked);
+			});
+			
+			
+			$('#fix-limit').click(function() {
+			    $("#limit-number").toggle(this.checked);
+			});
+			
+
+			var domain = document.getElementById('domain'),
+				scan_type = document.getElementById('info-source'),
+				verify_hostname = document.getElementById('verify-hostname'),
+				reverse_dns = document.getElementById('reverse-dns'),
+				tld_discovery = document.getElementById('tld-discovery'),
+				shodan = document.getElementById('shodan'),
+				start_number = document.getElementById('start-number'),
+				dns_name = document.getElementById('dns'),
+				max_number = document.getElementById('max-number'),
+				command = document.getElementById('command');
+			
+			
+			function getLimit()
+			{
+				var max_number_txt = '';
+				
+				if (document.getElementById("fix-limit").checked)
+					{
+						if (max_number.value.length == 0)
+							{
+								max_number_txt = '-l ' + '&lt;limit&gt;';
+							}
+						else
+							{
+								max_number_txt = '-l ' + max_number.value;
+							}
+					}
+				
+				return max_number_txt;
+			}
+			
+			
+			
+			function getDNSName()
+			{
+				var dns_name_txt = '';
+				
+				if (document.getElementById("use-dns").checked)
+					{
+						if (dns_name.value.length == 0)
+							{
+								dns_name_txt = '-e ' + '&lt;dns&gt;';
+							}
+						else
+							{
+								dns_name_txt = '-e ' + dns_name.value;
+							}
+					}
+				
+				return dns_name_txt;
+			}
+			
+			
+			function getStartNumber()
+			{
+				var start_number_txt = '';
+				
+				if (document.getElementById("startN-check").checked)
+					{
+						if (start_number.value.length == 0)
+							{
+								start_number_txt = '-s ' + '&lt;start&gt;';
+							}
+						else
+							{
+								start_number_txt = '-s ' + start_number.value;
+							}
+					}
+				
+				return start_number_txt;
+			}
+			
+			
+			function getDomain()
+			{
+				var domain_txt = '';
+				
+				if(domain.value.length == 0){
+					domain_txt = '&lt;domain&gt;';
+				}else{
+					domain_txt = domain.value;
+				}
+				
+				return domain_txt;
+			}
+			
+			
+			function getInformationSource()
+			{
+				var info_source_txt = '';
+				
+				for(i=0;i<scan_type.length;i++)
+				{
+					if(scan_type[i].selected == true)
+					{
+						if (info_source_txt == '')
+							{
+								info_source_txt = '-b ';
+							}
+						
+						if(scan_type[i].value != 'multiselect-all')
+							{
+								info_source_txt += scan_type[i].value;
+							}
+						info_source_txt += " ";
+					}
+				}
+				
+				//console.log(info_source_txt);
+				
+				return info_source_txt;
 			}
 			
 			function updateCommand(){
 				
-				var hostname_txt = '';
-				var scan_txt = '';
+				var domain_txt = '';
+				var scan_type_txt = '';
+				var verify_hostname_txt = '';
+				var reverse_dns_txt = '';
+				var tld_discovery_txt = '';
+				var shodan_txt = '';
+				var dns_name_txt = '';
+				var start_number_txt = '';
+				var max_number_txt = '';
+				
 				var command_string = '';
-				var scan_index = scan_type.selectedIndex;
-					
-				if(domain.value.length == 0){
-					hostname_txt = '&lt;hostname&gt;';
-				}else{
-					hostname_txt = hostname.value;
-				}
 				
-				switch(scan_index)
-				{
-					case 0:
-						scan_txt = '-T4 -A -v';
-						break;
-					case 1:
-						scan_txt = '-sS -sU T4 -A -v';
-						break;
-					case 2:
-						scan_txt = '-p 1-65535 -T4 -A -v';
-						break;
-					case 3:
-						scan_txt = '-T4 -A -v -Pn';
-						break;
-					case 4:
-						scan_txt = '-T4 -F';
-						break;
-					case 5:
-						scan_txt = '-sV -T4 -O -F --version-light';
-						break;
-					case 6:
-						scan_txt = '-sn';
-						break;
-					case 7:
-						scan_txt = '-sn --traceroute';
-						break;
-					case 8:
-						scan_txt = '-v';
-						break;
-					case 9:
-						scan_txt = 'S80,443 -PA3389 -PU4-sS -sU -T4 -A -v -PE -PP -P0125 -PY -g 53 --script "default or (discovery and safe)"';
-						break;
-					default:
-						scan_txt = '&lt;scan_type&gt;';
-				}
+				console.log(getStartNumber());
 				
-				command_string ='> nmap ' + hostname_txt + ' ' + scan_txt;
+				domain_txt = getDomain();
+				info_source_txt =  getInformationSource();
+				dns_name_txt = getDNSName();
+				start_number_txt = getStartNumber();
+				max_number_txt = getLimit();
+				
+				if (verify_hostname.checked)
+					{
+						verify_hostname_txt = verify_hostname.value;
+					}
+				
+				if (reverse_dns.checked)
+					{
+						reverse_dns_txt = reverse_dns.value;
+					}
+				
+				if (tld_discovery.checked)
+					{
+						tld_discovery_txt = tld_discovery.value;
+					}
+				
+				if (shodan.checked)
+					{
+						shodan_txt = shodan.value;
+					}
+				
+				
+				command_string ='> theharvester ' + domain_txt + ' ' + info_source_txt + ' ' + verify_hostname_txt + ' ' + reverse_dns_txt + ' ' + tld_discovery_txt + ' ' + shodan_txt + ' ' + dns_name_txt + ' ' + start_number_txt + ' ' + max_number_txt;
 				command.innerHTML = command_string ;
 			}
 			
@@ -241,11 +417,16 @@
 				$('[data-toggle="tooltip"]').tooltip();
 			});
 			
+			
+			/*
+			* Create the multiselct view
+			*
+			*/
 		    $(document).ready(function() {
 		        $('#info-source').multiselect({
 		            includeSelectAllOption: true,
 		            enableFiltering: true,
-		            enableCaseInsensitiveFiltering: true 
+		            enableCaseInsensitiveFiltering: true
 		        });
 		    });
 		</script>
