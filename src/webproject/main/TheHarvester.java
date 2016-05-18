@@ -56,7 +56,10 @@ public class TheHarvester extends HttpServlet{
 		history.addCommand(command);
 		session.setAttribute(Constants.ATT_SESSION_HISTORY, history);
 
-		request.setAttribute(Constants.ATT_FORM,form);
+		request.setAttribute(Constants.ATT_FORM, form);
+		//System.out.println(request.setAttribute("info-source", request.getParameterMap().get("info-source")));
+		session.setAttribute("info-source", request.getParameterMap().get("info-source"));
+		
 		this.getServletContext().getRequestDispatcher(Constants.VIEW_THEHARVESTER).forward(request, response);
 	}
 }

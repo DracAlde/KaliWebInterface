@@ -9,6 +9,7 @@ public class Command {
 	private ToolName tool;
 	private Map<String, Object> arguments = new HashMap<String, Object>();
 	private boolean success;
+	private String command;
 	
 	public Command(ToolName tool){
 		this.tool = tool;
@@ -20,6 +21,11 @@ public class Command {
 
 	public void setTool(ToolName tool) {
 		this.tool = tool;
+	}
+	
+	public void setStringCommand(String command)
+	{
+		this.command = command;
 	}
 
 	public Map<String, Object> getArguments() {
@@ -71,5 +77,10 @@ public class Command {
 		// We cut the last "&"
 		url = url.substring(0, url.length()-1);
 		return url;
+	}
+	
+	public String getStringCommmand()
+	{
+		return this.command;
 	}
 }

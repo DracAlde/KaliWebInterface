@@ -50,11 +50,11 @@ public class ZenmapForm {
 		command.setArguments(Constants.FIELD_HOSTNAME, hostname);
 		command.setArguments(Constants.FIELD_SCAN_TYPE, scanValue);
 		
+		String commandString = "nmap "+ hostname+" "+ scanValue;
+		command.setStringCommand(commandString);
+		
 		if (errors.isEmpty()) {
 			// pas d'erreur, on envois la requete
-			String commandString = "zenmap "+ hostname+" "+ scanValue;
-			System.out.println(commandString);
-			
 			command.setSuccess(true);
 			result = "Succès de la commande";
 		} else {

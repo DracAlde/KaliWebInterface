@@ -101,13 +101,14 @@ public class TheHarvesterForm {
 		command.setArguments(Constants.FIELD_DOMAIN, domain);
 		command.setArguments(Constants.FIELD_SOURCE_INFO, sourceToUse);
 		
+		String commandString = "theharvester " + domain + " " + sourceToUse + " " + reverseDNS +
+				" " + verifyHostname + " " + TLDDiscovery + " " + shodan + " " + startResult +
+				" " + DNSToUse + " " + printLimit;
+		
+		command.setStringCommand(commandString);
+		
 		if (errors.isEmpty()) {
-			// pas d'erreur, on envois la requetesartResult
-			String commandString = "theharvester " + domain + " " + sourceToUse + " " + reverseDNS +
-					" " + verifyHostname + " " + TLDDiscovery + " " + shodan + " " + startResult +
-					" " + DNSToUse + " " + printLimit; 
-			System.out.println(commandString);
-			
+			// pas d'erreur, on envois la requetesartResult			
 			command.setSuccess(true);
 			result = "Succès de la commande";
 		} else {

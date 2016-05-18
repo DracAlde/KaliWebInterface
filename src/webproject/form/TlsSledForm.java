@@ -46,12 +46,12 @@ public class TlsSledForm {
 		Command command = new Command(ToolName.TlsSled);
 		command.setArguments(Constants.FIELD_HOSTNAME, hostname);
 		command.setArguments(Constants.FIELD_PORT, port);
+
+		String commandString = "tlssled " + hostname + " " + port;
+		command.setStringCommand(commandString);
 		
 		if (errors.isEmpty()) {
 			// pas d'erreur, on envois la requete
-			String commandString = "tlssled " + hostname + " " + port;
-			System.out.println(commandString);
-			
 			command.setSuccess(true);
 			result = "Succès de la commande";
 		} else {
