@@ -8,10 +8,10 @@
 		<div class="list-group" style="height: 150px; overflow: auto;">
 			<c:forEach items="${history['history']}" var="command">
 				<c:if test="${command.isSuccess()}">
-					<a class="list-group-item list-group-item-success">
+					<a class="list-group-item list-group-item-success" href="<c:url value="${command.getURL()}" />">
 				</c:if>
-				<c:if test="${!command.isSuccess()}">
-					<a class="list-group-item list-group-item-danger">
+				<c:if test="${!command.isSuccess()}" >
+					<a class="list-group-item list-group-item-danger" href="<c:url value="${command.getURL()}" />">
 				</c:if>
 				<strong><c:out value="${command['tool']}" /></strong>
 							hostname = <strong><c:out

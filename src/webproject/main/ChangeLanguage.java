@@ -20,16 +20,18 @@ public class ChangeLanguage extends HttpServlet{
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Tools.initiatePath(request);
-
+		
 		HttpSession session = request.getSession();
 		Language language = (Language) session.getAttribute(Constants.SESS_LANG);
+		
+		if(language == null){
+			session.setAttribute("language", new Language(request));
+			this.getServletContext().getRequestDispatcher(Constants.VIEW_HOME).forward(request, response);
+		}
+		
 		language.switchLanguage();
 		session.setAttribute("language", language);
-
-		if(language.getCurrentToolLanguage() == Constants.TOOL_TLS_SLED){
-
-		}
-
+		
 		if(null == language.getCurrentToolLanguage()){
 			this.getServletContext().getRequestDispatcher(Constants.VIEW_HOME).forward(request, response);
 		}else{
