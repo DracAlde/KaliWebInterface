@@ -32,7 +32,7 @@
 				</h3>
 					
 				</div>
-			<form method="POST" action="<c:url value="/zenmap.html" ></c:url>">
+			<form method="POST" action="<c:url value="/theharvester.html" ></c:url>">
 					<div>
 						<label for="domain" data-toggle="tooltip"
 							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/domaine')}" />"
@@ -71,7 +71,7 @@
 								<button type="button" id="unselect_all" name="unselect_all" value="unselect_all" class="btn btn-danger" onclick="removeAllItems()"><span class="glyphicon glyphicon-remove"></span> Remove all</button>
 							</div>
 							
-							<select name="info-source" class="glyphicon" id="info-source" onchange="updateCommand()" autofocus required multiple="multiple">
+							<select name="info-source" class="glyphicon" id="info-source" onchange="updateCommand()" autofocus multiple="multiple">
 								<optgroup label="${language.getLanguageValue('/site/tools/$tool/options/info-source/group-search-engine')}">
 									<option value="google" id="google"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/google')}" /></option>
 									<option value="google-cse" id="google-cse"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/google-cse')}" /></option>
@@ -105,39 +105,39 @@
 								<label data-toggle="tooltip"
 									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/verify')}" />"
 									data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-									type="checkbox" id="verify-hostname" value="-v">${language.getLanguageValue('/site/tools/$tool/options/options/verify')}</label>
+									type="checkbox" id="verify-hostname" name="verify-hostname" value="-v">${language.getLanguageValue('/site/tools/$tool/options/options/verify')}</label>
 									</div>
 									
 								<div class="col-lg-2 col-md-2 col-sm-2">
 								<label data-toggle="tooltip"
 									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/reverse-dns')}" />"
 									data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-									type="checkbox" id="reverse-dns" value="-n">${language.getLanguageValue('/site/tools/$tool/options/options/reverse-dns')}</label>
+									type="checkbox" id="reverse-dns" name="reverse-dns" value="-n">${language.getLanguageValue('/site/tools/$tool/options/options/reverse-dns')}</label>
 									</div>
 									
 								<div class="col-lg-2 col-md-2 col-sm-2">
 								<label data-toggle="tooltip"
 									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/tld')}" />"
 									data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-									type="checkbox" id="tld-discovery" value="-t">${language.getLanguageValue('/site/tools/$tool/options/options/tld')}</label>
+									type="checkbox" id="tld-discovery" name="tld-discovery" value="-t">${language.getLanguageValue('/site/tools/$tool/options/options/tld')}</label>
 									</div>
 									
 								<div class="col-lg-2 col-md-2 col-sm-2">
 								<label data-toggle="tooltip"
 									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/shodan')}" />"
 									data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-									type="checkbox" id="shodan" value="-h">${language.getLanguageValue('/site/tools/$tool/options/options/shodan')}</label>
+									type="checkbox" id="shodan" name="shodan" value="-h">${language.getLanguageValue('/site/tools/$tool/options/options/shodan')}</label>
 									</div>
 
-								
+														
 								<div class="col-lg-10 col-md-10 col-sm-10">
 								
 								<div class="checkbox input-group">
 									<label>
-									<input type="checkbox" id="startN-check" onclick="updateCommand()">${language.getLanguageValue('/site/tools/$tool/options/options/start')}</label>
+									<input type="checkbox" id="startN-check" name="startN-check" onclick="updateCommand()">${language.getLanguageValue('/site/tools/$tool/options/options/start')}</label>
 									<div class="input-group" id="start-result" style="display: none;">
-										<input type="number" min="0" max="10000" class="form-control"
-												placeholder="0" name="" id="start-number"
+										<input type="number" class="form-control" min="0" max="10000" 
+												placeholder="0" name="start-number" id="start-number"
 												onkeyup="updateCommand()" onselect="updateCommand()"
 												> 
 												<span class="input-group-addon"
@@ -150,10 +150,10 @@
 								</div>
 									
 								<div class="checkbox input-group">
-									<label><input type="checkbox" id="use-dns" onclick="updateCommand()">${language.getLanguageValue('/site/tools/$tool/options/options/use-dns')}</label>
+									<label><input type="checkbox" id="use-dns" name="use-dns" onclick="updateCommand()">${language.getLanguageValue('/site/tools/$tool/options/options/use-dns')}</label>
 									<div class="input-group" id="dns-name" style="display: none;">
-										<input type="text" placeholder="my-dns.com" class="form-control"
-												placeholder="0" name="" id="dns"
+										<input type="text" class="form-control" placeholder="my-dns.com" 
+												name="dns" id="dns"
 												onkeyup="updateCommand()" onselect="updateCommand()"
 												> 
 												<span class="input-group-addon"
@@ -166,10 +166,10 @@
 								</div>
 									
 								<div class="checkbox input-group">
-									<label><input type="checkbox" id="fix-limit" onclick="updateCommand()">${language.getLanguageValue('/site/tools/$tool/options/options/limit')}</label>
+									<label><input type="checkbox" id="fix-limit" name="fix-limit" onclick="updateCommand()">${language.getLanguageValue('/site/tools/$tool/options/options/limit')}</label>
 									<div class="input-group" id="limit-number" style="display: none;">
-										<input type="number" min="0" max="10000" class="form-control"
-												placeholder="100" name="" id="max-number"
+										<input type="number" class="form-control" min="0" max="10000" 
+												placeholder="100" name="max-number" id="max-number"
 												onkeyup="updateCommand()" onselect="updateCommand()"
 												> 
 												<span class="input-group-addon"
@@ -340,13 +340,13 @@
 			
 			function getInformationSource()
 			{
-				var info_source_txt = '';
+				var info_source_txt = '-b &lt;source&gt;';
 				
 				for(i=0;i<scan_type.length;i++)
 				{
 					if(scan_type[i].selected == true)
 					{
-						if (info_source_txt == '')
+						if (info_source_txt == '-b &lt;source&gt;')
 							{
 								info_source_txt = '-b ';
 							}
@@ -358,9 +358,7 @@
 						info_source_txt += " ";
 					}
 				}
-				
-				//console.log(info_source_txt);
-				
+								
 				return info_source_txt;
 			}
 			

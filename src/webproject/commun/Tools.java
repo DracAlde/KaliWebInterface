@@ -1,7 +1,9 @@
 package webproject.commun;
 
 import java.util.Enumeration;
+import java.util.LinkedList;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Properties;
 import java.util.regex.Pattern;
 
@@ -47,10 +49,39 @@ public class Tools {
 	 */
 	public static String getFieldValue(HttpServletRequest request, String fieldName) {
 		String value = request.getParameter(fieldName);
+		System.out.println(value);
 		if ( value == null || value.trim().length() == 0 ) {
 			return null;
 		} else {
 			return value;
+		}
+	}
+	
+	
+	/**
+	 * Methods permits to access parameter selected in the "select" form
+	 * which are not accessible by default
+	 * @param request request to get the list from
+	 * @param fieldName "select" field name
+	 * @return the list of the parameter selected by the user in the "select" form
+	 */
+	public static LinkedList<String> getListFieldValue(HttpServletRequest request, String fieldName)
+	{
+		String[] selectList = request.getParameterValues(fieldName);
+		LinkedList<String> multiparameters = new LinkedList<String>();
+		
+		if (selectList == null || selectList.length == 0)
+		{
+			return null;
+		}
+		else 
+		{
+			for (int i = 0; i < selectList.length; i++) 
+			{
+				multiparameters.add(selectList[i]);
+			}
+			
+			return multiparameters;
 		}
 	}
 

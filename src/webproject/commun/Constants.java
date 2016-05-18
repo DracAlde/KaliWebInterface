@@ -54,6 +54,18 @@ public class Constants {
 	public static final String FIELD_HOSTNAME 		= "hostname";
 	public static final String FIELD_PORT 			= "port";
 	public static final String FIELD_SCAN_TYPE		= "scan_type";
+	public static final String FIELD_DOMAIN			= "domain";
+	public static final String FIELD_SOURCE_INFO	= "info-source";
+	public static final String CHK_VERIFY_HOST		= "verify-hostname";
+	public static final String CHK_REVERSE_DNS		= "reverse-dns";
+	public static final String CHK_TLD_DISCOVERY	= "tld-discovery";
+	public static final String CHK_SHODAN			= "shodan";
+	public static final String CHK_USE_DNS			= "use-dns";
+	public static final String FIELD_DNS			= "dns";
+	public static final String CHK_FIX_LIMIT_NUMBER	= "fix-limit";
+	public static final String FIELD_MAX_NUMBER		= "max-number";
+	public static final String CHK_START_NUMBER		= "startN-check";
+	public static final String FIELD_START_NUMBER	= "start-number";
 	
 	/**
 	 * SSH session constants
