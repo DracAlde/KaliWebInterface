@@ -37,25 +37,25 @@ public class ChangeLanguage extends HttpServlet{
 		}else{
 			switch(language.getCurrentToolLanguage()){
 			case Constants.TOOL_TLS_SLED:
-				this.getServletContext().getRequestDispatcher(Constants.VIEW_TLS_SLED).forward(request, response);
+				response.sendRedirect(Constants.URL_REDIRECT + Constants.ADDR_TLS_SLED);
 				break;
 			case Constants.TOOL_DNS_RECON:
-				this.getServletContext().getRequestDispatcher(Constants.VIEW_DNS_RECON).forward(request, response);
+				response.sendRedirect(Constants.URL_REDIRECT + Constants.ADDR_DNS_RECON);
 				break;
 			case Constants.TOOL_HYDRA:
-				this.getServletContext().getRequestDispatcher(Constants.VIEW_HYDRA).forward(request, response);
+				response.sendRedirect(Constants.URL_REDIRECT + Constants.ADDR_HYDRA);
 				break;
 			case Constants.TOOL_NIKTO:
-				this.getServletContext().getRequestDispatcher(Constants.VIEW_NIKTO).forward(request, response);
+				response.sendRedirect(Constants.URL_REDIRECT + Constants.ADDR_NIKTO);
 				break;
 			case Constants.TOOL_THE_HARVESTER:
-				this.getServletContext().getRequestDispatcher(Constants.VIEW_THEHARVESTER).forward(request, response);
+				response.sendRedirect(Constants.URL_REDIRECT + Constants.ADDR_THEHARVESTER);
 				break;
 			case Constants.TOOL_ZENMAP:
-				this.getServletContext().getRequestDispatcher(Constants.VIEW_ZENMAP).forward(request, response);
+				response.sendRedirect(Constants.URL_REDIRECT + Constants.ADDR_ZENMAP);
 				break;
 			default:
-				this.getServletContext().getRequestDispatcher(Constants.VIEW_HOME).forward(request, response);
+				response.sendRedirect(Constants.URL_REDIRECT + Constants.ADDR_HOME);
 			}
 		}
 	}

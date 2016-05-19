@@ -8,6 +8,8 @@ package webproject.commun;
 
 public class Constants {
 	
+	public static final String URL_REDIRECT      	= "http://localhost:8080/WebProject";
+	
 	/**
 	 * JSP path constants
 	 */
@@ -18,6 +20,7 @@ public class Constants {
 	public static final String VIEW_TLS_SLED     	= "/WEB-INF/tls_sled.jsp";
 	public static final String VIEW_HYDRA        	= "/WEB-INF/hydra.jsp";
 	public static final String VIEW_DNS_RECON    	= "/WEB-INF/dns_recon.jsp";
+	
 	
 	/**
 	 * Language constants
@@ -66,6 +69,17 @@ public class Constants {
 	public static final String FIELD_MAX_NUMBER		= "max-number";
 	public static final String CHK_START_NUMBER		= "startN-check";
 	public static final String FIELD_START_NUMBER	= "start-number";
+	
+	// Hydra
+	
+	public static final String FIELD_TARGET         = "target";
+	public static final String FIELD_ACCOUNT_NAME   = "account_name_field";
+	public static final String FIELD_PASSWORD       = "password_field";
+	public static final String RADIO_ACCOUNT        = "account";
+	public static final String RADIO_PASSWORD       = "password";
+	public static final String SLCT_ACCOUNT_DICO    = "account_dico_type";
+	public static final String SLCT_PASSWORD_DICO   = "password_dico_type";
+	
 	
 	/**
 	 * SSH session constants

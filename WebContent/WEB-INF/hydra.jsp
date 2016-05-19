@@ -66,8 +66,8 @@
 						<!-- Radio -->
 
 						<div class="col-sm-4 col-md-4 col-lg-4">
-							<input type="radio" name="account" value="knwon" id="account_known" checked="checked" onclick="printAccountForm()"/> <label
-								for="knwon"><c:out
+							<input type="radio" name="account" value="known" id="account_known" checked="checked" onclick="printAccountForm()"/> <label
+								for="known"><c:out
 									value="${language.getLanguageValue('/site/tools/$tool/options/account-group/compte-connu')}" /></label>
 							<br> <input type="radio" name="account" value="dictionary"
 								id="account_radio_dictionary" onclick="printAccountForm()"/> <label for="dictionary"><c:out
@@ -77,10 +77,10 @@
 						<!-- Nom du compte -->
 
 						<div class="col-sm-6 col-md-6 col-lg-6" id="account_name">
-							<label for="target" data-toggle="tooltip"
+							<label for="account_name_field" data-toggle="tooltip"
 								title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/cible')}" />"
 								data-placement="right"> <c:out
-									value="${language.getLanguageValue('/site/tools/$tool/options/cible')}" />
+									value="${language.getLanguageValue('/site/tools/$tool/options/account-group/nom-compte')}" />
 							</label>
 							<div class="input-group">
 								<input type="text" class="form-control"
@@ -97,13 +97,13 @@
 						<!-- Dictionnaire -->
 
 						<div id="account_dictionary" class='hidden'>
-							<label for="scan_type" data-toggle="tooltip"
+							<label for="account_dico_type" data-toggle="tooltip"
 								title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/dico')}" />"
 								data-placement="right"> <c:out
 									value="${language.getLanguageValue('/site/tools/$tool/options/dictionnaire/nom')}" />
 							</label>
 							<div class="input-group col-lg-6 col-mg-6 col-sm-6">
-								<select class="form-control" name="scan_type" id="scan_type"
+								<select class="form-control" name="account_dico_type" id="account_dico_type"
 									onchange="updateCommand()" autofocus required>
 									<option value="big-dico" id="big-dico" title="dictionary"><c:out
 											value="${language.getLanguageValue('/site/tools/$tool/options/dictionnaire/grand-dico')}" /></option>
@@ -132,8 +132,8 @@
 						<!-- Radio -->
 
 						<div class="col-sm-4 col-md-4 col-lg-4">
-							<input type="radio" name="password" value="knwon" id="password_known" checked="checked" onclick="printPasswordForm()"/>
-							<label for="knwon"><c:out
+							<input type="radio" name="password" value="known" id="password_known" checked="checked" onclick="printPasswordForm()"/>
+							<label for="known"><c:out
 									value="${language.getLanguageValue('/site/tools/$tool/options/password-group/mdp-connu')}" /></label>
 							<br> <input type="radio" name="password" value="dictionary"
 								id="password_radio_dictionary" onclick="printPasswordForm()"/> <label for="dictionary"><c:out
@@ -142,11 +142,11 @@
 
 						<!-- Password -->
 
-						<div class="col-sm-6 col-md-6 col-lg-6" id="password">
+						<div id="password">
 							<label for="target" data-toggle="tooltip"
 								title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/cible')}" />"
 								data-placement="right"> <c:out
-									value="${language.getLanguageValue('/site/tools/$tool/options/cible')}" />
+									value="${language.getLanguageValue('/site/tools/$tool/options/password-group/mdp')}" />
 							</label>
 							<div class="input-group">
 								<input type="text" class="form-control"
@@ -163,13 +163,13 @@
 						<!-- Dictionnaire -->
 
 						<div id="password_dictionary" class='hidden'>
-							<label for="scan_type" data-toggle="tooltip"
+							<label for="password_dico_type" data-toggle="tooltip"
 								title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/dico')}" />"
 								data-placement="right"> <c:out
 									value="${language.getLanguageValue('/site/tools/$tool/options/dictionnaire/nom')}" />
 							</label>
 							<div class="input-group col-lg-6 col-mg-6 col-sm-6">
-								<select class="form-control" name="scan_type" id="scan_type"
+								<select class="form-control" name="password_dico_type" id="password_dico_type"
 									onchange="updateCommand()" autofocus required>
 									<option value="big-dico" id="big-dico" title="dictionary"><c:out
 											value="${language.getLanguageValue('/site/tools/$tool/options/dictionnaire/grand-dico')}" /></option>
@@ -192,7 +192,11 @@
 
 					<div class=command id=command data-toggle="tooltip"
 						title="C'est la ligne qui sera envoyée dans le terminal de notre système Kali Linux"
-						data-placement="bottom">> hydra</div>
+						data-placement="bottom">
+						
+						> hydra
+						
+					</div>
 
 					<div style="text-align: right">
 						<br>

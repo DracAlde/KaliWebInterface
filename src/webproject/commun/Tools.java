@@ -3,7 +3,6 @@ package webproject.commun;
 import java.util.Enumeration;
 import java.util.LinkedList;
 import java.util.Locale;
-import java.util.Map;
 import java.util.Properties;
 import java.util.regex.Pattern;
 

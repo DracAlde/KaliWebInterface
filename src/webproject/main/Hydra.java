@@ -8,9 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import webproject.commun.Command;
 import webproject.commun.Constants;
+import webproject.commun.History;
 import webproject.commun.Language;
 import webproject.commun.Tools;
+import webproject.form.HydraForm;
 
 public class Hydra extends HttpServlet{
 	
@@ -31,6 +34,27 @@ public class Hydra extends HttpServlet{
 		language.setCurrentTool(Constants.TOOL_HYDRA);
 		session.setAttribute(Constants.SESS_LANG, language);
 		
+		this.getServletContext().getRequestDispatcher(Constants.VIEW_HYDRA).forward(request, response);
+	}
+	
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		Tools.initiatePath(request);
+
+		HydraForm form = new HydraForm();
+
+		Command command = form.validateHydra(request);
+
+		HttpSession session = request.getSession();
+		History history = (History) session.getAttribute(Constants.ATT_SESSION_HISTORY);
+
+		if( history == null){
+			history = new History();
+		}
+
+		history.addCommand(command);
+		session.setAttribute(Constants.ATT_SESSION_HISTORY, history);
+
+		request.setAttribute(Constants.ATT_FORM,form);
 		this.getServletContext().getRequestDispatcher(Constants.VIEW_HYDRA).forward(request, response);
 	}
 }
