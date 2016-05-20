@@ -186,7 +186,7 @@
 						</div>
 					</fieldset>
 
-					<br><br><br><br><br><br><br><br><br>
+					<br><br><br><br><br><br><br>
 					
 					<!-- Command -->
 
@@ -247,23 +247,23 @@
 				}
 
 				if(account_radio_name.checked){
-					if (account_name.value.length == 0) {
+					if (account_name_field.value.length == 0) {
 						account_opt = '-l &lt;account name&gt;';
 					} else {
-						account_opt = '-l ' + account_name.value;
+						account_opt = '-l ' + account_name_field.value;
 					}
 				}else if(account_radio_dico.checked){
-					account_opt = '-L dictionary path ';
+					account_opt = '-L [dictionary path]';
 				}
 
 				if(password_radio_name.checked){
-					if (password.value.length == 0) {
+					if (password_field.value.length == 0) {
 						password_opt = '-p &lt;password&gt;';
 					} else {
-						password_opt = '-p ' + password.value;
+						password_opt = '-p ' + password_field.value;
 					}
 				}else if(password_radio_dico.checked){
-					password_opt = '-P dictionary path ';
+					password_opt = '-P [dictionary path]';
 				}
 				
 				command_string = '> hydra ' + target_txt + ' ' + account_opt + ' ' + password_opt;
