@@ -54,37 +54,37 @@
 	
 	<servlet-mapping>
 		<servlet-name>Nikto</servlet-name>
-		<url-pattern>/nikto.html</url-pattern>
+		<url-pattern>/nikto</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>
 		<servlet-name>Zenmap</servlet-name>
-		<url-pattern>/zenmap.html</url-pattern>
+		<url-pattern>/zenmap</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>
 		<servlet-name>TheHarvester</servlet-name>
-		<url-pattern>/theharvester.html</url-pattern>
+		<url-pattern>/theharvester</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>
 		<servlet-name>TlsSled</servlet-name>
-		<url-pattern>/tlssled.html</url-pattern>
+		<url-pattern>/tlssled</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>
 		<servlet-name>Hydra</servlet-name>
-		<url-pattern>/hydra.html</url-pattern>
+		<url-pattern>/hydra</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>
 		<servlet-name>DnsRecon</servlet-name>
-		<url-pattern>/dnsrecon.html</url-pattern>
+		<url-pattern>/dnsrecon</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>
 		<servlet-name>ChangeLanguage</servlet-name>
-		<url-pattern>/changelanguage.html</url-pattern>
+		<url-pattern>/changelanguage</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>

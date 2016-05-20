@@ -31,12 +31,12 @@ public class Constants {
 	 * URL address constants
 	 */
 	public static final String ADDR_HOME         	= "/";
-	public static final String ADDR_NIKTO        	= "/nikto.html";
-	public static final String ADDR_ZENMAP       	= "/zenmap.html";
-	public static final String ADDR_THEHARVESTER 	= "/theharvester.html";
-	public static final String ADDR_TLS_SLED     	= "/tlssled.html";
-	public static final String ADDR_HYDRA        	= "/hydra.html";
-	public static final String ADDR_DNS_RECON    	= "/dnsrecon.html";
+	public static final String ADDR_NIKTO        	= "/nikto";
+	public static final String ADDR_ZENMAP       	= "/zenmap";
+	public static final String ADDR_THEHARVESTER 	= "/theharvester";
+	public static final String ADDR_TLS_SLED     	= "/tlssled";
+	public static final String ADDR_HYDRA        	= "/hydra";
+	public static final String ADDR_DNS_RECON    	= "/dnsrecon";
 	
 	/**
 	 * Parameters name constants

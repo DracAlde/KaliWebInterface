@@ -71,38 +71,38 @@
 
 			<li role="separator" class="separator"></li>
 
-			<a href="<c:url value="/nikto.html"></c:url>">
+			<a href="<c:url value="/nikto"></c:url>">
 				<li><img src="img/nikto.png"> <c:out
 						value="${language.getLanguageValue('default', '/default/nav/nikto')}" /></li>
 			</a>
 
-			<a href="<c:url value="/zenmap.html"></c:url>">
+			<a href="<c:url value="/zenmap"></c:url>">
 				<li><i class="fa fa-eye fa-lg"></i> <c:out
 						value="${language.getLanguageValue('default', '/default/nav/zenmap')}" /></li>
 			</a>
 
-			<a href="<c:url value="/theharvester.html"></c:url>">
+			<a href="<c:url value="/theharvester"></c:url>">
 				<li><img src="img/harvester.png"> <c:out
 						value="${language.getLanguageValue('default', '/default/nav/the-harvester')}" />
 			</li>
 			</a>
 
-			<a href="<c:url value="/tlssled.html"></c:url>">
+			<a href="<c:url value="/tlssled"></c:url>">
 				<li><i class="fa fa-lock fa-lg"></i> <c:out
 						value="${language.getLanguageValue('default', '/default/nav/tls-sled')}" /></li>
 			</a>
 
-			<a href="<c:url value="/hydra.html"></c:url>">
+			<a href="<c:url value="/hydra"></c:url>">
 				<li><img src="img/hydra.png"> <c:out
 						value="${language.getLanguageValue('default', '/default/nav/hydra')}" /></li>
 			</a>
 
-			<a href="<c:url value="/dnsrecon.html"></c:url>">
+			<a href="<c:url value="/dnsrecon"></c:url>">
 				<li><img src="img/dnsrecon.png"> <c:out
 						value="${language.getLanguageValue('default', '/default/nav/dns-recon')}" /></li>
 			</a>
 
-			<a href="<c:url value="/dnsrecon.html"></c:url>">
+			<a href="<c:url value="/dnsrecon"></c:url>">
 				<li><i class="fa fa-terminal fa-lg"></i> <c:out
 						value="${language.getLanguageValue('default', '/default/nav/terminal')}" /></li>
 			</a>
@@ -132,7 +132,7 @@
 <script type="text/javascript">
 
 function updateLang(){
-	window.document.location.href = "/WebProject/changelanguage.html";
+	window.document.location.href = "/WebProject/changelanguage";
 }
 </script>
 
