@@ -32,7 +32,7 @@
 				</h3>
 					
 				</div>
-			<form method="POST" action="<c:url value="/zenmap.html" ></c:url>">
+			<form method="POST" action="<c:url value="/zenmap" ></c:url>">
 					<div>
 						<label for="hostname" data-toggle="tooltip"
 							title="<c:out value="${language.getLanguageValue('zenmap', '/zenmap/aide/cible')}" />"

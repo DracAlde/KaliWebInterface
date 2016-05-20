@@ -32,7 +32,7 @@
 				</h3>
 					
 				</div>
-			<form method="POST" action="<c:url value="/theharvester.html" ></c:url>">
+			<form method="POST" action="<c:url value="/theharvester" ></c:url>">
 					<div>
 						<label for="domain" data-toggle="tooltip"
 							title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/domaine')}" />"

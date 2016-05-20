@@ -32,7 +32,7 @@
 				</h3>
 					
 				</div>
-			<form method="POST" action="<c:url value="/tlssled.html" ></c:url>">
+			<form method="POST" action="<c:url value="/tlssled" ></c:url>">
 				<div>
 					<label 	for="hostname" 
 							data-toggle="tooltip" 

@@ -6,7 +6,7 @@
 <div id="desc" class="hidden">
 	<div class="panel panel-default">
 		<div class="panel-body" style="height: 150px; overflow: auto;">
-			<c:out value="${language.getLanguageValue('$tool', '/$tools/desc-tool')}" />
+			<c:out value="${language.getLanguageValue('$tool', '/$tool/desc-tool')}" />
 		</div>
 	</div>
 </div>

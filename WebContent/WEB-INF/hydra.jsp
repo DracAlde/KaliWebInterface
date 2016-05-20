@@ -32,7 +32,7 @@
 					</h3>
 
 				</div>
-				<form method="POST" action="<c:url value="/hydra.html" ></c:url>">
+				<form method="POST" action="<c:url value="/hydra" ></c:url>">
 
 					<!-- Target -->
 
