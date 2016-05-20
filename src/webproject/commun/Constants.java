@@ -8,8 +8,6 @@ package webproject.commun;
 
 public class Constants {
 	
-	public static final String URL_REDIRECT      	= "http://localhost:8080/WebProject";
-	
 	/**
 	 * JSP path constants
 	 */

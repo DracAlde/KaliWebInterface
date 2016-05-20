@@ -19,6 +19,9 @@ public class ChangeLanguage extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		StringBuffer bufURL = null;
+		String url = "";
+		
 		Tools.initiatePath(request);
 		
 		HttpSession session = request.getSession();
@@ -32,30 +35,34 @@ public class ChangeLanguage extends HttpServlet{
 		language.switchLanguage();
 		session.setAttribute("language", language);
 		
+		bufURL = request.getRequestURL();
+		
+		url = bufURL.substring(0, bufURL.lastIndexOf("/"));
+		
 		if(null == language.getCurrentToolLanguage()){
 			this.getServletContext().getRequestDispatcher(Constants.VIEW_HOME).forward(request, response);
 		}else{
 			switch(language.getCurrentToolLanguage()){
 			case Constants.TOOL_TLS_SLED:
-				response.sendRedirect(Constants.URL_REDIRECT + Constants.ADDR_TLS_SLED);
+				response.sendRedirect(url + Constants.ADDR_TLS_SLED);
 				break;
 			case Constants.TOOL_DNS_RECON:
-				response.sendRedirect(Constants.URL_REDIRECT + Constants.ADDR_DNS_RECON);
+				response.sendRedirect(url + Constants.ADDR_DNS_RECON);
 				break;
 			case Constants.TOOL_HYDRA:
-				response.sendRedirect(Constants.URL_REDIRECT + Constants.ADDR_HYDRA);
+				response.sendRedirect(url + Constants.ADDR_HYDRA);
 				break;
 			case Constants.TOOL_NIKTO:
-				response.sendRedirect(Constants.URL_REDIRECT + Constants.ADDR_NIKTO);
+				response.sendRedirect(url + Constants.ADDR_NIKTO);
 				break;
 			case Constants.TOOL_THE_HARVESTER:
-				response.sendRedirect(Constants.URL_REDIRECT + Constants.ADDR_THEHARVESTER);
+				response.sendRedirect(url + Constants.ADDR_THEHARVESTER);
 				break;
 			case Constants.TOOL_ZENMAP:
-				response.sendRedirect(Constants.URL_REDIRECT + Constants.ADDR_ZENMAP);
+				response.sendRedirect(url + Constants.ADDR_ZENMAP);
 				break;
 			default:
-				response.sendRedirect(Constants.URL_REDIRECT + Constants.ADDR_HOME);
+				response.sendRedirect(url + Constants.ADDR_HOME);
 			}
 		}
 	}
