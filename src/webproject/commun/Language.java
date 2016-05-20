@@ -60,7 +60,7 @@ public class Language {
 		String langPath = Constants.LANG_PATH_FR;
 		String longPath = Home.path;
 
-		longPath += "lang/" + folder;
+		longPath += "/lang/" + folder;
 
 		if ("en".equals(language))
 		{

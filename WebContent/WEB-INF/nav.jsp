@@ -132,7 +132,7 @@
 <script type="text/javascript">
 
 function updateLang(){
-	window.document.location.href = "/WebProject/changelanguage";
+		document.location.href = "changelanguage";
 }
 </script>
 
