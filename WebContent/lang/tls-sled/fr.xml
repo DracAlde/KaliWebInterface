@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tls-sled>
+	<desc-tool>Description de tsl sled, quand il est apparu, qui l'a créé,
+		à quoi il sert, quel contexte on l'utilise ... =) On peut aussi mettre
+		la description dans l'info-bulle du point d'interrogration près du
+		titre !</desc-tool>
+	<options>
+		<cible>Cible ou adresse IP</cible>
+		<port>Port</port>
+	</options>
+	<aide>
+		<cible>Veuillez indiquer l'adresse IP (192.168.0.1) ou le nom de la
+			machine à cibler (target.com)</cible>
+		<port>Veuillez indiquer le port à cibler (compris entre 0 et 65535).
+			Le port sélectionné par défaut est le 443</port>
+	</aide>
+	<actions>
+		<bouton-envoyer>Envoyer</bouton-envoyer>
+	</actions>
+</tls-sled>

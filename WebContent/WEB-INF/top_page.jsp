@@ -7,7 +7,7 @@
 <div class="panel-body">
 	<ul class="nav nav-pills">
 		<li id="history_btn" role="presentation" class="active"
-			onclick="changeHead(this)"><a> <c:out value="${language.getLanguageValue('/site/tools/$tool/historique')}" />
+			onclick="changeHead(this)"><a> <c:out value="${language.getLanguageValue('default', '/default/historique')}" />
 				<span class="badge"> <c:out
 						value="${history['history'].size()}" /> <c:if
 						test="${empty history}">
@@ -17,7 +17,7 @@
 		</a></li>
 
 		<li id="desc_btn" role="presentation" onclick="changeHead(this)">
-			<a> <c:out value="${language.getLanguageValue('/site/tools/$tool/description')}" />
+			<a> <c:out value="${language.getLanguageValue('default', '/default/description')}" />
 		</a>
 		</li>
 	</ul>

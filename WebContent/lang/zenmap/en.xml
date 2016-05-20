@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zenmap>
+	<desc-tool>Description de zenmap, quand il est apparu, qui l'a créé, à
+		quoi il sert, quel contexte on l'utilise ... =) On peut aussi mettre
+		la description dans l'info-bulle du point d'interrogration près du
+		titre !</desc-tool>
+	<options>
+		<cible>Target or IP address</cible>
+		<scan-type>
+			<nom>Kind of scan</nom>
+			<intense>Intense</intense>
+			<intense-udp>Intense UDP</intense-udp>
+			<intense-tcp>Intense TCP</intense-tcp>
+			<intense-ping>Intense without Ping</intense-ping>
+			<rapide>Fast</rapide>
+			<rapide-plus>Fast plus</rapide-plus>
+			<ping>Ping</ping>
+			<traceroute>Traceroute</traceroute>
+			<ordinaire>Ordinary</ordinaire>
+			<complet>Full</complet>
+		</scan-type>
+	</options>
+	<aide>
+		<cible>Precise the IP address (192.168.0.1) or target hostname
+			(target.com)</cible>
+		<scan-type>Select the scan type wanted within following ones
+		</scan-type>
+	</aide>
+	<actions>
+		<bouton-envoyer>Send</bouton-envoyer>
+	</actions>
+</zenmap>

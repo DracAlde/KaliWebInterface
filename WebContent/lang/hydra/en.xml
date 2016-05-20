@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hydra>
+	<desc-tool>Description d'hydra, quand il est apparu, qui l'a créé, à
+		quoi il sert, quel contexte on l'utilise ... =) On peut aussi mettre
+		la description dans l'info-bulle du point d'interrogration près du
+		titre !</desc-tool>
+	<options>
+		<cible>Target or IP address</cible>
+		<account-group>
+			<nom>Account</nom>
+			<compte-connu>Known account</compte-connu>
+			<dictionnaire>Dictionary</dictionnaire>
+			<nom-compte>Account name</nom-compte>
+		</account-group>
+		<password-group>
+			<nom>Password</nom>
+			<mdp-connu>Known password</mdp-connu>
+			<dictionnaire>Dictionary</dictionnaire>
+			<mdp>Password</mdp>
+		</password-group>
+		<dictionnaire>
+			<nom>Dictionary</nom>
+			<grand-dico>Big dictionary</grand-dico>
+			<dico>Medium dictionary</dico>
+			<petit-dico>Small dictionary</petit-dico>
+		</dictionnaire>
+	</options>
+	<aide>
+		<cible>Precise the IP address (192.168.0.1) or target hostname
+			(target.com)</cible>
+		<dico>Select the dictionary size</dico>
+	</aide>
+	<actions>
+		<bouton-envoyer>Send</bouton-envoyer>
+	</actions>
+</hydra>

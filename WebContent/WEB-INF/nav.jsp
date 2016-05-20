@@ -66,45 +66,45 @@
 
 			<a href="<c:url value="/"></c:url>">
 				<li><i class="fa fa-dashboard fa-lg"></i><strong><c:out
-							value="${language.getLanguageValue('/site/nav/accueil')}" /></li>
+							value="${language.getLanguageValue('default', '/default/nav/accueil')}" /></li>
 			</a>
 
 			<li role="separator" class="separator"></li>
 
 			<a href="<c:url value="/nikto.html"></c:url>">
 				<li><img src="img/nikto.png"> <c:out
-						value="${language.getLanguageValue('/site/nav/nikto')}" /></li>
+						value="${language.getLanguageValue('default', '/default/nav/nikto')}" /></li>
 			</a>
 
 			<a href="<c:url value="/zenmap.html"></c:url>">
 				<li><i class="fa fa-eye fa-lg"></i> <c:out
-						value="${language.getLanguageValue('/site/nav/zenmap')}" /></li>
+						value="${language.getLanguageValue('default', '/default/nav/zenmap')}" /></li>
 			</a>
 
 			<a href="<c:url value="/theharvester.html"></c:url>">
 				<li><img src="img/harvester.png"> <c:out
-						value="${language.getLanguageValue('/site/nav/the-harvester')}" />
+						value="${language.getLanguageValue('default', '/default/nav/the-harvester')}" />
 			</li>
 			</a>
 
 			<a href="<c:url value="/tlssled.html"></c:url>">
 				<li><i class="fa fa-lock fa-lg"></i> <c:out
-						value="${language.getLanguageValue('/site/nav/tls-sled')}" /></li>
+						value="${language.getLanguageValue('default', '/default/nav/tls-sled')}" /></li>
 			</a>
 
 			<a href="<c:url value="/hydra.html"></c:url>">
 				<li><img src="img/hydra.png"> <c:out
-						value="${language.getLanguageValue('/site/nav/hydra')}" /></li>
+						value="${language.getLanguageValue('default', '/default/nav/hydra')}" /></li>
 			</a>
 
 			<a href="<c:url value="/dnsrecon.html"></c:url>">
 				<li><img src="img/dnsrecon.png"> <c:out
-						value="${language.getLanguageValue('/site/nav/dns-recon')}" /></li>
+						value="${language.getLanguageValue('default', '/default/nav/dns-recon')}" /></li>
 			</a>
 
 			<a href="<c:url value="/dnsrecon.html"></c:url>">
 				<li><i class="fa fa-terminal fa-lg"></i> <c:out
-						value="${language.getLanguageValue('/site/nav/terminal')}" /></li>
+						value="${language.getLanguageValue('default', '/default/nav/terminal')}" /></li>
 			</a>
 
 <%-- 			<a href="<c:url value="/changelanguage.html"></c:url>">

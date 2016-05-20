@@ -17,7 +17,7 @@
 			
 				<h3 class=col-lg-12>
 					<span	data-toggle="tooltip" 
-							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/desc-tool')}" />
+							title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/desc-tool')}" />
 							data-placement="right">
 							
 						TLS Sled
@@ -26,7 +26,7 @@
 					
 					<div class="help-picture"
 						data-toggle="tooltip" 
-						title="<c:out value="${language.getLanguageValue('/site/tools/$tool/desc-tool')}" />"
+						title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/desc-tool')}" />"
 						data-placement="left">
 					</div>
 				</h3>
@@ -36,15 +36,15 @@
 				<div>
 					<label 	for="hostname" 
 							data-toggle="tooltip" 
-							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/cible')}" />"
+							title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/cible')}" />"
 							data-placement="right">
-							<c:out value="${language.getLanguageValue('/site/tools/$tool/options/cible')}" />
+							<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/options/cible')}" />
 					</label>
 					<div class="input-group col-lg-2 col-mg-4 col-sm-6">
 					  	<input type="text" class="form-control" placeholder="Hostname" name="hostname" id="hostname" onkeyup="updateCommand()" onselect="updateCommand()" autofocus required>
 				    	<span 	class="input-group-addon" id="basic-addon2"
 				    			data-toggle="tooltip" 
-								title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/cible')}" />"
+								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/cible')}" />"
 								data-placement="bottom">
 							<i class="fa fa-question fa-lg"></i>
 						</span>
@@ -53,15 +53,15 @@
 					
 					<label 	for="port"
 							data-toggle="tooltip" 
-							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/port')}" />"
+							title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/port')}" />"
 							data-placement="right">
-							<c:out value="${language.getLanguageValue('/site/tools/$tool/options/port')}" />
+							<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/options/port')}" />
 					</label>
 					<div class="input-group col-lg-2">
 						<input type="number"  class="form-control" placeholder="Port" name="port" id="port" value="443" onkeyup="updateCommand()" onchange="updateCommand()" required>
 						<span 	class="input-group-addon" id="basic-addon2"
 					    		data-toggle="tooltip" 
-								title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/port')}" />"
+								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/port')}" />"
 								data-placement="bottom">
 							<i class="fa fa-question fa-lg"></i>
 						</span>
@@ -81,7 +81,7 @@
 				<div style="text-align:right">
 					<br>
 					<button type="submit" class="btn btn-default" aria-label="Right Align">
-						<c:out value="${language.getLanguageValue('/site/tools/$tool/actions/bouton-envoyer')}" />
+						<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/actions/bouton-envoyer')}" />
 					</button>
 				</div>
 				

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<the-harvester>
+	<desc-tool>Description de The Harvester, quand il est apparu, qui l'a
+		créé, à quoi il sert, quel contexte on l'utilise ... =) On peut aussi
+		mettre la description dans l'info-bulle du point d'interrogration près
+		du titre !</desc-tool>
+	<options>
+		<domaine>Domaine ou nom de société</domaine>
+		<info-source>
+			<nom>Source d'information</nom>
+			<group-search-engine>Moteur de recherche</group-search-engine>
+			<google>Google</google>
+			<google-cse>Google CSE</google-cse>
+			<bing>Bing</bing>
+			<bing-api>Bing API</bing-api>
+			<group-social-network>Social network</group-social-network>
+			<pgp>PGP key servers</pgp>
+			<linkedin>Linkedin</linkedin>
+			<google-profiles>Google profiles</google-profiles>
+			<jigsaw>Jigsaw</jigsaw>
+			<twitter>Twitter</twitter>
+			<google-plus>Google Plus</google-plus>
+			<select-all>Select all</select-all>
+			<group-other>Other</group-other>
+		</info-source>
+		<options>
+			<nom>Options</nom>
+			<verify>Verifer le nom de l'hôte</verify>
+			<reverse-dns>DNS inversé</reverse-dns>
+			<tld>Découverte TLD</tld>
+			<shodan>Base de données SHODAN</shodan>
+			<start>Affiche le résultat à partir de X</start>
+			<use-dns>Serveur DNS</use-dns>
+			<limit>Fixer la limite des résultats</limit>
+		</options>
+	</options>
+	<aide>
+		<domaine>Préciser le domaine ou le nom de société sur lequel chercher
+			(ex : www.google.com ou Google)</domaine>
+		<info-source>Définir la source d'information à partir de laquelle on
+			souhaite que l'outils effectue la recherche</info-source>
+		<options>Options associées à la commande The Harvester (non requis)
+		</options>
+		<verify>Vérification du hostname à l'aide d'une recherche DNS et
+			recherche de domaines virtuels</verify>
+		<reverse-dns>Effectuer une recherche DNS inverse sur toutes les
+			adresses découvertes</reverse-dns>
+		<tld>Recherche DNS sur les TLD (Top Level Domains)</tld>
+		<shodan>Utiliser la base de données SHODAN pour trouver des
+			informations sur les hôtes découverts</shodan>
+		<start>Afficher le résultat à partir de X (par défaut 0)</start>
+		<use-dns>Utiliser un serveur DNS sécifique (adresse IP ou URL)
+		</use-dns>
+		<limit>Limiter le nombre de résultat à afficher</limit>
+	</aide>
+	<actions>
+		<bouton-envoyer>Envoyer</bouton-envoyer>
+	</actions>
+</the-harvester>

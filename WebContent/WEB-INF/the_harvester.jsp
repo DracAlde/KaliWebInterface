@@ -17,7 +17,7 @@
 			
 				<h3 class=col-lg-12>
 					<span	data-toggle="tooltip" 
-							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/desc-tool')}"/>"
+							title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/desc-tool')}"/>"
 							data-placement="right">
 							
 						The Harvester
@@ -26,7 +26,7 @@
 					
 					<div class="help-picture"
 						data-toggle="tooltip" 
-						title="<c:out value="${language.getLanguageValue('/site/tools/$tool/desc-tool')}" />"
+						title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/desc-tool')}" />"
 						data-placement="left">
 					</div>
 				</h3>
@@ -35,8 +35,8 @@
 			<form method="POST" action="<c:url value="/theharvester.html" ></c:url>">
 					<div>
 						<label for="domain" data-toggle="tooltip"
-							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/domaine')}" />"
-							data-placement="right"> <c:out value="${language.getLanguageValue('/site/tools/$tool/options/domaine')}" />
+							title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/domaine')}" />"
+							data-placement="right"> <c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/domaine')}" />
 						</label>
 						<div class="input-group col-lg-2 col-mg-4 col-sm-6">
 							<input type="text" class="form-control" placeholder="google.com"
@@ -45,7 +45,7 @@
 							<span
 								class="input-group-addon" id="basic-addon2"
 								data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/domaine')}" />"
+								title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/domaine')}" />"
 								data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
 							</span>
 						</div>
@@ -55,15 +55,15 @@
 
 					<div>
 						<label for="info-source" data-toggle="tooltip"
-							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/info-source')}" />"
-							data-placement="right"> <c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/nom')}" />
+							title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/info-source')}" />"
+							data-placement="right"> <c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/nom')}" />
 						</label>
 						
 						<div class="input-group col-lg-4 col-mg-4 col-sm-6 btn-group">
 							<span
 								class="input-group-addon" id="basic-addon2"
 								data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/cible')}" />"
+								title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/cible')}" />"
 								data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
 							</span>
 							
@@ -72,21 +72,21 @@
 							</div>
 							
 							<select name="info-source" class="glyphicon" id="info-source" onchange="updateCommand()" autofocus multiple="multiple">
-								<optgroup label="${language.getLanguageValue('/site/tools/$tool/options/info-source/group-search-engine')}">
-									<option value="google" id="google"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/google')}" /></option>
-									<option value="google-cse" id="google-cse"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/google-cse')}" /></option>
-									<option value="bing" id="bing"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/bing')}" /></option>
-									<option value="bing-api" id="bing-api"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/bing-api')}" /></option>
+								<optgroup label="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/group-search-engine')}">
+									<option value="google" id="google"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/google')}" /></option>
+									<option value="google-cse" id="google-cse"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/google-cse')}" /></option>
+									<option value="bing" id="bing"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/bing')}" /></option>
+									<option value="bing-api" id="bing-api"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/bing-api')}" /></option>
 								</optgroup>
-								<optgroup label="${language.getLanguageValue('/site/tools/$tool/options/info-source/group-social-network')}">
-									<option value="linkedin" id="linkedin"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/linkedin')}" /></option>
-									<option value="google-profiles" id="google-profiles"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/google-profiles')}" /></option>
-									<option value="jigsaw" id="jigsaw"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/jigsaw')}" /></option>
-									<option value="twitter" id="twitter"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/twitter')}" /></option>
-									<option value="google-plus" id="google-plus"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/google-plus')}" /></option>
+								<optgroup label="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/group-social-network')}">
+									<option value="linkedin" id="linkedin"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/linkedin')}" /></option>
+									<option value="google-profiles" id="google-profiles"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/google-profiles')}" /></option>
+									<option value="jigsaw" id="jigsaw"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/jigsaw')}" /></option>
+									<option value="twitter" id="twitter"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/twitter')}" /></option>
+									<option value="google-plus" id="google-plus"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/google-plus')}" /></option>
 								</optgroup>
-								<optgroup label="${language.getLanguageValue('/site/tools/$tool/options/info-source/group-other')}">
-									<option value="pgp" id="pgp"><c:out value="${language.getLanguageValue('/site/tools/$tool/options/info-source/pgp')}" /></option>
+								<optgroup label="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/group-other')}">
+									<option value="pgp" id="pgp"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/pgp')}" /></option>
 								</optgroup>
 							</select>
 						</div>
@@ -94,39 +94,39 @@
 						<div>
 
 							<br> <label for="options" data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/options')}" />"
+								title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/options')}" />"
 								data-placement="right"> <c:out
-									value="${language.getLanguageValue('/site/tools/$tool/options/options/nom')}" />
+									value="${language.getLanguageValue('the-harvester', '/the-harvester/options/options/nom')}" />
 							</label>
 
 							<div class="input-group col-lg-10 col-md-10 col-sm-10 btn-group">
 
 								<div class="col-lg-2 col-md-2 col-sm-2">
 								<label data-toggle="tooltip"
-									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/verify')}" />"
+									title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/verify')}" />"
 									data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-									type="checkbox" id="verify-hostname" name="verify-hostname" value="-v">${language.getLanguageValue('/site/tools/$tool/options/options/verify')}</label>
+									type="checkbox" id="verify-hostname" name="verify-hostname" value="-v">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/verify')}</label>
 									</div>
 									
 								<div class="col-lg-2 col-md-2 col-sm-2">
 								<label data-toggle="tooltip"
-									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/reverse-dns')}" />"
+									title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/reverse-dns')}" />"
 									data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-									type="checkbox" id="reverse-dns" name="reverse-dns" value="-n">${language.getLanguageValue('/site/tools/$tool/options/options/reverse-dns')}</label>
+									type="checkbox" id="reverse-dns" name="reverse-dns" value="-n">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/reverse-dns')}</label>
 									</div>
 									
 								<div class="col-lg-2 col-md-2 col-sm-2">
 								<label data-toggle="tooltip"
-									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/tld')}" />"
+									title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/tld')}" />"
 									data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-									type="checkbox" id="tld-discovery" name="tld-discovery" value="-t">${language.getLanguageValue('/site/tools/$tool/options/options/tld')}</label>
+									type="checkbox" id="tld-discovery" name="tld-discovery" value="-t">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/tld')}</label>
 									</div>
 									
 								<div class="col-lg-2 col-md-2 col-sm-2">
 								<label data-toggle="tooltip"
-									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/shodan')}" />"
+									title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/shodan')}" />"
 									data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-									type="checkbox" id="shodan" name="shodan" value="-h">${language.getLanguageValue('/site/tools/$tool/options/options/shodan')}</label>
+									type="checkbox" id="shodan" name="shodan" value="-h">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/shodan')}</label>
 									</div>
 
 														
@@ -134,7 +134,7 @@
 								
 								<div class="checkbox input-group">
 									<label>
-									<input type="checkbox" id="startN-check" name="startN-check" onclick="updateCommand()">${language.getLanguageValue('/site/tools/$tool/options/options/start')}</label>
+									<input type="checkbox" id="startN-check" name="startN-check" onclick="updateCommand()">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/start')}</label>
 									<div class="input-group" id="start-result" style="display: none;">
 										<input type="number" class="form-control" min="0" max="10000" 
 												placeholder="0" name="start-number" id="start-number"
@@ -142,7 +142,7 @@
 												> 
 												<span class="input-group-addon"
 												id="basic-addon2" data-toggle="tooltip"
-												title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/start')}" />"
+												title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/start')}" />"
 												data-placement="bottom"> <i
 												class="fa fa-question fa-lg"></i>
 											</span>
@@ -150,7 +150,7 @@
 								</div>
 									
 								<div class="checkbox input-group">
-									<label><input type="checkbox" id="use-dns" name="use-dns" onclick="updateCommand()">${language.getLanguageValue('/site/tools/$tool/options/options/use-dns')}</label>
+									<label><input type="checkbox" id="use-dns" name="use-dns" onclick="updateCommand()">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/use-dns')}</label>
 									<div class="input-group" id="dns-name" style="display: none;">
 										<input type="text" class="form-control" placeholder="my-dns.com" 
 												name="dns" id="dns"
@@ -158,7 +158,7 @@
 												> 
 												<span class="input-group-addon"
 												id="basic-addon2" data-toggle="tooltip"
-												title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/use-dns')}" />"
+												title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/use-dns')}" />"
 												data-placement="bottom"> <i
 												class="fa fa-question fa-lg"></i>
 											</span>
@@ -166,7 +166,7 @@
 								</div>
 									
 								<div class="checkbox input-group">
-									<label><input type="checkbox" id="fix-limit" name="fix-limit" onclick="updateCommand()">${language.getLanguageValue('/site/tools/$tool/options/options/limit')}</label>
+									<label><input type="checkbox" id="fix-limit" name="fix-limit" onclick="updateCommand()">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/limit')}</label>
 									<div class="input-group" id="limit-number" style="display: none;">
 										<input type="number" class="form-control" min="0" max="10000" 
 												placeholder="100" name="max-number" id="max-number"
@@ -174,7 +174,7 @@
 												> 
 												<span class="input-group-addon"
 												id="basic-addon2" data-toggle="tooltip"
-												title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/limit')}" />"
+												title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/limit')}" />"
 												data-placement="bottom"> <i
 												class="fa fa-question fa-lg"></i>
 											</span>
@@ -198,7 +198,7 @@
 				<div style="text-align:right">
 					<br>
 					<button type="submit" class="btn btn-default" aria-label="Right Align">
-						<c:out value="${language.getLanguageValue('/site/tools/$tool/actions/bouton-envoyer')}" />
+						<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/actions/bouton-envoyer')}" />
 					</button>
 				</div>
 				

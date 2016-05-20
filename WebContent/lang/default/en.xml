@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<default>
+	<nav>
+		<accueil>Home</accueil>
+		<nikto>Nikto</nikto>
+		<zenmap>Zenmap</zenmap>
+		<the-harvester>The Harvester</the-harvester>
+		<tls-sled>TLS Sled</tls-sled>
+		<hydra>Hydra</hydra>
+		<dns-recon>DNS Recon</dns-recon>
+		<terminal>Terminal</terminal>
+	</nav>
+	<historique>History</historique>
+	<description>Description</description>
+</default>

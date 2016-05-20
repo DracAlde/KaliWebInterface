@@ -18,7 +18,7 @@
 
 					<h3 class=col-lg-12>
 						<span data-toggle="tooltip"
-							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/desc-tool')}" />
+							title="<c:out value="${language.getLanguageValue('hydra', '/hydra/desc-tool')}" />
 							data-placement="right">
 
 							Hydra 
@@ -26,7 +26,7 @@
 						</span>
 
 						<div class="help-picture" data-toggle="tooltip"
-							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/desc-tool')}" />"
+							title="<c:out value="${language.getLanguageValue('hydra', '/hydra/desc-tool')}" />"
 							data-placement="left">
 						</div>
 					</h3>
@@ -38,9 +38,9 @@
 
 					<div>
 						<label for="target" data-toggle="tooltip"
-							title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/cible')}" />"
+							title="<c:out value="${language.getLanguageValue('hydra', '/hydra/aide/cible')}" />"
 							data-placement="right"> <c:out
-								value="${language.getLanguageValue('/site/tools/$tool/options/cible')}" />
+								value="${language.getLanguageValue('hydra', '/hydra/options/cible')}" />
 						</label>
 						<div class="input-group col-lg-2 col-mg-4 col-sm-6">
 							<input type="text" class="form-control" placeholder="Target"
@@ -48,7 +48,7 @@
 								onselect="updateCommand()" autofocus required> <span
 								class="input-group-addon" id="basic-addon2"
 								data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/cible')}" />"
+								title="<c:out value="${language.getLanguageValue('hydra', '/hydra/aide/cible')}" />"
 								data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
 							</span>
 						</div>
@@ -60,7 +60,7 @@
 					<fieldset class="col-sm-6 col-md-6 col-lg-6">
 						<legend>
 							<c:out
-								value="${language.getLanguageValue('/site/tools/$tool/options/account-group/nom')}" />
+								value="${language.getLanguageValue('hydra', '/hydra/options/account-group/nom')}" />
 						</legend>
 
 						<!-- Radio -->
@@ -68,19 +68,19 @@
 						<div class="col-sm-4 col-md-4 col-lg-4">
 							<input type="radio" name="account" value="known" id="account_known" checked="checked" onclick="printAccountForm()"/> <label
 								for="known"><c:out
-									value="${language.getLanguageValue('/site/tools/$tool/options/account-group/compte-connu')}" /></label>
+									value="${language.getLanguageValue('hydra', '/hydra/options/account-group/compte-connu')}" /></label>
 							<br> <input type="radio" name="account" value="dictionary"
 								id="account_radio_dictionary" onclick="printAccountForm()"/> <label for="dictionary"><c:out
-									value="${language.getLanguageValue('/site/tools/$tool/options/account-group/dictionnaire')}" /></label>
+									value="${language.getLanguageValue('hydra', '/hydra/options/account-group/dictionnaire')}" /></label>
 						</div>
 
 						<!-- Nom du compte -->
 
 						<div class="col-sm-6 col-md-6 col-lg-6" id="account_name">
 							<label for="account_name_field" data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/cible')}" />"
+								title="<c:out value="${language.getLanguageValue('hydra', '/hydra/aide/cible')}" />"
 								data-placement="right"> <c:out
-									value="${language.getLanguageValue('/site/tools/$tool/options/account-group/nom-compte')}" />
+									value="${language.getLanguageValue('hydra', '/hydra/options/account-group/nom-compte')}" />
 							</label>
 							<div class="input-group">
 								<input type="text" class="form-control"
@@ -88,7 +88,7 @@
 									onkeyup="updateCommand()" onselect="updateCommand()" autofocus
 									required> <span class="input-group-addon"
 									id="basic-addon2" data-toggle="tooltip"
-									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/cible')}" />"
+									title="<c:out value="${language.getLanguageValue('hydra', '/hydra/aide/cible')}" />"
 									data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
 								</span>
 							</div>
@@ -98,22 +98,22 @@
 
 						<div id="account_dictionary" class='hidden'>
 							<label for="account_dico_type" data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/dico')}" />"
+								title="<c:out value="${language.getLanguageValue('hydra', '/hydra/aide/dico')}" />"
 								data-placement="right"> <c:out
-									value="${language.getLanguageValue('/site/tools/$tool/options/dictionnaire/nom')}" />
+									value="${language.getLanguageValue('hydra', '/hydra/options/dictionnaire/nom')}" />
 							</label>
 							<div class="input-group col-lg-6 col-mg-6 col-sm-6">
 								<select class="form-control" name="account_dico_type" id="account_dico_type"
 									onchange="updateCommand()" autofocus required>
 									<option value="big-dico" id="big-dico" title="dictionary"><c:out
-											value="${language.getLanguageValue('/site/tools/$tool/options/dictionnaire/grand-dico')}" /></option>
+											value="${language.getLanguageValue('hydra', '/hydra/options/dictionnaire/grand-dico')}" /></option>
 									<option value="med-dico" id="med-dico" title="dictionary"><c:out
-											value="${language.getLanguageValue('/site/tools/$tool/options/dictionnaire/dico')}" /></option>
+											value="${language.getLanguageValue('hydra', '/hydra/options/dictionnaire/dico')}" /></option>
 									<option value="small-dico" id="small-dico" title="dictionary"><c:out
-											value="${language.getLanguageValue('/site/tools/$tool/options/dictionnaire/petit-dico')}" /></option>
+											value="${language.getLanguageValue('hydra', '/hydra/options/dictionnaire/petit-dico')}" /></option>
 								</select> <span class="input-group-addon" id="basic-addon2"
 									data-toggle="tooltip"
-									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/cible')}" />"
+									title="<c:out value="${language.getLanguageValue('hydra', '/hydra/aide/cible')}" />"
 									data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
 								</span>
 							</div>
@@ -126,7 +126,7 @@
 					<fieldset class="col-sm-6 col-md-6 col-lg-6">
 						<legend>
 							<c:out
-								value="${language.getLanguageValue('/site/tools/$tool/options/password-group/nom')}" />
+								value="${language.getLanguageValue('hydra', '/hydra/options/password-group/nom')}" />
 						</legend>
 
 						<!-- Radio -->
@@ -134,19 +134,19 @@
 						<div class="col-sm-4 col-md-4 col-lg-4">
 							<input type="radio" name="password" value="known" id="password_known" checked="checked" onclick="printPasswordForm()"/>
 							<label for="known"><c:out
-									value="${language.getLanguageValue('/site/tools/$tool/options/password-group/mdp-connu')}" /></label>
+									value="${language.getLanguageValue('hydra', '/hydra/options/password-group/mdp-connu')}" /></label>
 							<br> <input type="radio" name="password" value="dictionary"
 								id="password_radio_dictionary" onclick="printPasswordForm()"/> <label for="dictionary"><c:out
-									value="${language.getLanguageValue('/site/tools/$tool/options/password-group/dictionnaire')}" /></label>
+									value="${language.getLanguageValue('hydra', '/hydra/options/password-group/dictionnaire')}" /></label>
 						</div>
 
 						<!-- Password -->
 
 						<div id="password">
 							<label for="target" data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/cible')}" />"
+								title="<c:out value="${language.getLanguageValue('hydra', '/hydra/aide/cible')}" />"
 								data-placement="right"> <c:out
-									value="${language.getLanguageValue('/site/tools/$tool/options/password-group/mdp')}" />
+									value="${language.getLanguageValue('hydra', '/hydra/options/password-group/mdp')}" />
 							</label>
 							<div class="input-group">
 								<input type="text" class="form-control"
@@ -154,7 +154,7 @@
 									onkeyup="updateCommand()" onselect="updateCommand()" autofocus
 									required> <span class="input-group-addon"
 									id="basic-addon2" data-toggle="tooltip"
-									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/cible')}" />"
+									title="<c:out value="${language.getLanguageValue('hydra', '/hydra/aide/cible')}" />"
 									data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
 								</span>
 							</div>
@@ -164,22 +164,22 @@
 
 						<div id="password_dictionary" class='hidden'>
 							<label for="password_dico_type" data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/dico')}" />"
+								title="<c:out value="${language.getLanguageValue('hydra', '/hydra/aide/dico')}" />"
 								data-placement="right"> <c:out
-									value="${language.getLanguageValue('/site/tools/$tool/options/dictionnaire/nom')}" />
+									value="${language.getLanguageValue('hydra', '/hydra/options/dictionnaire/nom')}" />
 							</label>
 							<div class="input-group col-lg-6 col-mg-6 col-sm-6">
 								<select class="form-control" name="password_dico_type" id="password_dico_type"
 									onchange="updateCommand()" autofocus required>
 									<option value="big-dico" id="big-dico" title="dictionary"><c:out
-											value="${language.getLanguageValue('/site/tools/$tool/options/dictionnaire/grand-dico')}" /></option>
+											value="${language.getLanguageValue('hydra', '/hydra/options/dictionnaire/grand-dico')}" /></option>
 									<option value="med-dico" id="med-dico" title="dictionary"><c:out
-											value="${language.getLanguageValue('/site/tools/$tool/options/dictionnaire/dico')}" /></option>
+											value="${language.getLanguageValue('hydra', '/hydra/options/dictionnaire/dico')}" /></option>
 									<option value="small-dico" id="small-dico" title="dictionary"><c:out
-											value="${language.getLanguageValue('/site/tools/$tool/options/dictionnaire/petit-dico')}" /></option>
+											value="${language.getLanguageValue('hydra', '/hydra/options/dictionnaire/petit-dico')}" /></option>
 								</select> <span class="input-group-addon" id="basic-addon2"
 									data-toggle="tooltip"
-									title="<c:out value="${language.getLanguageValue('/site/tools/$tool/aide/cible')}" />"
+									title="<c:out value="${language.getLanguageValue('hydra', '/hydra/aide/cible')}" />"
 									data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
 								</span>
 							</div>
@@ -203,7 +203,7 @@
 						<button type="submit" class="btn btn-default"
 							aria-label="Right Align">
 							<c:out
-								value="${language.getLanguageValue('/site/tools/$tool/actions/bouton-envoyer')}" />
+								value="${language.getLanguageValue('hydra', '/hydra/actions/bouton-envoyer')}" />
 						</button>
 					</div>
 

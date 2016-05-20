@@ -55,11 +55,12 @@ public class Language {
 	 * @return		The <b>absolute</b> path associated to the language selected 
 	 * by the user
 	 */
-	private String determineLanguagePath()
+	private String determineLanguagePath(String folder)
 	{
 		String langPath = Constants.LANG_PATH_FR;
 		String longPath = Home.path;
 
+		longPath += "lang/" + folder;
 
 		if ("en".equals(language))
 		{
@@ -95,16 +96,27 @@ public class Language {
 	 * @param valueAttribute		the value needed is the path to the node
 	 * @return						the value of the node attribute
 	 */
-	public String getLanguageValue(String valueAttribute)
+	public String getLanguageValue(String folder, String valueAttribute)
 	{
 		String result = "Constants -> MY_PROJETC_PATH";
-		String longPath = determineLanguagePath();
 		
-		if (valueAttribute.contains("$tool"))
+		if (folder.contains("$tool"))
 		{	
+			if(currentToolLanguage != null){
+				folder = currentToolLanguage;
+			}else{
+				result = "ERROR: no tool defined";
+				System.err.println(result);
+				return result;
+			}
+		}
+		
+		String longPath = determineLanguagePath(folder);
+		System.out.println(longPath);
+		
+		if(valueAttribute.contains("$tool")){
 			valueAttribute = getPathAssociatedTool(valueAttribute);
 		}
-				
 
 		try {
 						
@@ -120,7 +132,12 @@ public class Language {
 			XPath xPath =  XPathFactory.newInstance().newXPath();
 
 			NodeList nodeList = (NodeList) xPath.compile(valueAttribute).evaluate(document, XPathConstants.NODESET);
-			result = nodeList.item(0).getTextContent();
+			
+			if(nodeList.item(0) == null){
+				System.err.println("ERROR: " + valueAttribute + " unfound in " + inputFile.getName());
+			}else{
+				result = nodeList.item(0).getTextContent();
+			}
 
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
