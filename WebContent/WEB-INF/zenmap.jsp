@@ -113,8 +113,13 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="bootstrap/js/bootstrap.js"></script>
+		<!-- Include history script -->
+		<script src="js/history.js"></script>
 		
 		<script>
+		
+			history();
+			
 			var hostname = document.getElementById('hostname'),
 				scan_type = document.getElementById('scan_type'),
 				command = document.getElementById('command');

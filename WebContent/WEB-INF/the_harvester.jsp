@@ -216,10 +216,14 @@
 		<script type="text/javascript" src="bootstrap/js/angular.min.js"></script>
 		<script type="text/javascript" src="bootstrap/js/angularjs-multiple-select.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap-multiselect.js"></script>
+		<!-- Include history script -->
+		<script src="js/history.js"></script>
 		
 
 		<script>
-			
+		
+			history();
+		
 			/*
 			* That function permits to unselect all items selected in the 'info-source'
 			* multiselect box
@@ -236,7 +240,7 @@
 			* Print the input associated to the below checkboxes
 			* 
 			*/
-			$('#startN-check').click(function() {
+ 			$('#startN-check').click(function() {
 			    $("#start-result").toggle(this.checked);
 			});
 			
@@ -249,6 +253,22 @@
 			$('#fix-limit').click(function() {
 			    $("#limit-number").toggle(this.checked);
 			});
+			
+			function toogleCheckboxes()
+			{
+				if (document.getElementById('startN-check').checked)
+					{
+						$("#start-result").toggle(this.checked);
+					}
+				if (document.getElementById('use-dns').checked)
+					{
+						$("#dns-name").toggle(this.checked);
+					}
+				if (document.getElementById('fix-limit').checked)
+					{
+						$("#limit-number").toggle(this.checked);
+					}
+			}
 			
 
 			var domain = document.getElementById('domain'),
@@ -404,12 +424,13 @@
 						shodan_txt = shodan.value;
 					}
 				
-				
 				command_string ='> theharvester ' + domain_txt + ' ' + info_source_txt + ' ' + verify_hostname_txt + ' ' + reverse_dns_txt + ' ' + tld_discovery_txt + ' ' + shodan_txt + ' ' + dns_name_txt + ' ' + start_number_txt + ' ' + max_number_txt;
 				command.innerHTML = command_string ;
 			}
 			
 			updateCommand();
+			
+			toogleCheckboxes();
 
 			$(document).ready(function() {
 				$('[data-toggle="tooltip"]').tooltip();

@@ -35,7 +35,7 @@ public class TheHarvester extends HttpServlet{
 		session.setAttribute(Constants.SESS_LANG, language);
 
 
-		System.out.println(Tools.detectLocale(request));
+		//System.out.println(Tools.detectLocale(request));
 		this.getServletContext().getRequestDispatcher(Constants.VIEW_THEHARVESTER).forward(request, response);	}
 	
 	

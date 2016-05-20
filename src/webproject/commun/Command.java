@@ -1,13 +1,14 @@
 package webproject.commun;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.Map.Entry;
 
 public class Command {
 	
 	private ToolName tool;
-	private Map<String, Object> arguments = new HashMap<String, Object>();
+	private LinkedList<HashMap<String, Object>> arguments = new LinkedList<HashMap<String, Object>>();
 	private boolean success;
 	private String command;
 	
@@ -28,12 +29,14 @@ public class Command {
 		this.command = command;
 	}
 
-	public Map<String, Object> getArguments() {
-		return arguments;
-	}
+//	public Map<String, Object> getArguments() {
+//		return arguments;
+//	}
 
 	public void setArguments(String argName, Object value) {
-		arguments.put(argName, value);
+		HashMap<String, Object> couple = new HashMap<String, Object>();
+		couple.put(argName, value);
+		arguments.add(couple);
 	}
 
 	public boolean isSuccess() {
@@ -70,8 +73,14 @@ public class Command {
 		url += "?";
 		
 		// We add the arguments in url's parameters
-		for(Entry<String, Object> entry : arguments.entrySet()) {
-		    url += entry.getKey()+"="+entry.getValue().toString()+"&";
+//		for(Entry<String, Object> entry : arguments.entrySet()) {
+//		    url += entry.getKey()+"="+entry.getValue().toString()+"&";
+//		}
+		
+		for (int i = 0; i < arguments.size(); i++)
+		{
+			Map.Entry<String,Object> entry=arguments.get(i).entrySet().iterator().next();
+			url += entry.getKey() + "=" + entry.getValue().toString() + "&";
 		}
 		
 		// We cut the last "&"

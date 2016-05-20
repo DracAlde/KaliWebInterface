@@ -48,7 +48,7 @@ public class Tools {
 	 */
 	public static String getFieldValue(HttpServletRequest request, String fieldName) {
 		String value = request.getParameter(fieldName);
-		System.out.println(value);
+		//System.out.println(value);
 		if ( value == null || value.trim().length() == 0 ) {
 			return null;
 		} else {

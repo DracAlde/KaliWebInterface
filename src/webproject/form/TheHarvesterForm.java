@@ -56,50 +56,49 @@ public class TheHarvesterForm {
 		
 		if (informationSource != null)
 		{
-			sourceToUse = getSourceToUse(informationSource);
+			sourceToUse = getSourceToUse(informationSource, command);
 		}
 		if (chkReverseDNS)
 		{
 			reverseDNS = "-n";
-			command.setArguments(Constants.CHK_REVERSE_DNS, reverseDNS);
+			command.setArguments(Constants.CHK_REVERSE_DNS, "on");
 		}
 		if (chkVerifyHostname)
 		{
 			verifyHostname = "-v";
-			command.setArguments(Constants.CHK_VERIFY_HOST, verifyHostname);
+			command.setArguments(Constants.CHK_VERIFY_HOST, "on");
 		}
 		if (chkTLDDiscovery)
 		{
 			TLDDiscovery = "-t";
-			command.setArguments(Constants.CHK_TLD_DISCOVERY, TLDDiscovery);
+			command.setArguments(Constants.CHK_TLD_DISCOVERY, "on");
 		}
 		if (chkShodan)
 		{
 			shodan = "-h";
-			command.setArguments(Constants.CHK_SHODAN, shodan);
+			command.setArguments(Constants.CHK_SHODAN, "on");
 		}
 		if (chkStartResult)
 		{
 			startResult = "-s " + Tools.getFieldValue(request, Constants.FIELD_START_NUMBER);
-			command.setArguments(Constants.CHK_START_NUMBER, "-s");
+			command.setArguments(Constants.CHK_START_NUMBER, "on");
 			command.setArguments(Constants.FIELD_START_NUMBER, Tools.getFieldValue(request, Constants.FIELD_START_NUMBER));
 		}
 		if (chkDNSToUse)
 		{
 			DNSToUse = "-e " + Tools.getFieldValue(request, Constants.FIELD_DNS);
-			command.setArguments(Constants.CHK_USE_DNS, "-e");
+			command.setArguments(Constants.CHK_USE_DNS, "on");
 			command.setArguments(Constants.FIELD_DNS, Tools.getFieldValue(request, Constants.FIELD_DNS));
 		}
 		if (chkPrintLimit)
 		{
 			printLimit = "-l " + Tools.getFieldValue(request, Constants.FIELD_MAX_NUMBER);
-			command.setArguments(Constants.CHK_FIX_LIMIT_NUMBER, "-l");
+			command.setArguments(Constants.CHK_FIX_LIMIT_NUMBER, "on");
 			command.setArguments(Constants.FIELD_MAX_NUMBER, Tools.getFieldValue(request, Constants.FIELD_MAX_NUMBER));
 		}
 			
 		//add this command to history
 		command.setArguments(Constants.FIELD_DOMAIN, domain);
-		command.setArguments(Constants.FIELD_SOURCE_INFO, sourceToUse);
 		
 		String commandString = "theharvester " + domain + " " + sourceToUse + " " + reverseDNS +
 				" " + verifyHostname + " " + TLDDiscovery + " " + shodan + " " + startResult +
@@ -127,18 +126,20 @@ public class TheHarvesterForm {
 	}
 	
 	
-	private String getSourceToUse(LinkedList<String> sourceList)
+	private String getSourceToUse(LinkedList<String> sourceList, Command command)
 	{
 		String bufferList = "-b";
 		
 		if (sourceList.contains("multiselect-all"))
 		{
 			sourceList.remove("multiselect-all");
+			command.setArguments(Constants.FIELD_SOURCE_INFO, "multiselect-all");
 		}
 		
 		for (int i = 0; i < sourceList.size(); i++) 
 		{
 			bufferList += " " + sourceList.get(i);
+			command.setArguments(Constants.FIELD_SOURCE_INFO, sourceList.get(i));
 		}
 		
 		return bufferList;

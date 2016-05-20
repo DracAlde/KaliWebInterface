@@ -30,7 +30,7 @@ public class ZenmapForm {
 		String scanType = Tools.getFieldValue(request, Constants.FIELD_SCAN_TYPE);
 		String scanValue = null;
 
-		System.out.println(scanType);
+		//System.out.println(scanType);
 		
 		try{
 			Tools.hostnameValidation(hostname);
@@ -48,7 +48,7 @@ public class ZenmapForm {
 		//add this command to history
 		Command command = new Command(ToolName.Zenmap);
 		command.setArguments(Constants.FIELD_HOSTNAME, hostname);
-		command.setArguments(Constants.FIELD_SCAN_TYPE, scanValue);
+		command.setArguments(Constants.FIELD_SCAN_TYPE, scanType);
 		
 		String commandString = "nmap "+ hostname+" "+ scanValue;
 		command.setStringCommand(commandString);

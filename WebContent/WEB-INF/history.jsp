@@ -11,7 +11,7 @@
 					<a class="list-group-item list-group-item-success"
 						href="<c:url value="${command.getURL()}" />"> 
 						<%-- <strong><c:out
-								value="${command['tool']}" /></strong> hostname = <strong><c:out
+								value="${command['tool']}" /></strong> hostname = <strong><c:outdecimal
 								value="${command.getArguments()['hostname']}" /></strong> port = <strong><c:out
 								value="${command.getArguments()['port']}" /></strong>
 								commande =  --%>
