@@ -45,6 +45,11 @@
 		<servlet-class>webproject.main.ChangeLanguage</servlet-class>
 	</servlet>
 	
+	<servlet>
+		<servlet-name>AsyncRequest</servlet-name>
+		<servlet-class>webproject.main.AsyncRequest</servlet-class>
+	</servlet>
+	
 	<!--                                                              SERVLET-MAPPING -->
 	
 	<servlet-mapping>
@@ -85,6 +90,11 @@
 	<servlet-mapping>
 		<servlet-name>ChangeLanguage</servlet-name>
 		<url-pattern>/changelanguage</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>AsyncRequest</servlet-name>
+		<url-pattern>/asyncrequest</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>

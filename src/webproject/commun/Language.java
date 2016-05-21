@@ -112,7 +112,6 @@ public class Language {
 		}
 		
 		String longPath = determineLanguagePath(folder);
-		System.out.println(longPath);
 		
 		if(valueAttribute.contains("$tool")){
 			valueAttribute = getPathAssociatedTool(valueAttribute);

@@ -13,5 +13,6 @@
 	</nav>
 	<historique>Historique</historique>
 	<description>Description</description>
-
+	<form>Formulaire</form>
+	<response>Réponse</response>
 </default>
