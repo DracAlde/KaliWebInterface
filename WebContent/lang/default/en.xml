@@ -11,6 +11,44 @@
 		<dns-recon>DNS Recon</dns-recon>
 		<terminal>Terminal</terminal>
 	</nav>
+	
+	<home>
+		<tuiles>
+			<nikto>
+				<nom>Nikto</nom>
+				<desc-courte>A powerful web application scanner</desc-courte>
+			</nikto>
+			<zenmap>
+				<nom>Zenmap</nom>
+				<desc-courte>A network scanner permitting efficient recognition phases</desc-courte>
+			</zenmap>
+			<the-harvester>
+				<nom>The harvester</nom>
+				<desc-courte>Efficiently collecting mails, sub domains, virtual hosts from a big amount of public sources</desc-courte>
+			</the-harvester>
+			<tls-sled>
+				<nom>Tlssled</nom>
+				<desc-courte>Discover if your server implement vulnerable cryptographic protocols</desc-courte>
+			</tls-sled>
+			<hydra>
+				<nom>Hydra</nom>
+				<desc-courte>Crack every king of password</desc-courte>
+			</hydra>
+			<dns-recon>			
+				<nom>DNS recon</nom>
+				<desc-courte>Discover how good is your DNS security</desc-courte>
+			</dns-recon>
+			<terminal>
+				<nom>Terminal</nom>
+				<desc-courte>Take back Kali control and apply your knowledges</desc-courte>
+			</terminal>
+			<parametres>
+				<nom>Settings</nom>
+				<desc-courte>For settings, it's here !</desc-courte>
+			</parametres>
+		</tuiles>
+	</home>
+	
 	<historique>History</historique>
 	<description>Description</description>
 	<form>Form</form>

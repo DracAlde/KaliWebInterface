@@ -11,6 +11,44 @@
 		<dns-recon>DNS Recon</dns-recon>
 		<terminal>Terminal</terminal>
 	</nav>
+		
+	<home>
+		<tuiles>
+			<nikto>
+				<nom>Nikto</nom>
+				<desc-courte>Un puissant scanner de vulnérabilité web</desc-courte>
+			</nikto>
+			<zenmap>
+				<nom>Zenmap</nom>
+				<desc-courte>Un scanner réseau permettant de performantes phases de reconnaissance</desc-courte>
+			</zenmap>
+			<the-harvester>
+				<nom>The harvester</nom>
+				<desc-courte>Collectez efficacement des adresses mails, des sous domaines, des hotes virtuels depuis énormément de sources publiques</desc-courte>
+			</the-harvester>
+			<tls-sled>
+				<nom>Tlssled</nom>
+				<desc-courte>Découvrez si vos serveurs utilisent des protocoles de chiffrement vulnérables</desc-courte>
+			</tls-sled>
+			<hydra>
+				<nom>Hydra</nom>
+				<desc-courte>Craquez tous types de mots de passes</desc-courte>
+			</hydra>
+			<dns-recon>			
+				<nom>DNS recon</nom>
+				<desc-courte>Testez la sécurité de vos DNS</desc-courte>
+			</dns-recon>
+			<terminal>
+				<nom>Terminal</nom>
+				<desc-courte>Prenez le controle de Kali et appliquez vos connaissances</desc-courte>
+			</terminal>
+			<parametres>
+				<nom>Paramètres</nom>
+				<desc-courte>Pour les réglages, c'est par ici !</desc-courte>
+			</parametres>
+		</tuiles>
+	</home>
+	
 	<historique>Historique</historique>
 	<description>Description</description>
 	<form>Formulaire</form>
