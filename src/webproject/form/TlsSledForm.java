@@ -9,6 +9,7 @@ import webproject.commun.Command;
 import webproject.commun.Constants;
 import webproject.commun.ToolName;
 import webproject.commun.Tools;
+import webproject.shell.Shell;
 
 public class TlsSledForm {
 
@@ -54,6 +55,9 @@ public class TlsSledForm {
 			// pas d'erreur, on envois la requete
 			command.setSuccess(true);
 			result = "Succès de la commande";
+			
+			@SuppressWarnings("unused")
+			Shell shell = new Shell(request, "tls-sled", commandString);
 		} else {
 			command.setSuccess(false);
 			result = "Echec de la commande";

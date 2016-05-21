@@ -43,16 +43,16 @@ public class TlsSled extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Tools.initiatePath(request);
 
-		TlsSledForm form = new TlsSledForm();
-
-		Command command = form.validateTlsSled(request);
-
 		HttpSession session = request.getSession();
 		History history = (History) session.getAttribute(Constants.ATT_SESSION_HISTORY);
 
 		if( history == null){
 			history = new History();
 		}
+
+		TlsSledForm form = new TlsSledForm();
+
+		Command command = form.validateTlsSled(request);
 
 		history.addCommand(command);
 		session.setAttribute(Constants.ATT_SESSION_HISTORY, history);

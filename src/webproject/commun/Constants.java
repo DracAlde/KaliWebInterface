@@ -82,9 +82,9 @@ public class Constants {
 	/**
 	 * SSH session constants
 	 */
-	public static final String SSH_USERNAME 		= "username";
-	public static final String SSH_HOST     		= "127.0.0.1";
-	public static final String SSH_PASSWORD 		= "password";
+	public static final String SSH_USERNAME 		= "root";
+	public static final String SSH_HOST     		= "192.168.56.101";
+	public static final String SSH_PASSWORD 		= "toor";
 	
 	/**
 	 * Tool name used in Languages file ("*.xml")
