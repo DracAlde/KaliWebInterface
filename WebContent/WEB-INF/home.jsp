@@ -6,7 +6,7 @@
 <body>
 	<section>
 		<div class="title col-lg-12 col-sm-12 col-xs-12">
-			<h1 class="h1">Shiva an other way to hack the world</h1>
+			<h1 class="h1">Shiva, an other way to hack the world</h1>
 			<h3 class="h3">&ldquo;Practice more to go further into the system&rdquo;</h3>
 		</div>
 	</section>
