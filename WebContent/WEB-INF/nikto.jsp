@@ -5,6 +5,9 @@
 <c:import url="nav.jsp"></c:import>
 <body>
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" media="screen" rel="stylesheet" type="text/css">
+
+
 	<section>
 		<div class="panel panel-default col-md-12 col-lg-12"
 			style="padding: 0px;">
@@ -55,7 +58,7 @@
 				<div id="form">
 					<form method="POST" action="<c:url value="/tlssled" ></c:url>"
 						id="form">
-						<div>
+						<div class="col-lg-12 col-md-12 col-sm-12">
 							<label for="hostname" data-toggle="tooltip" class="col-lg-12 col-md-12 col-sm-12"
 								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/cible')}" />"
 								data-placement="right"> <c:out
@@ -91,7 +94,7 @@
 							<p class="error">${form.errors['port']}</p>
 							
 							
-							<label for="help-vhost" data-toggle="tooltip"
+							<label for="help-vhost" data-toggle="tooltip" class="col-lg-12 col-md-12 col-sm-12"
 								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/cible')}" />"
 								data-placement="right"> <c:out
 									value="${language.getLanguageValue('tls-sled', '/tls-sled/options/cible')}" />
@@ -108,206 +111,97 @@
 							</div>
 							
 							<br>
-							<label for="help-options-principales" data-toggle="tooltip" class="col-lg-12 col-md-12 col-sm-12"
-								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/cible')}" />"
+							
+							<label for="time-out" data-toggle="tooltip" class="col-lg-12 col-md-12 col-sm-12"
+								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/port')}" />"
 								data-placement="right"> <c:out
-									value="${language.getLanguageValue('tls-sled', '/tls-sled/options/cible')}" />
-							</label><br>
-							
-							<div class="col-lg-2 col-md-2 col-sm-2">
-								<label data-toggle="tooltip"
-									title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/verify')}" />"
-									data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-									type="checkbox" id="cgidirs" name="cgidirs" value="-Cgidirs">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/verify')}</label>
-									</div>
-									
-								<div class="input-group col-lg-2 col-mg-4 col-sm-6" id="cgidirs-box" style="display: none;">
-									<input type="text" class="form-control" placeholder="All"
-										name="cgidirs-input" id="cgidirs-input" onkeyup="updateCommand()"
-										onselect="updateCommand()" > <span
-										class="input-group-addon" id="basic-addon2"
-										data-toggle="tooltip"
-										title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/cible')}" />"
-										data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
-									</span>
-								</div>
-							
-								<div class="col-lg-2 col-md-2 col-sm-2">
-								<label data-toggle="tooltip"
-									title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/reverse-dns')}" />"
-									data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-									type="checkbox" id="reverse-dns" name="reverse-dns" value="-n">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/reverse-dns')}</label>
-									</div>
-									
-								<div class="col-lg-2 col-md-2 col-sm-2">
-								<label data-toggle="tooltip"
-									title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/tld')}" />"
-									data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-									type="checkbox" id="tld-discovery" name="tld-discovery" value="-t">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/tld')}</label>
-									</div>	
-									
-							
-							
-							
-							<br><br>
-							<label for="help-options-principales" data-toggle="tooltip" class="col-lg-12 col-md-12 col-sm-12"
-								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/cible')}" />"
-								data-placement="right"> <c:out
-									value="${language.getLanguageValue('tls-sled', '/tls-sled/options/cible')}" />
-							</label><br>
-							
-									<div class="col-lg-3 col-md-3 col-sm-2">
-									<label data-toggle="tooltip"
-										title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/verify')}" />"
-										data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-										type="checkbox" id="cgidirs" name="cgidirs" value="-Cgidirs">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/verify')}</label>
-										</div>
-								
-									<div class="col-lg-3 col-md-3 col-sm-2">
-									<label data-toggle="tooltip"
-										title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/reverse-dns')}" />"
-										data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-										type="checkbox" id="reverse-dns" name="reverse-dns" value="-n">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/reverse-dns')}</label>
-										</div>
-										
-									<div class="col-lg-3 col-md-3 col-sm-2">
-									<label data-toggle="tooltip"
-										title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/tld')}" />"
-										data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-										type="checkbox" id="tld-discovery" name="tld-discovery" value="-t">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/tld')}</label>
-										</div>
-								
-								
-									<div class="col-lg-3 col-md-3 col-sm-2">
-									<label data-toggle="tooltip"
-										title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/verify')}" />"
-										data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-										type="checkbox" id="cgidirs" name="cgidirs" value="-Cgidirs">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/verify')}</label>
-										</div>
-								
-									<div class="col-lg-3 col-md-3 col-sm-2">
-									<label data-toggle="tooltip"
-										title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/reverse-dns')}" />"
-										data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-										type="checkbox" id="reverse-dns" name="reverse-dns" value="-n">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/reverse-dns')}</label>
-										</div>
-										
-									<div class="col-lg-3 col-md-3 col-sm-2">
-									<label data-toggle="tooltip"
-										title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/tld')}" />"
-										data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-										type="checkbox" id="tld-discovery" name="tld-discovery" value="-t">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/tld')}</label>
-										</div>	
-									
-									<div class="col-lg-3 col-md-3 col-sm-2">
-									<label data-toggle="tooltip"
-										title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/tld')}" />"
-										data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-										type="checkbox" id="tld-discovery" name="tld-discovery" value="-t">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/tld')}</label>
-										</div>	
-										
-										
-								
-								
-								
-							<div class="col-lg-6 col-md-6 col-sm-12">
-								<div class="checkbox input-group">
-									<label><input type="checkbox" id="fix-limit" name="fix-limit" onclick="updateCommand()">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/limit')}</label>
-									<div class="input-group" id="limit-number" style="display: none;">
-										<input type="number" class="form-control" min="0" max="10000" 
-												placeholder="100" name="max-number" id="max-number"
-												onkeyup="updateCommand()" onselect="updateCommand()"
-												> 
-												<span class="input-group-addon"
-												id="basic-addon2" data-toggle="tooltip"
-												title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/limit')}" />"
-												data-placement="bottom"> <i
-												class="fa fa-question fa-lg"></i>
-											</span>
-									</div>
-								</div>
+									value="${language.getLanguageValue('tls-sled', '/tls-sled/options/port')}" />
+							</label>
+							<div class="input-group col-lg-2">
+								<input type="number" class="form-control" placeholder="Timeout"
+									name="timeout" id="timeout" value="2" onkeyup="updateCommand()"
+									onchange="updateCommand()" required> <span
+									class="input-group-addon" id="basic-addon2"
+									data-toggle="tooltip"
+									title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/port')}" />"
+									data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
+								</span>
 							</div>
-								
-								
-							<div class="col-lg-6 col-md-6 col-sm-12">
-								<div class="checkbox input-group">
-									<label><input type="checkbox" id="fix-limit" name="fix-limit" onclick="updateCommand()">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/limit')}</label>
-									<div class="input-group" id="limit-number" style="display: none;">
-										<input type="number" class="form-control" min="0" max="10000" 
-												placeholder="100" name="max-number" id="max-number"
-												onkeyup="updateCommand()" onselect="updateCommand()"
-												> 
-												<span class="input-group-addon"
-												id="basic-addon2" data-toggle="tooltip"
-												title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/limit')}" />"
-												data-placement="bottom"> <i
-												class="fa fa-question fa-lg"></i>
-											</span>
-									</div>
-								</div>
+							
+						
+						<br>
+						<label for="evasion-label" data-toggle="tooltip" class="col-lg-12 col-md-12 col-sm-12"
+							title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/info-source')}" />"
+							data-placement="right"> <c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/nom')}" />
+						</label>
+							
+						<div class="input-group col-lg-4 col-mg-4 col-sm-6 btn-group">
+							<span
+								class="input-group-addon" id="basic-addon2"
+								data-toggle="tooltip"
+								title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/cible')}" />"
+								data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
+							</span>
+							
+							<div class="btn-group">
+								<button type="button" id="unselect_all" name="unselect_all" value="unselect_all" class="btn btn-danger" onclick="removeAllItems()"><span class="glyphicon glyphicon-remove"></span> Remove all</button>
 							</div>
-								
-								
-							<div class="col-lg-6 col-md-6 col-sm-12">
-								<div class="checkbox input-group">
-									<label><input type="checkbox" id="fix-limit" name="fix-limit" onclick="updateCommand()">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/limit')}</label>
-									<div class="input-group" id="limit-number" style="display: none;">
-										<input type="number" class="form-control" min="0" max="10000" 
-												placeholder="100" name="max-number" id="max-number"
-												onkeyup="updateCommand()" onselect="updateCommand()"
-												> 
-												<span class="input-group-addon"
-												id="basic-addon2" data-toggle="tooltip"
-												title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/limit')}" />"
-												data-placement="bottom"> <i
-												class="fa fa-question fa-lg"></i>
-											</span>
-									</div>
-								</div>
-							</div>
-								
-								
-							<div class="col-lg-6 col-md-6 col-sm-12">
-								<div class="checkbox input-group">
-									<label><input type="checkbox" id="fix-limit" name="fix-limit" onclick="updateCommand()">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/limit')}</label>
-									<div class="input-group" id="limit-number" style="display: none;">
-										<input type="number" class="form-control" min="0" max="10000" 
-												placeholder="100" name="max-number" id="max-number"
-												onkeyup="updateCommand()" onselect="updateCommand()"
-												> 
-												<span class="input-group-addon"
-												id="basic-addon2" data-toggle="tooltip"
-												title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/limit')}" />"
-												data-placement="bottom"> <i
-												class="fa fa-question fa-lg"></i>
-											</span>
-									</div>
-								</div>
-							</div>
-								
-								
-							<div class="col-lg-6 col-md-6 col-sm-12">
-								<div class="checkbox input-group">
-									<label><input type="checkbox" id="fix-limit" name="fix-limit" onclick="updateCommand()">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/limit')}</label>
-									<div class="input-group" id="limit-number" style="display: none;">
-										<input type="number" class="form-control" min="0" max="10000" 
-												placeholder="100" name="max-number" id="max-number"
-												onkeyup="updateCommand()" onselect="updateCommand()"
-												> 
-												<span class="input-group-addon"
-												id="basic-addon2" data-toggle="tooltip"
-												title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/limit')}" />"
-												data-placement="bottom"> <i
-												class="fa fa-question fa-lg"></i>
-											</span>
-									</div>
-								</div>
-							</div>					
+							
+							<select name="info-source" class="glyphicon" id="info-source" onchange="updateCommand()" autofocus multiple="multiple">
+									<option value="random-uri" id="random-uri"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/google')}" /></option>
+									<option value="directory-self-reference" id="directory-self-reference"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/google-cse')}" /></option>
+									<option value="premature-url-ending" id="premature-url-ending"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/bing')}" /></option>
+									<option value="long-random-string" id="long-random-string"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/bing-api')}" /></option>
+									<option value="fake-parameter" id="fake-parameter"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/linkedin')}" /></option>
+									<option value="tab-request-spacer" id="tab-request-spacer"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/google-profiles')}" /></option>
+									<option value="change-case" id="change-case"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/jigsaw')}" /></option>
+									<option value="directory-separator" id="directory-separator"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/twitter')}" /></option>
+							</select>
 						</div>
-
+					</div>
+					
+					<br>
+					
+					<div class="col-lg-12 col-md-12 col-sm-12">
+					
+						<br>
+						<label for="options" data-toggle="tooltip" class="col-lg-12 col-md-12 col-sm-12"
+							title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/info-source')}" />"
+							data-placement="right"> <c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/nom')}" />
+						</label>
+						
+							<div class="col-lg-2 col-md-2 col-sm-2">
+									<label data-toggle="tooltip"
+										title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/verify')}" />"
+										data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
+										type="checkbox" id="find-only" name="find-only" value="-v">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/verify')}</label>
+										</div>
+										
+							<div class="col-lg-2 col-md-2 col-sm-2">
+									<label data-toggle="tooltip"
+										title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/verify')}" />"
+										data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
+										type="checkbox" id="name-lookup" name="name-lookup" value="-v">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/verify')}</label>
+										</div>
+									
+							<div class="col-lg-2 col-md-2 col-sm-2">
+									<label data-toggle="tooltip"
+										title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/verify')}" />"
+										data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
+										type="checkbox" id="force-ssl" name="force-ssl" value="-v">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/verify')}</label>
+										</div>
+										
+							<div class="col-lg-2 col-md-2 col-sm-2">
+									<label data-toggle="tooltip"
+										title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/verify')}" />"
+										data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
+										type="checkbox" id="single-request" name="single-request" value="-v">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/verify')}</label>
+										</div>
+						</div>
+						
 						<br>
 
-						<div class="command col-lg-12 col-md-12 col-sm-&2" id="commad" data-toggle="tooltip"
+						<div class="command col-lg-12 col-md-12 col-sm-12" id="commad" data-toggle="tooltip"
 							title="C'est la ligne qui sera envoyée dans le terminal de notre système Kali Linux"
 							data-placement="bottom">> nikto</div>
 
@@ -332,10 +226,14 @@
 		</div>
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script
-			src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="bootstrap/js/bootstrap.js"></script>
+		<script type="text/javascript" src="bootstrap/js/angular.min.js"></script>
+		<script type="text/javascript" src="bootstrap/js/angularjs-multiple-select.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap-multiselect.js"></script>
+		<!-- Include history script -->
+		<script src="js/history.js"></script>
 		
 		<script>
 		
@@ -558,13 +456,13 @@
 			* Create the multiselct view
 			*
 			*/
-		   /* $(document).ready(function() {
+		   $(document).ready(function() {
 		        $('#info-source').multiselect({
 		            includeSelectAllOption: true,
 		            enableFiltering: true,
 		            enableCaseInsensitiveFiltering: true
 		        });
-		    }); */
+		    }); 
 		</script>
 	</section>
 	

@@ -68,7 +68,7 @@
 							</span>
 							
 							<div class="btn-group">
-								<button type="button" id="unselect_all" name="unselect_all" value="unselect_all" class="btn btn-danger" onclick="removeAllItems()"><span class="glyphicon glyphicon-remove"></span> Remove all</button>
+								<button type="button" id="unselect_all" name="unselect_all" value="unselect_all" class="btn btn-danger" onclick="removeAllItems()"><span class="glyphicon glyphicon-remove"></span> ${language.getLanguageValue('the-harvester', '/the-harvester/actions/tout-supprimer')}</button>
 							</div>
 							
 							<select name="info-source" class="glyphicon" id="info-source" onchange="updateCommand()" autofocus multiple="multiple">
@@ -450,7 +450,5 @@
 		    });
 		</script>
 	</section>
-	
-	<c:import url="credits.jsp"></c:import>
 </body>
 </html>

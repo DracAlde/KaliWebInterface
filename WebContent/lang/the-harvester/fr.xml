@@ -56,5 +56,6 @@
 	</aide>
 	<actions>
 		<bouton-envoyer>Envoyer</bouton-envoyer>
+		<tout-supprimer>Tout déselectionner</tout-supprimer>
 	</actions>
 </the-harvester>

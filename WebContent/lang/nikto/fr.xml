@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<nikto>
+	<desc-tool>Nikto est un outils...</desc-tool>
+	
+	<options>
+		<cible>Nom d'hote ou adresse IP</cible>
+		<port>Port</port>
+		<hote-virtuel>Hote virtuel</hote-virtuel>
+		
+		<options-principales>
+			<grp-nom>Options principales</grp-nom>
+			<cgidirs>Cgidirs</cgidirs>
+			<root>Recherche à la racine</root>
+			<ignore-code>Ignorer les codes d'erreurs</ignore-code>
+		</options-principales>
+		
+		<options-secondaires>
+			<dbcheck>Rechercher dans le base de données</dbcheck>
+			<findonly>Recherche seulement</findonly>
+			<nolookup>Ne pas rechercher le nom</nolookup>
+		</options-secondaires>
+	</options>
+</nikto>
