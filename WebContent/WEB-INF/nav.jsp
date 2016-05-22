@@ -19,6 +19,7 @@
 <!-- Adding CSS import to perform help tip -->
 <link href="css/help_tip.css" rel="stylesheet">
 <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+<link rel="shortcut icon" type="image/png" href="img/favicon4.png"/>
 
 </head>
 
