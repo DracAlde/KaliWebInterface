@@ -7,18 +7,48 @@
 		<cible>Nom d'hote ou adresse IP</cible>
 		<port>Port</port>
 		<hote-virtuel>Hote virtuel</hote-virtuel>
+		<timeout>Valeur de délais</timeout>
+		<evasion>Type d'évasion</evasion>
+		<evasion-grp>
+			<uri>Encodage aléatoire de l'URI</uri>
+			<rep-autoref>Autoréférence des répertoires</rep-autoref>
+			<url-fin>Fin d'URL prématuré</url-fin>
+			<long-random>Envoi d'une longue chaine aléatoire</long-random>
+			<faux-parametres>Envoi de faux paramètres</faux-parametres>
+			<tab>Tabulation comme séparateur de requêtes</tab>
+			<change-case>Changer la case de l'URL</change-case>
+			<windows-url>Utiliser la séparation de répertoire Windows</windows-url>
+		</evasion-grp>
 		
-		<options-principales>
-			<grp-nom>Options principales</grp-nom>
-			<cgidirs>Cgidirs</cgidirs>
-			<root>Recherche à la racine</root>
-			<ignore-code>Ignorer les codes d'erreurs</ignore-code>
-		</options-principales>
-		
-		<options-secondaires>
-			<dbcheck>Rechercher dans le base de données</dbcheck>
-			<findonly>Recherche seulement</findonly>
-			<nolookup>Ne pas rechercher le nom</nolookup>
-		</options-secondaires>
+		<options>
+			<nom>Options</nom>
+			<find-only>Recherche seule</find-only>
+			<nolookup>Pas de recherche lookup</nolookup>
+			<force-ssl>Forcer le SSL</force-ssl>
+			<single-request>Mode requêtes uniques</single-request>
+		</options>
 	</options>
+	
+	<aide>
+		<cible>Veuillez renseigner le nom ou l'adresse IP du serveur à cibler (google.com ou 8.8.8.8)</cible>
+		<port>Veuillez renseigner le port du serveur à cibler (par défaut 80)</port>
+		<hote-virtuel>Veuillez indiquer l'hôte virtuel. Un hote virtuel est un serveur basé dans un sous réseau du domaine ciblé (optionel)</hote-virtuel>
+		<timeout>Temps d'attente entre chaque envoi d'un nouveau test</timeout>
+		<evasion>Spécifiez la technique d'évasion IDS libwhisker à utiliser. Utiliser un ou plusieur numéro de la liste: 
+1 - encodage aléatoire URI (non-UTF8) 
+2 - Répertoire auto-référence (/./) 
+3 - URL prématurée fin 
+4 - Envoi longue chaîne aléatoire 
+5 - Faux paramètre  
+6 - TAB comme séparateur de requête
+7 - Changer la case de l'URL 
+8 - Utiliser Windows séparateur de répertoire (\)</evasion>
+		
+		<options>
+			<find-only> Découvrir Seuls les ports HTTP/HTTPS, attention ça n'effectue pas un balayage sécursié. Cela va tenter de se connecter avec HTTP ou HTTPS, et rendre un rapport sur les en-tête du serveur.</find-only>
+			<nolookup>Ne pas effectuer les recherches de noms sur les adresses IP</nolookup>
+			<force-ssl>Forcer l'utilisation de SSL</force-ssl>
+			<single-request>Envoi de requêtes uniques au serveur</single-request>
+		</options>
+	</aide>
 </nikto>

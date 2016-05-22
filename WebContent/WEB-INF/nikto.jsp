@@ -47,7 +47,7 @@
 										value="${language.getLanguageValue('default', '/default/response')}" />
 							</a></li>
 							<li><a data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/desc-tool')}" />"
+								title="<c:out value="${language.getLanguageValue('nikto', '/nikto/desc-tool')}" />"
 								data-placement="right">?</a></li>
 						</ul>
 
@@ -60,9 +60,9 @@
 						id="form">
 						<div class="col-lg-12 col-md-12 col-sm-12">
 							<label for="hostname" data-toggle="tooltip" class="col-lg-12 col-md-12 col-sm-12"
-								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/cible')}" />"
+								title="<c:out value="${language.getLanguageValue('nikto', '/nikto/aide/cible')}" />"
 								data-placement="right"> <c:out
-									value="${language.getLanguageValue('tls-sled', '/tls-sled/options/cible')}" />
+									value="${language.getLanguageValue('nikto', '/nikto/options/cible')}" />
 							</label>
 							<div class="input-group col-lg-2 col-mg-4 col-sm-6">
 								<input type="text" class="form-control" placeholder="Hostname"
@@ -70,16 +70,16 @@
 									onselect="updateCommand()" autofocus required> <span
 									class="input-group-addon" id="basic-addon2"
 									data-toggle="tooltip"
-									title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/cible')}" />"
+									title="<c:out value="${language.getLanguageValue('nikto', '/nikto/aide/cible')}" />"
 									data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
 								</span>
 							</div>
 							<p class="error">${form.errors['hostname']}</p>
 
 							<label for="port" data-toggle="tooltip" class="col-lg-12 col-md-12 col-sm-12"
-								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/port')}" />"
+								title="<c:out value="${language.getLanguageValue('nikto', '/nikto/aide/port')}" />"
 								data-placement="right"> <c:out
-									value="${language.getLanguageValue('tls-sled', '/tls-sled/options/port')}" />
+									value="${language.getLanguageValue('nikto', '/nikto/options/port')}" />
 							</label>
 							<div class="input-group col-lg-2">
 								<input type="number" class="form-control" placeholder="Port"
@@ -87,7 +87,7 @@
 									onchange="updateCommand()" required> <span
 									class="input-group-addon" id="basic-addon2"
 									data-toggle="tooltip"
-									title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/port')}" />"
+									title="<c:out value="${language.getLanguageValue('nikto', '/nikto/aide/port')}" />"
 									data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
 								</span>
 							</div>
@@ -95,9 +95,9 @@
 							
 							
 							<label for="help-vhost" data-toggle="tooltip" class="col-lg-12 col-md-12 col-sm-12"
-								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/cible')}" />"
+								title="<c:out value="${language.getLanguageValue('nikto', '/nikto/aide/hot-virtuel')}" />"
 								data-placement="right"> <c:out
-									value="${language.getLanguageValue('tls-sled', '/tls-sled/options/cible')}" />
+									value="${language.getLanguageValue('nikto', '/nikto/options/hote-virtuel')}" />
 							</label>
 							<div class="input-group col-lg-2 col-mg-4 col-sm-6">
 								<input type="text" class="form-control" placeholder="Virtual host"
@@ -105,7 +105,7 @@
 									onselect="updateCommand()" autofocus> <span
 									class="input-group-addon" id="basic-addon2"
 									data-toggle="tooltip"
-									title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/cible')}" />"
+									title="<c:out value="${language.getLanguageValue('nikto', '/nikto/aide/hote-virtuel')}" />"
 									data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
 								</span>
 							</div>
@@ -113,9 +113,9 @@
 							<br>
 							
 							<label for="time-out" data-toggle="tooltip" class="col-lg-12 col-md-12 col-sm-12"
-								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/port')}" />"
+								title="<c:out value="${language.getLanguageValue('nikto', '/nikto/aide/timeout')}" />"
 								data-placement="right"> <c:out
-									value="${language.getLanguageValue('tls-sled', '/tls-sled/options/port')}" />
+									value="${language.getLanguageValue('nikto', '/nikto/options/timeout')}" />
 							</label>
 							<div class="input-group col-lg-2">
 								<input type="number" class="form-control" placeholder="Timeout"
@@ -123,7 +123,7 @@
 									onchange="updateCommand()" required> <span
 									class="input-group-addon" id="basic-addon2"
 									data-toggle="tooltip"
-									title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/port')}" />"
+									title="<c:out value="${language.getLanguageValue('nikto', '/nikto/aide/timeout')}" />"
 									data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
 								</span>
 							</div>
@@ -131,31 +131,31 @@
 						
 						<br>
 						<label for="evasion-label" data-toggle="tooltip" class="col-lg-12 col-md-12 col-sm-12"
-							title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/info-source')}" />"
-							data-placement="right"> <c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/nom')}" />
+							title="<c:out value="${language.getLanguageValue('nikto', '/nikto/aide/evasion')}" />"
+							data-placement="right"> <c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion')}" />
 						</label>
 							
 						<div class="input-group col-lg-4 col-mg-4 col-sm-6 btn-group">
 							<span
 								class="input-group-addon" id="basic-addon2"
 								data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/cible')}" />"
+								title="<c:out value="${language.getLanguageValue('nikto', '/nikto/aide/evasion')}" />"
 								data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
 							</span>
 							
 							<div class="btn-group">
-								<button type="button" id="unselect_all" name="unselect_all" value="unselect_all" class="btn btn-danger" onclick="removeAllItems()"><span class="glyphicon glyphicon-remove"></span> Remove all</button>
+								<button type="button" id="unselect_all" name="unselect_all" value="unselect_all" class="btn btn-danger" onclick="removeAllItems()"><span class="glyphicon glyphicon-remove"></span> ${language.getLanguageValue('the-harvester', '/the-harvester/actions/tout-supprimer')}</button>
 							</div>
 							
 							<select name="info-source" class="glyphicon" id="info-source" onchange="updateCommand()" autofocus multiple="multiple">
-									<option value="random-uri" id="random-uri"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/google')}" /></option>
-									<option value="directory-self-reference" id="directory-self-reference"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/google-cse')}" /></option>
-									<option value="premature-url-ending" id="premature-url-ending"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/bing')}" /></option>
-									<option value="long-random-string" id="long-random-string"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/bing-api')}" /></option>
-									<option value="fake-parameter" id="fake-parameter"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/linkedin')}" /></option>
-									<option value="tab-request-spacer" id="tab-request-spacer"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/google-profiles')}" /></option>
-									<option value="change-case" id="change-case"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/jigsaw')}" /></option>
-									<option value="directory-separator" id="directory-separator"><c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/twitter')}" /></option>
+									<option value="random-uri" id="random-uri"><c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion-grp/uri')}" /></option>
+									<option value="directory-self-reference" id="directory-self-reference"><c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion-grp/rep-autoref')}" /></option>
+									<option value="premature-url-ending" id="premature-url-ending"><c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion-grp/url-fin')}" /></option>
+									<option value="long-random-string" id="long-random-string"><c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion-grp/long-random')}" /></option>
+									<option value="fake-parameter" id="fake-parameter"><c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion-grp/faux-parametres')}" /></option>
+									<option value="tab-request-spacer" id="tab-request-spacer"><c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion-grp/tab')}" /></option>
+									<option value="change-case" id="change-case"><c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion-grp/change-case')}" /></option>
+									<option value="directory-separator" id="directory-separator"><c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion-grp/windows-url')}" /></option>
 							</select>
 						</div>
 					</div>
@@ -166,36 +166,35 @@
 					
 						<br>
 						<label for="options" data-toggle="tooltip" class="col-lg-12 col-md-12 col-sm-12"
-							title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/info-source')}" />"
-							data-placement="right"> <c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/info-source/nom')}" />
+							data-placement="right"> <c:out value="${language.getLanguageValue('nikto', '/nikto/options/options/nom')}" />
 						</label>
 						
 							<div class="col-lg-2 col-md-2 col-sm-2">
 									<label data-toggle="tooltip"
-										title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/verify')}" />"
+										title="<c:out value="${language.getLanguageValue('nikto', '/nikto/aide/options/find-only')}" />"
 										data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-										type="checkbox" id="find-only" name="find-only" value="-v">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/verify')}</label>
+										type="checkbox" id="find-only" name="find-only" value="-v">${language.getLanguageValue('nikto', '/nikto/options/options/find-only')}</label>
 										</div>
 										
 							<div class="col-lg-2 col-md-2 col-sm-2">
 									<label data-toggle="tooltip"
-										title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/verify')}" />"
+										title="<c:out value="${language.getLanguageValue('nikto', '/nikto/aide/options/nolookup')}" />"
 										data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-										type="checkbox" id="name-lookup" name="name-lookup" value="-v">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/verify')}</label>
+										type="checkbox" id="name-lookup" name="name-lookup" value="-v">${language.getLanguageValue('nikto', '/nikto/options/options/nolookup')}</label>
 										</div>
 									
 							<div class="col-lg-2 col-md-2 col-sm-2">
 									<label data-toggle="tooltip"
-										title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/verify')}" />"
+										title="<c:out value="${language.getLanguageValue('nikto', '/nikto/aide/options/force-ssl')}" />"
 										data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-										type="checkbox" id="force-ssl" name="force-ssl" value="-v">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/verify')}</label>
+										type="checkbox" id="force-ssl" name="force-ssl" value="-v">${language.getLanguageValue('nikto', '/nikto/options/options/force-ssl')}</label>
 										</div>
 										
 							<div class="col-lg-2 col-md-2 col-sm-2">
 									<label data-toggle="tooltip"
-										title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/verify')}" />"
+										title="<c:out value="${language.getLanguageValue('nikto', '/nikto/aide/options/single-request')}" />"
 										data-placement="right" class="checkbox-inline"><input onclick="updateCommand()"
-										type="checkbox" id="single-request" name="single-request" value="-v">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/verify')}</label>
+										type="checkbox" id="single-request" name="single-request" value="-v">${language.getLanguageValue('nikto', '/nikto/options/options/single-request')}</label>
 										</div>
 						</div>
 						

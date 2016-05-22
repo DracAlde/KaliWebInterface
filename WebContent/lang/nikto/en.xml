@@ -1,1 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<nikto>
+	<desc-tool>Nikto est un outils...</desc-tool>
+	
+	<options>
+		<cible>Hostname or IP address</cible>
+		<port>Port</port>
+		<hote-virtuel>Virtual host</hote-virtuel>
+		<timeout>Time-out value</timeout>
+		<evasion>Evasion type</evasion>
+		<evasion-grp>
+			<uri>Random URI encoding</uri>
+			<rep-autoref>Directory self-reference</rep-autoref>
+			<url-fin>Premature URL ending</url-fin>
+			<long-random>Prepend long random string</long-random>
+			<faux-parametres>Fake parameters</faux-parametres>
+			<tab>TAB as request spacer</tab>
+			<change-case>Change teh case of the URL</change-case>
+			<windows-url>Widows directory separation</windows-url>
+		</evasion-grp>
+		
+		<options>
+			<nom>Options</nom>
+			<find-only>FInd only</find-only>
+			<nolookup>No lookup search</nolookup>
+			<force-ssl>Force SSL use</force-ssl>
+			<single-request>Single request mode</single-request>
+		</options>
+	</options>
+	
+	<aide>
+		<cible>Provide hostname or IP address of target server (google.com ou 8.8.8.8)</cible>
+		<port>Provide port of the targeted server (by default 80)</port>
+		<hote-virtuel>Define if a virtual host is targeted or not (optional)</hote-virtuel>
+		<timeout>Time out between each packet send</timeout>
+		<evasion>Provides the evasion technique to use. You can choose one or more in the list below: 
+1 - Random URI encoding (non-UTF8) 
+2 - Directory self-reference (/./) 
+3 - Premature URL ending
+4 - Prepend long random string 
+5 - Fake parameters
+6 - TAB as request spacer
+7 - Change the case of the URL 
+8 - Windows directory separation (\)</evasion>
+		
+		<options>
+			<find-only>Only discover the HTTP(S) ports, do not perform a security scan. This will attempt to connect with HTTP or HTTPS, and report the Server header</find-only>
+			<nolookup>Do not perform name lookups on IP addresses</nolookup>
+			<force-ssl>Force SSL use</force-ssl>
+			<single-request>Unique single request send to the server</single-request>
+		</options>
+	</aide>
+</nikto>
