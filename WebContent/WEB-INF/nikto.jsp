@@ -4,17 +4,52 @@
 
 <c:import url="nav.jsp"></c:import>
 <body>
+
 	<section>
-		<div class="row">
-			<div class="col-md-6"
-				style="border: 1px solid black;">
-				<h3>Informations</h3>
-				<p>Nikto est le meilleur logiciel du monde parce que ceci ou
-					cela</p>
-			</div>
-			<c:import url="history.jsp"></c:import>
-		</div>
-		<h1 class=col-lg-3>Nikto page</h1>
+		<div class="panel panel-default col-md-12 col-lg-12"
+			style="padding: 0px;">
+
+			<c:import url="top_page.jsp"></c:import>
+
+			<div class="panel-footer">
+
+				<!-- Test nav bar -->
+
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed"
+								data-toggle="collapse"
+								data-target="#bs-example-navbar-collapse-1"
+								aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span> <span
+									class="icon-bar"></span> <span class="icon-bar"></span> <span
+									class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand">Nikto</a>
+						</div>
+
+						<ul class="nav navbar-nav">
+
+
+							<li id="form_btn" role="presentation" class="active"
+								onclick="switcher(this)"><a> <c:out
+										value="${language.getLanguageValue('default', '/default/form')}" />
+
+							</a></li>
+
+							<li id="response_btn" role="presentation"
+								onclick="switcher(this)"><a> <c:out
+										value="${language.getLanguageValue('default', '/default/response')}" />
+							</a></li>
+							<li><a data-toggle="tooltip"
+								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/desc-tool')}" />"
+								data-placement="right">?</a></li>
+						</ul>
+
+					</div>
+				</nav>
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script
