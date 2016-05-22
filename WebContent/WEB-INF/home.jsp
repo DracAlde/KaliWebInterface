@@ -110,11 +110,7 @@
 		</div>
 	</section>
 	
-	<section>
-		<div class="padding col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			Credits <a href="https://github.com/arn0f">arn0f</a> Hoel <a href="https://github.com/KilianSeznec">Kilian</a> Julien
-		</div>
-	</section>
+	<c:import url="credits.jsp"></c:import>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script

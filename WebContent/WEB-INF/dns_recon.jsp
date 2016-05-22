@@ -13,5 +13,7 @@
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="bootstrap/js/bootstrap.js"></script>
 	</section>
+	
+	<c:import url="credits.jsp"></c:import>
 </body>
 </html>

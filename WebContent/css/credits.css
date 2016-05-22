@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+
+.padding {
+	padding-top: 300px;
+	padding-bottom: 70px;
+	position: inherit;
+	text-align: center;
+}

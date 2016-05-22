@@ -300,5 +300,7 @@
 			});
 		</script>
 	</section>
+	
+	<c:import url="credits.jsp"></c:import>
 </body>
 </html>
