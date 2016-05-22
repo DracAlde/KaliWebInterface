@@ -14,52 +14,50 @@
 			<c:import url="top_page.jsp"></c:import>
 
 			<div class="panel-footer">
-				<div class="row">
 
-					<!-- Test nav bar -->
+				<!-- Test nav bar -->
 
-					<nav class="navbar-default">
-						<div class="container-fluid">
-							<!-- Brand and toggle get grouped for better mobile display -->
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed"
-									data-toggle="collapse"
-									data-target="#bs-example-navbar-collapse-1"
-									aria-expanded="false">
-									<span class="sr-only">Toggle navigation</span> <span
-										class="icon-bar"></span> <span class="icon-bar"></span> <span
-										class="icon-bar"></span>
-								</button>
-								<a class="navbar-brand" href="#">TLS Sled</a>
-							</div>
-
-							<ul class="nav nav-pills">
-								<li id="form_btn" role="presentation" class="active"
-									onclick="switcher(this)"><a> <c:out
-											value="${language.getLanguageValue('default', '/default/form')}" />
-
-								</a></li>
-
-								<li id="response_btn" role="presentation"
-									onclick="switcher(this)"><a> <c:out
-											value="${language.getLanguageValue('default', '/default/response')}" />
-								</a></li>
-								<li>
-									<div class="help-picture" data-toggle="tooltip"
-										title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/desc-tool')}" />"
-										data-placement="right"></div>
-								</li>
-							</ul>
-
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed"
+								data-toggle="collapse"
+								data-target="#bs-example-navbar-collapse-1"
+								aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span> <span
+									class="icon-bar"></span> <span class="icon-bar"></span> <span
+									class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand">TLS Sled</a>
 						</div>
-					</nav>
 
-					<!-- End test nav bar -->
-					
-				</div>
+						<ul class="nav navbar-nav">
+
+
+							<li id="form_btn" role="presentation" class="active"
+								onclick="switcher(this)"><a> <c:out
+										value="${language.getLanguageValue('default', '/default/form')}" />
+
+							</a></li>
+
+							<li id="response_btn" role="presentation"
+								onclick="switcher(this)"><a> <c:out
+										value="${language.getLanguageValue('default', '/default/response')}" />
+							</a></li>
+							<li><a data-toggle="tooltip"
+								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/desc-tool')}" />"
+								data-placement="right">?</a></li>
+						</ul>
+
+					</div>
+				</nav>
+
+				<!-- End test nav bar -->
 
 				<div id="form">
-					<form method="POST" action="<c:url value="/tlssled" ></c:url>">
+					<form method="POST" action="<c:url value="/tlssled" ></c:url>"
+						id="form">
 						<div>
 							<label for="hostname" data-toggle="tooltip"
 								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/aide/cible')}" />"
@@ -105,7 +103,7 @@
 						<div style="text-align: right">
 							<br>
 							<button type="submit" class="btn btn-default"
-								aria-label="Right Align" onclick="request(readData);">
+								aria-label="Right Align">
 								<c:out
 									value="${language.getLanguageValue('tls-sled', '/tls-sled/actions/bouton-envoyer')}" />
 							</button>
@@ -116,7 +114,9 @@
 						</div>
 					</form>
 				</div>
-				<div id="response_panel" class="hidden">Response</div>
+				<div id="response_panel" class="hidden">
+					<div class=command id=response></div>
+				</div>
 			</div>
 		</div>
 
@@ -135,9 +135,11 @@
 		<script>
 			history();
 
-			var hostname = document.getElementById('hostname'), port = document
-					.getElementById('port'), command = document
-					.getElementById('command');
+			var hostname = document.getElementById('hostname');
+			var port = document.getElementById('port');
+			var command = document.getElementById('command');
+			var form = document.getElementById('form');
+			var response = document.getElementById('response');
 
 			function updateCommand() {
 
@@ -166,22 +168,27 @@
 			function request(callback) {
 				var xhr = getXMLHttpRequest();
 
-				xhr.onreadystatechange = function() {
-					if (xhr.readyState == 4
-							&& (xhr.status == 200 || xhr.status == 0)) {
-						callback(xhr.responseText);
-					}
-				};
+				setTimeout(function(){
+					xhr.onreadystatechange = function() {
+						if (xhr.readyState == 4
+								&& (xhr.status == 200 || xhr.status == 0)) {
+							callback(xhr.responseText);
+						}
+					};
 
-				xhr.open("GET", "<c:url value='/asyncrequest' ></c:url>", true);
-				xhr.send(null);
+					xhr.open("GET", "<c:url value='/asyncrequest?tool=tls-sled' ></c:url>", true);
+					xhr.send(null);
+					request(readData);
+					}, 10000);
 			}
 
 			function readData(sData) {
 				// On peut maintenant traiter les données sans encombrer l'objet XHR.
-				alert("Réponse : '" + sData + "'");
+				response.innerHTML = sData;
 			}
-
+			
+			request(readData);
+			
 			$(document).ready(function() {
 				$('[data-toggle="tooltip"]').tooltip();
 			});
