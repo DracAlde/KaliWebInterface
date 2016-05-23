@@ -2,8 +2,6 @@ package webproject.shell;
 
 import java.io.InputStream;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -13,19 +11,18 @@ import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 import com.jcraft.jsch.UserInfo;
 
-import webproject.commun.Constants;
-import webproject.commun.History;
+import webproject.commun.AsyncItem;
 import webproject.main.AsyncRequest;
 
 public class Shell extends Thread{
 
 	private static Channel channel;
-	private HttpServletRequest request;
 	private String tool;
 	private String command;
-	
-	public Shell(HttpServletRequest request, String tool,String command){
-		this.request = request;
+	private String sessionID;
+
+	public Shell(String sessionID, String tool,String command){
+		this.sessionID = sessionID;
 		this.tool = tool;
 		this.command = command;
 		this.start();
@@ -77,7 +74,7 @@ public class Shell extends Thread{
 			InputStream in=channel.getInputStream();
 
 			channel.connect();
-			
+
 			byte[] tmp=new byte[1024];
 			while(true){
 				while(in.available()>0){
@@ -87,34 +84,24 @@ public class Shell extends Thread{
 				}
 				if(channel.isClosed()){
 					if(in.available()>0) continue; 
-					res += "done";
 					break;
 				}
 			}
 			channel.disconnect();
 			session.disconnect();
-			
-			System.out.println(res);
+
 		}
 		catch(Exception e){
 			res += "ERROR: failed to execute request";
-			System.out.println(e);
+			System.err.println(e.getMessage());
 		}
 		
-		HttpSession session = request.getSession();
-		if(session == null){
-			System.err.println("Thread: session is null");
-		}
-		History history = (History) session.getAttribute(Constants.ATT_SESSION_HISTORY);
+		res.replaceAll("(\r\n|\n)", "<br />");
+		System.out.println(res);
 		
-		if( history == null){
-			history = new History();
-		}
-		
-		history.addResponse(tool, res);
-		
-		session.setAttribute(Constants.ATT_SESSION_HISTORY, history);
-		AsyncRequest.read(request, tool);
+		AsyncItem item = new AsyncItem(sessionID, tool, res);
+		AsyncRequest.addAsyncItem(item);
+		System.err.println(AsyncRequest.getResponse(sessionID, tool));
 	}
 
 	public String sendCommand(String command){

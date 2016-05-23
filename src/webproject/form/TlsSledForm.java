@@ -57,7 +57,7 @@ public class TlsSledForm {
 			result = "Succès de la commande";
 			
 			@SuppressWarnings("unused")
-			Shell shell = new Shell(request, "tls-sled", commandString);
+			Shell shell = new Shell(request.getSession().getId(), Constants.TOOL_TLS_SLED, commandString);
 		} else {
 			command.setSuccess(false);
 			result = "Echec de la commande";
