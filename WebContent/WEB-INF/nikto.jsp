@@ -158,7 +158,6 @@
 									<option value="8" id="directory-separator"><c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion-grp/windows-url')}" /></option>
 							</select>
 						</div>
-					</div>
 					
 					<br>
 					
@@ -198,6 +197,9 @@
 										</div>
 						</div>
 						
+					</div>
+						
+					<div class="col-lg-12 col-md-12 col-sm-12">
 						<br>
 
 						<div 	class=command id=command 
@@ -206,7 +208,7 @@
 							data-placement="bottom">
 							> nikto
 						</div>
-
+					</div>
 						<div style="text-align: right">
 							<br>
 							<button type="submit" class="btn btn-default"
@@ -221,6 +223,7 @@
 						</div>
 					</form>
 				</div>
+				
 				<div id="response_panel" class="hidden">
 					<div class=command id=response></div>
 				</div>
