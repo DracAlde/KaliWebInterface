@@ -3,9 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:import url="nav.jsp"></c:import>
+<link href="bootstrap/css/bootstrap-multiselect.css" media="screen" rel="stylesheet" type="text/css">
 <body>
-
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" media="screen" rel="stylesheet" type="text/css">
 
 	<section>
 		<div class="panel panel-default col-md-12 col-lg-12" style="padding:0px;">
@@ -230,9 +229,9 @@
 		</div>
 		
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="bootstrap/js/bootstrap.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 		<script type="text/javascript" src="bootstrap/js/angular.min.js"></script>
 		<script type="text/javascript" src="bootstrap/js/angularjs-multiple-select.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap-multiselect.js"></script>
@@ -244,7 +243,7 @@
 		<script type="text/javascript" src="js/switcher.js"></script>
 		<!-- Include the-harvester script -->
 		<script type="text/javascript" src="js/the-harvester.js"></script>
-		
+		</div>
 	</section>
 </body>
 </html>
