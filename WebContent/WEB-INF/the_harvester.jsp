@@ -80,7 +80,7 @@
 							<span
 								class="input-group-addon" id="basic-addon2"
 								data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/cible')}" />"
+								title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/info-source')}" />"
 								data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
 							</span>
 							
