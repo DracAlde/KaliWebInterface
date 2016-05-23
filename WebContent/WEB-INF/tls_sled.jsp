@@ -140,6 +140,7 @@
 			var command = document.getElementById('command');
 			var form = document.getElementById('form');
 			var response = document.getElementById('response');
+			var response_btn = document.getElementById('response_btn');
 
 			function updateCommand() {
 
@@ -184,7 +185,10 @@
 
 			function readData(sData) {
 				// On peut maintenant traiter les données sans encombrer l'objet XHR.
-				response.innerHTML = sData;
+				if(sData != response.innerHTML){
+					response.innerHTML = sData;
+					switcher(response_btn);
+				}
 			}
 			
 			request(readData);

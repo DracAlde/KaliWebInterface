@@ -492,7 +492,10 @@
 
 			function readData(sData) {
 				// On peut maintenant traiter les données sans encombrer l'objet XHR.
-				response.innerHTML = sData;
+				if(sData != response.innerHTML){
+					response.innerHTML = sData;
+					switcher(response_btn);
+				}
 			}
 			
 			request(readData);

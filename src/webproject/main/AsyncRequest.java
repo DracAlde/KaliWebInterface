@@ -28,14 +28,18 @@ public class AsyncRequest extends HttpServlet{
 		response.setContentType("text/html");
 
 		String tool = Tools.getFieldValue(request, "tool");
-		String res = "";
+		String res = null;
 
 		HttpSession session = request.getSession();
 		if(tool != null){
 			res = getResponse(session.getId(), tool);
 		}
+		
+		if(res == null){
+			res = "";
+		}
 		PrintWriter out = response.getWriter();
-		out.println(res);
+		out.print(res);
 	}
 
 	public static synchronized void addAsyncItem(AsyncItem item){
