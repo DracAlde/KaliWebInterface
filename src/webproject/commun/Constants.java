@@ -28,6 +28,12 @@ public class Constants {
 	public static final String LANG_PATH_EN			= "/en.xml";
 	
 	/**
+	 * Dictionary path
+	 */
+	public static final String DICO_MEDIUM			= "/usr/share/dict/words";
+	
+	
+	/**
 	 * URL address constants
 	 */
 	public static final String ADDR_HOME         	= "/";

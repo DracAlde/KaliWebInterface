@@ -50,7 +50,7 @@ public class HydraForm {
 				accountArg = "-l";
 				accountValue = Tools.getFieldValue(request, Constants.FIELD_ACCOUNT_NAME);
 			}else if(accountRadio.equals("dictionary")){
-				accountArg = "-L";
+				accountArg = "-L "+Constants.DICO_MEDIUM;
 				accountValue = Tools.getFieldValue(request, Constants.SLCT_ACCOUNT_DICO);
 			}
 			
@@ -65,7 +65,7 @@ public class HydraForm {
 				passwordArg = "-p";
 				passwordValue = Tools.getFieldValue(request, Constants.FIELD_PASSWORD);
 			}else if(passwordRadio.equals("dictionary")){
-				passwordArg = "-P";
+				passwordArg = "-P"+Constants.DICO_MEDIUM;
 				passwordValue = Tools.getFieldValue(request, Constants.SLCT_PASSWORD_DICO);
 			}
 			
