@@ -13,25 +13,44 @@
 		  <c:import url="top_page.jsp"></c:import>
 		  
 		  <div class="panel-footer">
-			<div class="row">
 			
-				<h3 class=col-lg-12>
-					<span	data-toggle="tooltip" 
-							title="<c:out value="${language.getLanguageValue('zenmap', '/zenmap/desc-tool')}"/>"
-							data-placement="right">
-							
-						Zenmap
-						
-					</span>
-					
-					<div class="help-picture"
-						data-toggle="tooltip" 
-						title="<c:out value="${language.getLanguageValue('zenmap', '/zenmap/desc-tool')}" />"
-						data-placement="left">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed"
+								data-toggle="collapse"
+								data-target="#bs-example-navbar-collapse-1"
+								aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span> <span
+									class="icon-bar"></span> <span class="icon-bar"></span> <span
+									class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand">Zenmap</a>
+						</div>
+
+						<ul class="nav navbar-nav">
+
+
+							<li id="form_btn" role="presentation" class="active"
+								onclick="switcher(this)"><a> <c:out
+										value="${language.getLanguageValue('default', '/default/form')}" />
+
+							</a></li>
+
+							<li id="response_btn" role="presentation"
+								onclick="switcher(this)"><a> <c:out
+										value="${language.getLanguageValue('default', '/default/response')}" />
+							</a></li>
+							<li><a data-toggle="tooltip"
+								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/desc-tool')}" />"
+								data-placement="right">?</a></li>
+						</ul>
+
 					</div>
-				</h3>
-					
-				</div>
+				</nav>
+				
+				<div id="form">
 			<form method="POST" action="<c:url value="/zenmap" ></c:url>">
 					<div>
 						<label for="hostname" data-toggle="tooltip"
@@ -107,6 +126,9 @@
 				</div>
 			</form>
 		  </div>
+			<div id="response_panel" class="hidden">
+				<div class=command id=response></div>
+			</div>
 		</div>
 		
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -115,6 +137,10 @@
 		<script src="bootstrap/js/bootstrap.js"></script>
 		<!-- Include history script -->
 		<script src="js/history.js"></script>
+		<!-- Include tools for asynchrone requests -->
+		<script type="text/javascript" src="js/async.js"></script>
+		<!-- Include switcher -->
+		<script type="text/javascript" src="js/switcher.js"></script>
 		
 		<script>
 		
@@ -178,6 +204,30 @@
 			}
 			
 			updateCommand();
+			
+			function request(callback) {
+				var xhr = getXMLHttpRequest();
+
+				setTimeout(function(){
+					xhr.onreadystatechange = function() {
+						if (xhr.readyState == 4
+								&& (xhr.status == 200 || xhr.status == 0)) {
+							callback(xhr.responseText);
+						}
+					};
+
+					xhr.open("GET", "<c:url value='/asyncrequest?tool=zenmap' ></c:url>", true);
+					xhr.send(null);
+					request(readData);
+					}, 1000);
+			}
+
+			function readData(sData) {
+				// On peut maintenant traiter les données sans encombrer l'objet XHR.
+				response.innerHTML = sData;
+			}
+			
+			request(readData);
 			
 			$(document).ready(function(){
 			    $('[data-toggle="tooltip"]').tooltip();

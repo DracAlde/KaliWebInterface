@@ -66,20 +66,6 @@ public class TlsSledForm {
 		return command;
 	}
 
-//	private void hostnameValidation(String hostname) throws Exception {
-//		DomainValidator dv = DomainValidator.getInstance();
-//		if(dv.isValid(hostname)){
-//			return;
-//		}
-//
-//		InetAddressValidator iav = InetAddressValidator.getInstance();
-//		if(iav.isValid(hostname)){
-//			return;
-//		}
-//
-//		throw new Exception("Cet hostname est invalide");
-//	}
-
 	/**
 	 * Ajoute un message correspondant au champ spécifié à la map des erreurs.
 	 */

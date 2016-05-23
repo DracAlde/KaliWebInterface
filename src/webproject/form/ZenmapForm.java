@@ -9,6 +9,7 @@ import webproject.commun.Command;
 import webproject.commun.Constants;
 import webproject.commun.ToolName;
 import webproject.commun.Tools;
+import webproject.shell.Shell;
 
 public class ZenmapForm {
 	
@@ -57,6 +58,9 @@ public class ZenmapForm {
 			// pas d'erreur, on envois la requete
 			command.setSuccess(true);
 			result = "Succès de la commande";
+			
+			@SuppressWarnings("unused")
+			Shell shell = new Shell(request.getSession().getId(), Constants.TOOL_ZENMAP, commandString);
 		} else {
 			command.setSuccess(false);
 			result = "Echec de la commande";

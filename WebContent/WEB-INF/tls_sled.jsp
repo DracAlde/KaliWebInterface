@@ -179,7 +179,7 @@
 					xhr.open("GET", "<c:url value='/asyncrequest?tool=tls-sled' ></c:url>", true);
 					xhr.send(null);
 					request(readData);
-					}, 10000);
+					}, 1000);
 			}
 
 			function readData(sData) {
