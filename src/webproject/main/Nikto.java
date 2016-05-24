@@ -38,13 +38,10 @@ public class Nikto extends HttpServlet {
 	
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		//System.out.println("OK0");
 		Tools.initiatePath(request);
 
 		NiktoForm form = new NiktoForm();
 		
-		//System.out.println("OK1");
-
 		Command command = form.validateNikto(request);
 
 		HttpSession session = request.getSession();

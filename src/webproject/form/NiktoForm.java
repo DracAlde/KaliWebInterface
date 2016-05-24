@@ -33,15 +33,13 @@ public class NiktoForm {
 	{
 		Command command = new Command(ToolName.Nikto);
 		String commandString = "nikto";
-		String hostname = Tools.getFieldValue(request, Constants.FIELD_DOMAIN);
+		String hostname = Tools.getFieldValue(request, Constants.FIELD_HOSTNAME);
 		String vHost = Tools.getFieldValue(request, Constants.FIELD_VHOST);
 		String port = Tools.getFieldValue(request, Constants.FIELD_PORT);
 		String timeout = Tools.getFieldValue(request, Constants.FIELD_TIMEOUT);
 		LinkedList<String> evasionType = Tools.getListFieldValue(request, Constants.SLCT_EVASION_TYPE);
 		
-
-		System.out.println("OK2");
-		
+	
 		try{
 			Tools.hostnameValidation(hostname);
 			command.setArguments(Constants.FIELD_HOSTNAME, hostname);
@@ -50,12 +48,15 @@ public class NiktoForm {
 			setError(Constants.FIELD_HOSTNAME, "ERROR: hostname doesn't exist\n" + e.getMessage());
 		}
 		
-		try{
-			Tools.hostnameValidation(vHost);
-			command.setArguments(Constants.FIELD_VHOST, vHost);
-			commandString += " -vhost " + vHost;
-		} catch (Exception e) {
-			setError(Constants.FIELD_HOSTNAME, "ERROR: vHost doesn't exist\n" + e.getMessage());
+		if (vHost != null)
+		{
+			try{
+					System.out.println(Tools.hostnameValidation(vHost));
+					command.setArguments(Constants.FIELD_VHOST, vHost);
+					commandString += " -vhost " + vHost;
+			} catch (Exception e) {
+				setError(Constants.FIELD_VHOST, "ERROR: vHost doesn't exist\n" + e.getMessage());
+			}
 		}
 		
 		try{
@@ -66,12 +67,21 @@ public class NiktoForm {
 			setError(Constants.FIELD_PORT, "ERROR: port is not correct (must be between 0 and 65535)\n" + e.getMessage());
 		}
 		
-		try{
-			Tools.portValidation(timeout);
-			command.setArguments(Constants.FIELD_TIMEOUT, timeout);
-			commandString += " -Pause " + timeout;
-		} catch (Exception e) {
-			setError(Constants.FIELD_PORT, "ERROR: timeout is not correct (must be between 0 and 65535)\n" + e.getMessage());
+		if (timeout != null)
+		{
+			try{
+				
+					Tools.portValidation(timeout);
+					command.setArguments(Constants.FIELD_TIMEOUT, timeout);
+					commandString += " -Pause " + timeout;
+			} catch (Exception e) {
+				setError(Constants.FIELD_PORT, "ERROR: timeout is not correct (must be between 0 and 65535)\n" + e.getMessage());
+			}
+		}
+		else 
+		{
+			command.setArguments(Constants.FIELD_TIMEOUT, "2");
+			commandString += " -Pause " + "2";
 		}
 		
 		if (evasionType != null)
