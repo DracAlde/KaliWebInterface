@@ -96,7 +96,7 @@ public class Shell extends Thread{
 			System.err.println(e.getMessage());
 		}
 		
-		res.replaceAll("(\r\n|\n)", "<br />");
+		res.replaceAll("(\r\n|\r|\n)", "<br />");
 		System.out.println(res);
 		
 		AsyncItem item = new AsyncItem(sessionID, tool, res);

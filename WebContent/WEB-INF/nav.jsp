@@ -107,10 +107,7 @@
 				<li><i class="fa fa-terminal fa-lg"></i> <c:out
 						value="${language.getLanguageValue('default', '/default/nav/terminal')}" /></li>
 			</a>
-
-<%-- 			<a href="<c:url value="/changelanguage.html"></c:url>">
- --%>				<li>
-					<div class="onoffswitch">
+					<div class="onoffswitch" style="margin-left: 5px;margin-top: 5px;">
 					<c:if test="${language.getLanguage().equals('en')}">
 							<input type="checkbox" name="onoffswitch" onchange="updateLang()"
 								class="onoffswitch-checkbox" id="myonoffswitch">
@@ -124,7 +121,6 @@
 								class="onoffswitch-switch"></span>
 							</label>
 					</div>
-				</li>
 <!-- 			</a>
  -->		</ul>
 	</div>
