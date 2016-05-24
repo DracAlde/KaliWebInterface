@@ -84,6 +84,16 @@ public class Constants {
 	public static final String SLCT_ACCOUNT_DICO    = "account_dico_type";
 	public static final String SLCT_PASSWORD_DICO   = "password_dico_type";
 	
+	// Nikto
+	
+	public static final String FIELD_VHOST 			= "vhost";
+	public static final String FIELD_TIMEOUT		= "timeout";
+	public static final String SLCT_EVASION_TYPE 	= "evasion-type";
+	public static final String CHK_FIND_ONLY		= "find-only";
+	public static final String CHK_NO_LOOKUP		= "no-lookup";
+	public static final String CHK_FORCE_SSL		= "force-ssl";
+	public static final String CHK_SINGLE_REQ		= "single-request";
+	
 	
 	/**
 	 * SSH session constants

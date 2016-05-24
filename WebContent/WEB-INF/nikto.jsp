@@ -55,7 +55,7 @@
 				
 				
 				<div id="form">
-					<form method="POST" action="<c:url value="/tlssled" ></c:url>"
+					<form method="POST" action="<c:url value="/nikto" ></c:url>"
 						id="form">
 						<div class="col-lg-12 col-md-12 col-sm-12">
 							<label for="hostname" data-toggle="tooltip" class="col-lg-12 col-md-12 col-sm-12"

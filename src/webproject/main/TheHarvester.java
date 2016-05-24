@@ -34,8 +34,6 @@ public class TheHarvester extends HttpServlet{
 		language.setCurrentTool(Constants.TOOL_THE_HARVESTER);
 		session.setAttribute(Constants.SESS_LANG, language);
 
-
-		//System.out.println(Tools.detectLocale(request));
 		this.getServletContext().getRequestDispatcher(Constants.VIEW_THEHARVESTER).forward(request, response);	}
 	
 	
@@ -57,8 +55,6 @@ public class TheHarvester extends HttpServlet{
 		session.setAttribute(Constants.ATT_SESSION_HISTORY, history);
 
 		request.setAttribute(Constants.ATT_FORM, form);
-		//System.out.println(request.setAttribute("info-source", request.getParameterMap().get("info-source")));
-		session.setAttribute("info-source", request.getParameterMap().get("info-source"));
 		
 		this.getServletContext().getRequestDispatcher(Constants.VIEW_THEHARVESTER).forward(request, response);
 	}
