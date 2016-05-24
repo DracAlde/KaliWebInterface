@@ -244,6 +244,36 @@
 		<!-- Include the-harvester script -->
 		<script type="text/javascript" src="js/the-harvester.js"></script>
 		</div>
+		
+		<script type="text/javascript">
+
+		function request(callback) {
+			var xhr = getXMLHttpRequest();
+
+			setTimeout(function(){
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState == 4
+							&& (xhr.status == 200 || xhr.status == 0)) {
+						callback(xhr.responseText);
+					}
+				};
+
+				xhr.open("GET", "<c:url value='/asyncrequest?tool=the-harvester' ></c:url>", true);
+				xhr.send(null);
+				request(readData);
+			}, 1000);
+		}
+
+		function readData(sData) {
+			// On peut maintenant traiter les données sans encombrer l'objet XHR.
+			if(sData != response.innerHTML){
+				response.innerHTML = sData;
+				switcher(response_btn);
+			}
+		}
+
+		request(readData);
+		</script>
 	</section>
 </body>
 </html>

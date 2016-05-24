@@ -225,30 +225,3 @@ $(document).ready(function() {
 		enableCaseInsensitiveFiltering: true
 	});
 });
-
-function request(callback) {
-	var xhr = getXMLHttpRequest();
-
-	setTimeout(function(){
-		xhr.onreadystatechange = function() {
-			if (xhr.readyState == 4
-					&& (xhr.status == 200 || xhr.status == 0)) {
-				callback(xhr.responseText);
-			}
-		};
-
-		xhr.open("GET", "<c:url value='/asyncrequest?tool=the-harvester' ></c:url>", true);
-		xhr.send(null);
-		request(readData);
-	}, 1000);
-}
-
-function readData(sData) {
-	// On peut maintenant traiter les données sans encombrer l'objet XHR.
-	if(sData != response.innerHTML){
-		response.innerHTML = sData;
-		switcher(response_btn);
-	}
-}
-
-request(readData);
