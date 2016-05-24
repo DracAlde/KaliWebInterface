@@ -12,6 +12,7 @@ import com.jcraft.jsch.Session;
 import com.jcraft.jsch.UserInfo;
 
 import webproject.commun.AsyncItem;
+import webproject.commun.Config;
 import webproject.main.AsyncRequest;
 
 public class Shell extends Thread{
@@ -34,22 +35,10 @@ public class Shell extends Thread{
 		try{
 			JSch jsch=new JSch();  
 
-			String host = "root@192.168.56.101";
-			String user=host.substring(0, host.indexOf('@'));
-			host=host.substring(host.indexOf('@')+1);
+			String host = Config.getProperties("host");
+			String user = Config.getProperties("user");
 
 			Session session=jsch.getSession(user, host, 22);
-
-			/*
-		      String xhost="127.0.0.1";
-		      int xport=0;
-		      String display=JOptionPane.showInputDialog("Enter display name", 
-		                                                 xhost+":"+xport);
-		      xhost=display.substring(0, display.indexOf(':'));
-		      xport=Integer.parseInt(display.substring(display.indexOf(':')+1));
-		      session.setX11Host(xhost);
-		      session.setX11Port(xport+6000);
-			 */
 
 			// username and password will be given via UserInfo interface.
 			UserInfo ui=new MyUserInfo();
@@ -58,29 +47,23 @@ public class Shell extends Thread{
 
 			Channel channel=session.openChannel("exec");
 			((ChannelExec)channel).setCommand(command);
-
-			// X Forwarding
-			// channel.setXForwarding(true);
-
-			//channel.setInputStream(System.in);
+			
 			channel.setInputStream(null);
-
-			//channel.setOutputStream(System.out);
-
-			//FileOutputStream fos=new FileOutputStream("/tmp/stderr");
-			//((ChannelExec)channel).setErrStream(fos);
+			
 			((ChannelExec)channel).setErrStream(System.err);
 
 			InputStream in=channel.getInputStream();
 
 			channel.connect();
 
+			res = "> "+ command + "<br>";
+			
 			byte[] tmp=new byte[1024];
 			while(true){
 				while(in.available()>0){
 					int i=in.read(tmp, 0, 1024);
 					if(i<0)break;
-					res += new String(tmp, 0, i);
+					res += new String(tmp, 0, i) + "<br>";
 				}
 				if(channel.isClosed()){
 					if(in.available()>0) continue; 
@@ -95,9 +78,6 @@ public class Shell extends Thread{
 			res += "ERROR: failed to execute request";
 			System.err.println(e.getMessage());
 		}
-		
-		res.replaceAll("(\r\n|\r|\n)", "<br />");
-		System.out.println(res);
 		
 		AsyncItem item = new AsyncItem(sessionID, tool, res);
 		AsyncRequest.addAsyncItem(item);
@@ -114,7 +94,7 @@ public class Shell extends Thread{
 		public String getPassword(){ return passwd; }
 		public boolean promptYesNo(String str){ return true;}
 
-		String passwd = "toor";
+		String passwd = Config.getProperties("password");
 		JTextField passwordField=(JTextField)new JPasswordField(20);
 
 		public String getPassphrase(){ return null; }
