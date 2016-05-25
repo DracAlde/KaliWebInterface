@@ -48,7 +48,7 @@ public class ChangeLanguage extends HttpServlet{
 		url = bufURL.substring(0, bufURL.lastIndexOf("/"));
 		
 		if(null == language.getCurrentToolLanguage()){
-			this.getServletContext().getRequestDispatcher(Constants.VIEW_HOME).forward(request, response);
+			response.sendRedirect(url + Constants.ADDR_HOME);
 		}else{
 			switch(language.getCurrentToolLanguage()){
 			case Constants.TOOL_TLS_SLED:
