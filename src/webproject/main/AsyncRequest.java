@@ -15,6 +15,12 @@ import webproject.commun.Constants;
 import webproject.commun.History;
 import webproject.commun.Tools;
 
+/**
+ * Class used to store command responses (AsyncItem)
+ * and to send the result when it is called the client
+ * @author kilian
+ *
+ */
 public class AsyncRequest extends HttpServlet{
 
 	/**
@@ -23,6 +29,10 @@ public class AsyncRequest extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	private static LinkedList<AsyncItem> responsesList = new LinkedList<AsyncItem>();
 
+	/**
+	 * Create a txt response with the value corresponding to the sessionID
+	 * and the tool
+	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
 		response.setContentType("text/html");
@@ -46,6 +56,13 @@ public class AsyncRequest extends HttpServlet{
 		responsesList.add(item);
 	}
 
+	/**
+	 * Select the response in responsesList corresponding with the
+	 * sessionID and the tool
+	 * @param sessionID
+	 * @param tool
+	 * @return
+	 */
 	public static String getResponse(String sessionID, String tool){
 		String res = null;
 
@@ -57,10 +74,4 @@ public class AsyncRequest extends HttpServlet{
 
 		return res;
 	}
-
-	public static void read(HttpServletRequest request, String tool){
-		History history = (History) request.getSession().getAttribute(Constants.ATT_SESSION_HISTORY);
-		System.out.println(history.getResponse(tool));
-	}
-
 }

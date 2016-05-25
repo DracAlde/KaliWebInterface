@@ -15,6 +15,11 @@ import webproject.commun.Language;
 import webproject.commun.Tools;
 import webproject.form.TlsSledForm;
 
+/**
+ * Servlet for the The Harvester tool
+ * @author kilian
+ *
+ */
 public class TlsSled extends HttpServlet{
 
 	/**
@@ -22,6 +27,9 @@ public class TlsSled extends HttpServlet{
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Respond with the tls sled view
+	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Tools.initiatePath(request);
 
@@ -39,7 +47,11 @@ public class TlsSled extends HttpServlet{
 	}
 
 
-
+	/**
+	 * Use tls sled form to create a command
+	 * add the command in the session history
+	 * send tls sled's view
+	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Tools.initiatePath(request);
 

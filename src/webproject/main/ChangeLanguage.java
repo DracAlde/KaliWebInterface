@@ -12,12 +12,20 @@ import webproject.commun.Constants;
 import webproject.commun.Language;
 import webproject.commun.Tools;
 
+/**
+ * Class called to change the language of the application
+ * @author kilian
+ *
+ */
 public class ChangeLanguage extends HttpServlet{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Switch the language and redirect the request to the previous tool
+	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		StringBuffer bufURL = null;
 		String url = "";

@@ -15,6 +15,11 @@ import webproject.commun.Language;
 import webproject.commun.Tools;
 import webproject.form.HydraForm;
 
+/**
+ * Servlet for the Hydra tool
+ * @author kilian
+ *
+ */
 public class Hydra extends HttpServlet{
 	
 	/**
@@ -22,6 +27,9 @@ public class Hydra extends HttpServlet{
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Respond with the hydra view
+	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
 		Tools.initiatePath(request);
@@ -37,6 +45,11 @@ public class Hydra extends HttpServlet{
 		this.getServletContext().getRequestDispatcher(Constants.VIEW_HYDRA).forward(request, response);
 	}
 	
+	/**
+	 * Use the Hydra form to create a command
+	 * add the command in the session history
+	 * send hydra's view
+	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Tools.initiatePath(request);
 

@@ -11,6 +11,12 @@ import webproject.commun.ToolName;
 import webproject.commun.Tools;
 import webproject.shell.Shell;
 
+/**
+ * This class is used to validate the POST request form Hydra.
+ * It will return a shell command and a Map with form errors
+ * @author kilian
+ *
+ */
 public class HydraForm {
 
 	private String 				result = "";
@@ -26,6 +32,12 @@ public class HydraForm {
 		return errors;
 	}
 
+	/**
+	 * Test every parameters of the request and build a command
+	 * The errors are saved in the error Map
+	 * @param request
+	 * @return
+	 */
 	public Command validateHydra(HttpServletRequest request){
 		String target = Tools.getFieldValue(request, Constants.FIELD_TARGET);
 		String accountRadio = Tools.getFieldValue(request, Constants.RADIO_ACCOUNT);
@@ -100,6 +112,12 @@ public class HydraForm {
 		return command;
 	}
 	
+	/**
+	 * Test if the radio parameters has one of the correct values
+	 * @param accountRadio
+	 * @return
+	 * @throws Exception
+	 */
 	private int radioValidation(String accountRadio) throws Exception{
 		if(accountRadio.equals("known") || accountRadio.equals("dictionary")){
 			return 0;
@@ -108,7 +126,7 @@ public class HydraForm {
 	}
 
 	/**
-	 * Ajoute un message correspondant au champ spécifié à la map des erreurs.
+	 * Add an error message associated with a field in the error map
 	 */
 	private void setError(String field, String message) {
 		errors.put(field, message);

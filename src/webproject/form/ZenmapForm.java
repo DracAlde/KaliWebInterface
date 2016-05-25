@@ -11,6 +11,12 @@ import webproject.commun.ToolName;
 import webproject.commun.Tools;
 import webproject.shell.Shell;
 
+/**
+ * This class is used to validate the POST request form Zenmap.
+ * It will return a shell command and a Map with form errors
+ * @author arn0f
+ *
+ */
 public class ZenmapForm {
 	
 	private String 				result = "";
@@ -26,6 +32,12 @@ public class ZenmapForm {
 		return errors;
 	}
 
+	/**
+	 * Test every parameters of the request and build a command
+	 * The errors are saved in the error Map
+	 * @param request
+	 * @return
+	 */
 	public Command validateZenmap(HttpServletRequest request){
 		String hostname = Tools.getFieldValue(request, Constants.FIELD_HOSTNAME);
 		String scanType = Tools.getFieldValue(request, Constants.FIELD_SCAN_TYPE);
@@ -71,7 +83,7 @@ public class ZenmapForm {
 
 
 	/**
-	 * Ajoute un message correspondant au champ spécifié à la map des erreurs.
+	 * Add an error message associated with a field in the error map
 	 */
 	private void setError(String field, String message) {
 		errors.put(field, message);

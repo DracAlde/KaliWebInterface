@@ -168,7 +168,9 @@ public class Language {
 		this.currentToolLanguage = currentTool;
 	}
 
-
+	/**
+	 * Switch the current language between 'en' and 'fr'
+	 */
 	public void switchLanguage() {
 		
 		if(language == null) return;

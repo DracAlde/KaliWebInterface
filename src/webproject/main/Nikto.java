@@ -15,6 +15,11 @@ import webproject.commun.Language;
 import webproject.commun.Tools;
 import webproject.form.NiktoForm;
 
+/**
+ * Servlet for the Nikto tool
+ * @author arn0f
+ *
+ */
 public class Nikto extends HttpServlet {
 	
 	/**
@@ -22,6 +27,9 @@ public class Nikto extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Respond with the Nikto view
+	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Tools.initiatePath(request);
 
@@ -36,7 +44,11 @@ public class Nikto extends HttpServlet {
 		this.getServletContext().getRequestDispatcher(Constants.VIEW_NIKTO).forward(request, response);
 	}
 	
-	
+	/**
+	 * Use the Nikto form to create a command
+	 * add the command in the session history
+	 * send nikto's view
+	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Tools.initiatePath(request);
 

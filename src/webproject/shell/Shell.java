@@ -15,13 +15,24 @@ import webproject.commun.AsyncItem;
 import webproject.commun.Config;
 import webproject.main.AsyncRequest;
 
+/**
+ * Class used to send a command in the shell
+ * Use a specific thread
+ * @author kilian
+ *
+ */
 public class Shell extends Thread{
 
-	private static Channel channel;
 	private String tool;
 	private String command;
 	private String sessionID;
 
+	/**
+	 * Create a shell object and call run();
+	 * @param sessionID
+	 * @param tool
+	 * @param command
+	 */
 	public Shell(String sessionID, String tool,String command){
 		this.sessionID = sessionID;
 		this.tool = tool;
@@ -29,6 +40,14 @@ public class Shell extends Thread{
 		this.start();
 	}
 
+	/**
+	 * run() is called by the constructor
+	 * Create a shell session
+	 * send the command
+	 * receive the response
+	 * close the shell
+	 * create an AsyncItem and store it in AsyncRequest class
+	 */
 	public void run(){
 
 		String res = "";
@@ -84,12 +103,11 @@ public class Shell extends Thread{
 		System.err.println(AsyncRequest.getResponse(sessionID, tool));
 	}
 
-	public String sendCommand(String command){
-		channel.setInputStream(System.in);
-
-		return null;
-	}
-
+	/**
+	 * Simple user class, implement the password to connect to the shell
+	 * @author kilian
+	 *
+	 */
 	public static class MyUserInfo implements UserInfo{
 		public String getPassword(){ return passwd; }
 		public boolean promptYesNo(String str){ return true;}

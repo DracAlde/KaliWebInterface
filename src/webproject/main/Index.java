@@ -13,7 +13,7 @@ import webproject.commun.Language;
 import webproject.commun.Tools;
 
 /**
- * Page d'accueil d'une session connectée
+ * Print welcome page
  * @author kilian
  *
  */
@@ -27,7 +27,7 @@ public class Index extends HttpServlet {
 	public static String path = "";
 
 	/**
-	 * Affiche la page d'accueil
+	 * Send Home view
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Tools.initiatePath(request);

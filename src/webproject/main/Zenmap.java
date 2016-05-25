@@ -15,6 +15,11 @@ import webproject.commun.Language;
 import webproject.commun.Tools;
 import webproject.form.ZenmapForm;
 
+/**
+ * Servlet for the Zenmap tool
+ * @author arn0f
+ *
+ */
 public class Zenmap extends HttpServlet{
 	
 	/**
@@ -22,6 +27,9 @@ public class Zenmap extends HttpServlet{
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Respond with the zenmap view
+	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Tools.initiatePath(request);
 
@@ -39,7 +47,11 @@ public class Zenmap extends HttpServlet{
 	}
 	
 	
-	
+	/**
+	 * Use tls zenmap form to create a command
+	 * add the command in the session history
+	 * send tls zenmap view
+	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Tools.initiatePath(request);
 

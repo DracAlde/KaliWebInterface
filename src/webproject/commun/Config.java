@@ -5,7 +5,22 @@ import java.util.Properties;
 
 import webproject.main.Index;
 
+/**
+ * Class to read values from config.properties
+ * @author kilian
+ *
+ */
+
 public class Config{
+	
+	/**
+	 * The method getProperties return the value of the given parameter
+	 * (Exemple: in config.properties we can read 'user=tot',
+	 * name is 'user', it will return 'toto')
+	 * The config.properties file must  be in /webproject/shell/
+	 * @param name
+	 * @return
+	 */
 	
 	public static String getProperties(String name){
 		String value = null;

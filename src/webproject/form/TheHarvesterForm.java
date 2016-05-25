@@ -1,6 +1,7 @@
 package webproject.form;
 
 import java.util.HashMap;
+
 import java.util.LinkedList;
 import java.util.Map;
 
@@ -12,6 +13,12 @@ import webproject.commun.ToolName;
 import webproject.commun.Tools;
 import webproject.shell.Shell;
 
+/**
+ * This class is used to validate the POST request form The Harvester.
+ * It will return a shell command and a Map with form errors
+ * @author arn0f
+ *
+ */
 public class TheHarvesterForm {
 
 	private String 				result = "";
@@ -29,6 +36,12 @@ public class TheHarvesterForm {
 		return errors;
 	}
 	
+	/**
+	 * Test every parameters of the request and build a command
+	 * The errors are saved in the error Map
+	 * @param request
+	 * @return
+	 */
 	public Command validateTheHarvester(HttpServletRequest request)
 	{
 		Command command = new Command(ToolName.TheHarvester);
@@ -120,13 +133,18 @@ public class TheHarvesterForm {
 	}
 
 	/**
-	 * Ajoute un message correspondant au champ spécifié à la map des erreurs.
+	 * Add an error message associated with a field in the error map
 	 */
 	private void setError(String field, String message) {
 		errors.put(field, message);
 	}
 	
-	
+	/**
+	 * Special method to get the select values
+	 * @param selectList
+	 * @param command
+	 * @return LinkedList of the selected values
+	 */
 	private String getSourceToUse(LinkedList<String> sourceList, Command command)
 	{
 		String bufferList = "-b";
@@ -146,6 +164,12 @@ public class TheHarvesterForm {
 		return bufferList;
 	}
 	
+	/**
+	 * Get the value of the checkbox named in parameters
+	 * @param request
+	 * @param field
+	 * @return true or false
+	 */
 	private boolean getCheckboxInfo(HttpServletRequest request, String field)
 	{
 		boolean chkBox = false;

@@ -14,8 +14,12 @@ import webproject.commun.History;
 import webproject.commun.Language;
 import webproject.commun.Tools;
 import webproject.form.TheHarvesterForm;
-import webproject.form.TlsSledForm;
 
+/**
+ * Servlet for the The Harvester tool
+ * @author arn0f
+ *
+ */
 public class TheHarvester extends HttpServlet{
 	
 	/**
@@ -23,6 +27,9 @@ public class TheHarvester extends HttpServlet{
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Respond with the harvester view
+	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Tools.initiatePath(request);
 
@@ -34,9 +41,14 @@ public class TheHarvester extends HttpServlet{
 		language.setCurrentTool(Constants.TOOL_THE_HARVESTER);
 		session.setAttribute(Constants.SESS_LANG, language);
 
-		this.getServletContext().getRequestDispatcher(Constants.VIEW_THEHARVESTER).forward(request, response);	}
+		this.getServletContext().getRequestDispatcher(Constants.VIEW_THEHARVESTER).forward(request, response);	
+	}
 	
-	
+	/**
+	 * Use the harvester form to create a command
+	 * add the command in the session history
+	 * send the harvester's view
+	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Tools.initiatePath(request);
 

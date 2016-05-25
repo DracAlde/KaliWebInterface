@@ -1,5 +1,11 @@
 package webproject.commun;
 
+/**
+ * The AsyncItem is used to store the asyncRequest responses
+ * @author kilian
+ *
+ */
+
 public class AsyncItem {
 	
 	private String sessionID;

@@ -11,6 +11,12 @@ import webproject.commun.ToolName;
 import webproject.commun.Tools;
 import webproject.shell.Shell;
 
+/**
+ * This class is used to validate the POST request form TLS Sled.
+ * It will return a shell command and a Map with form errors
+ * @author kilian
+ *
+ */
 public class TlsSledForm {
 
 	private String 				result = "";
@@ -26,6 +32,12 @@ public class TlsSledForm {
 		return errors;
 	}
 
+	/**
+	 * Test every parameters of the request and build a command
+	 * The errors are saved in the error Map
+	 * @param request
+	 * @return
+	 */
 	public Command validateTlsSled(HttpServletRequest request){
 		String hostname = Tools.getFieldValue(request, Constants.FIELD_HOSTNAME);
 		String port = Tools.getFieldValue(request, Constants.FIELD_PORT);
@@ -67,7 +79,7 @@ public class TlsSledForm {
 	}
 
 	/**
-	 * Ajoute un message correspondant au champ spécifié à la map des erreurs.
+	 * Add an error message associated with a field in the error map
 	 */
 	private void setError(String field, String message) {
 		errors.put(field, message);

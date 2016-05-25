@@ -84,6 +84,12 @@ public class Tools {
 		}
 	}
 
+	/**
+	 * Determine if the parameter is a valid IP address
+	 * @param ip
+	 * @return true if the IP is valid else false
+	 */
+	
 	public static boolean validateIP(String ip) {
 		return PATTERN.matcher(ip).matches();
 	}
@@ -123,6 +129,12 @@ public class Tools {
 		return requestLocale.getLanguage();
 	}
 	
+	/**
+	 * Determine if the parameter is a valid hostname
+	 * @param hostname
+	 * @return true if the hostname is valid else false
+	 * @throws Exception
+	 */
 	public static int hostnameValidation(String hostname) throws Exception {
 		DomainValidator dv = DomainValidator.getInstance();
 		if(dv.isValid(hostname)){
@@ -137,6 +149,12 @@ public class Tools {
 		throw new Exception("Invalid hostname given");
 	}
 	
+	/**
+	 * Determiner if the parameter is a valid port number
+	 * @param port
+	 * @return true if the port number is valid else false
+	 * @throws Exception
+	 */
 	public static int portValidation(String port) throws Exception
 	{
 		int newPort;
@@ -155,6 +173,12 @@ public class Tools {
 		return 0;
 	}
 	
+	/**
+	 * Determiner if the parameter is valid scan parameters
+	 * @param scan
+	 * @return true if parameters are valid else false
+	 * @throws Exception
+	 */
 	public static String scanValidation(String scan) throws Exception
 	{
 		

@@ -4,6 +4,13 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
+/**
+ * The Command object is used to store a command line in the history
+ * and allow to restore the page which create it
+ * @author kilian
+ *
+ */
+
 public class Command {
 	
 	private ToolName tool;
