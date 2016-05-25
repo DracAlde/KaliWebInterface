@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <the-harvester>
-	<desc-tool>Description de The Harvester, quand il est apparu, qui l'a
-		créé, à quoi il sert, quel contexte on l'utilise ... =) On peut aussi
-		mettre la description dans l'info-bulle du point d'interrogration près
-		du titre !</desc-tool>
+	<desc-tool>The objective of this program is to gather emails, subdomains, hosts, employee names, open ports and banners from different public sources like search engines, PGP key servers and SHODAN computer database.
+This tool is intended to help pentester in the early stages of the pentest in order to understand the customer footprint on the Internet. It is also useful for anyone that wants to know what an attacker can see about their organization.</desc-tool>
 	<options>
 		<domaine>Domain or company name</domaine>
 		<info-source>
@@ -53,7 +51,6 @@
 		<limit>Limit the number of result to work with</limit>
 	</aide>
 	<actions>
-		<bouton-envoyer>Send</bouton-envoyer>
 		<tout-supprimer>Remove all</tout-supprimer>
 	</actions>
 </the-harvester>

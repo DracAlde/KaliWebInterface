@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <dns-recon>
-	<desc-tool>
+	<desc-tool>C’est un script utilisant les fonctionnalités du DNS à des fins de recherches et de cartographie. On peut l’utiliser pour rechercher des domaines avec un pool d’adresse IP, pour trouver les IP des serveurs avec un dictionnaire de noms.
 	</desc-tool>
 	
 	<options>

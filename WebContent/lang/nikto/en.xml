@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <nikto>
-	<desc-tool>Nikto est un outils...</desc-tool>
+	<desc-tool>Nikto is a security scanner for web servers, and is programmed in language P.E.R.L. Its functionality is to audit web servers for various faults, test potentially nearly 6,000 dangerous files and CGI vulnerabilities, check obsolete servers and their software components, search the files may contain sensitive information.</desc-tool>
 	
 	<options>
 		<cible>Hostname or IP address</cible>

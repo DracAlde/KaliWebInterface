@@ -6,14 +6,15 @@
 
 <c:import url="nav.jsp"></c:import>
 <body>
-	
+
 	<section>
-		<div class="panel panel-default col-md-12 col-lg-12" style="padding:0px;">
-		  
-		  <c:import url="top_page.jsp"></c:import>
-		  
-		  <div class="panel-footer">
-			
+		<div class="panel panel-default col-md-12 col-lg-12"
+			style="padding: 0px;">
+
+			<c:import url="top_page.jsp"></c:import>
+
+			<div class="panel-footer">
+
 				<nav class="navbar navbar-default">
 					<div class="container-fluid">
 						<!-- Brand and toggle get grouped for better mobile display -->
@@ -46,90 +47,103 @@
 
 					</div>
 				</nav>
-				
+
 				<div id="form">
-			<form method="POST" action="<c:url value="/zenmap" ></c:url>">
-					<div>
-						<label for="hostname" data-toggle="tooltip"
-							title="<c:out value="${language.getLanguageValue('zenmap', '/zenmap/aide/cible')}" />"
-							data-placement="right"> <c:out value="${language.getLanguageValue('zenmap', '/zenmap/options/cible')}" />
-						</label>
-						<div class="input-group col-lg-2 col-mg-4 col-sm-6">
-							<input type="text" class="form-control" placeholder="Hostname"
-								name="hostname" id="hostname" onkeyup="updateCommand()"
-								onselect="updateCommand()" autofocus required> 
-							<span
-								class="input-group-addon" id="basic-addon2"
-								data-toggle="tooltip"
+					<form method="POST" action="<c:url value="/zenmap" ></c:url>">
+						<div>
+							<label for="hostname" data-toggle="tooltip"
 								title="<c:out value="${language.getLanguageValue('zenmap', '/zenmap/aide/cible')}" />"
-								data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
-							</span>
+								data-placement="right"> <c:out
+									value="${language.getLanguageValue('zenmap', '/zenmap/options/cible')}" />
+							</label>
+							<div class="input-group col-lg-2 col-mg-4 col-sm-6">
+								<input type="text" class="form-control" placeholder="Hostname"
+									name="hostname" id="hostname" onkeyup="updateCommand()"
+									onselect="updateCommand()" autofocus required> <span
+									class="input-group-addon" id="basic-addon2"
+									data-toggle="tooltip"
+									title="<c:out value="${language.getLanguageValue('zenmap', '/zenmap/aide/cible')}" />"
+									data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
+								</span>
+							</div>
+							<p class="error">${form.errors['hostname']}</p>
 						</div>
-						<p class="error">${form.errors['hostname']}</p>
-					</div>
 
 
-					<div>
-						<label for="scan_type" data-toggle="tooltip"
-							title="<c:out value="${language.getLanguageValue('zenmap', '/zenmap/aide/scan-type')}" />"
-							data-placement="right"> <c:out value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/nom')}" />
-						</label>
-						<div class="input-group col-lg-2 col-mg-4 col-sm-6">
-							<select class="form-control" name="scan_type" id="scan_type" onchange="updateCommand()" autofocus required>
-								<optgroup label="Scan intense">
-									<option value="intense" id="intense" title="Test"><c:out value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/intense')}" /></option>
-									<option value="intense_udp" id="intense_udp" title="Test"><c:out value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/intense-udp')}" /></option>
-									<option value="intense_tcp" id="intense_tcp" title="Test"><c:out value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/intense-tcp')}" /></option>
-									<option value="intense_no_ping" id="intense_no_ping" title="Test"><c:out value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/intense-ping')}" /></option>
-								</optgroup>
-								<optgroup label="Scan rapide">
-									<option value="rapide" id="rapide" title="Test"><c:out value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/rapide')}" /></option>
-									<option value="rapide_plus" id="rapide_plus" title="Test"><c:out value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/rapide-plus')}" /></option>
-								</optgroup>
-								<optgroup label="Scan classique">
-									<option value="ping" id="ping" title="Test"><c:out value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/ping')}" /></option>
-									<option value="traceroute" id="traceroute" title="Test"><c:out value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/traceroute')}" /></option>
-									<option value="ordinaire" id="ordinaire" title="Test"><c:out value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/ordinaire')}" /></option>
-									<option value="complet" id="complet" title="Test"><c:out value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/complet')}" /></option>
-								</optgroup>
-							</select>
-							<span
-								class="input-group-addon" id="basic-addon2"
-								data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('zenmap', '/zenmap/aide/cible')}" />"
-								data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
-							</span>
+						<div>
+							<label for="scan_type" data-toggle="tooltip"
+								title="<c:out value="${language.getLanguageValue('zenmap', '/zenmap/aide/scan-type')}" />"
+								data-placement="right"> <c:out
+									value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/nom')}" />
+							</label>
+							<div class="input-group col-lg-2 col-mg-4 col-sm-6">
+								<select class="form-control" name="scan_type" id="scan_type"
+									onchange="updateCommand()" autofocus required>
+									<optgroup label="Scan intense">
+										<option value="intense" id="intense" title="Test"><c:out
+												value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/intense')}" /></option>
+										<option value="intense_udp" id="intense_udp" title="Test"><c:out
+												value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/intense-udp')}" /></option>
+										<option value="intense_tcp" id="intense_tcp" title="Test"><c:out
+												value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/intense-tcp')}" /></option>
+										<option value="intense_no_ping" id="intense_no_ping"
+											title="Test"><c:out
+												value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/intense-ping')}" /></option>
+									</optgroup>
+									<optgroup label="Scan rapide">
+										<option value="rapide" id="rapide" title="Test"><c:out
+												value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/rapide')}" /></option>
+										<option value="rapide_plus" id="rapide_plus" title="Test"><c:out
+												value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/rapide-plus')}" /></option>
+									</optgroup>
+									<optgroup label="Scan classique">
+										<option value="ping" id="ping" title="Test"><c:out
+												value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/ping')}" /></option>
+										<option value="traceroute" id="traceroute" title="Test"><c:out
+												value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/traceroute')}" /></option>
+										<option value="ordinaire" id="ordinaire" title="Test"><c:out
+												value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/ordinaire')}" /></option>
+										<option value="complet" id="complet" title="Test"><c:out
+												value="${language.getLanguageValue('zenmap', '/zenmap/options/scan-type/complet')}" /></option>
+									</optgroup>
+								</select> <span class="input-group-addon" id="basic-addon2"
+									data-toggle="tooltip"
+									title="<c:out value="${language.getLanguageValue('zenmap', '/zenmap/aide/cible')}" />"
+									data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
+								</span>
+							</div>
 						</div>
-					</div>
 
-					<br>
+						<br>
 
-					<div 	class=command id=command 
-						data-toggle="tooltip" 
-						title="C'est la ligne qui sera envoyée dans le terminal de notre système Kali Linux"
-						data-placement="bottom">
-					> nmap
+						<div class=command id=command data-toggle="tooltip"
+							title="C'est la ligne qui sera envoyée dans le terminal de notre système Kali Linux"
+							data-placement="bottom">> nmap</div>
+
+						<div style="text-align: right">
+							<br>
+							<button type="submit" class="btn btn-default"
+								aria-label="Right Align">
+								<c:out
+									value="${language.getLanguageValue('default', '/default/actions/bouton-envoyer')}" />
+							</button>
+						</div>
+
+						<div>
+							<p class="${empty form.errors ? 'succes' : 'error'}">${form.result}</p>
+						</div>
+
+					</form>
 				</div>
-				
-				<div style="text-align:right">
-					<br>
-					<button type="submit" class="btn btn-default" aria-label="Right Align">
-						<c:out value="${language.getLanguageValue('zenmap', '/zenmap/actions/bouton-envoyer')}" />
-					</button>
+				<div id="response_panel" class="hidden">
+					<div class=command id=response></div>
 				</div>
-				
-				<div>
-					<p class="${empty form.errors ? 'succes' : 'error'}">${form.result}</p>
-				</div>
-			</form>
-		  </div>
-			<div id="response_panel" class="hidden">
-				<div class=command id=response></div>
 			</div>
 		</div>
-		
+
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="bootstrap/js/bootstrap.js"></script>
 		<!-- Include history script -->
@@ -138,30 +152,28 @@
 		<script type="text/javascript" src="js/async.js"></script>
 		<!-- Include switcher -->
 		<script type="text/javascript" src="js/switcher.js"></script>
-		
+
 		<script>
-		
-			history();
-			
-			var hostname = document.getElementById('hostname'),
-				scan_type = document.getElementById('scan_type'),
-				command = document.getElementById('command');
-			
-			function updateCommand(){
-				
-				var hostname_txt = '';
-				var scan_txt = '';
-				var command_string = '';
-				var scan_index = scan_type.selectedIndex;
-					
-				if(hostname.value.length == 0){
-					hostname_txt = '&lt;hostname&gt;';
-				}else{
-					hostname_txt = hostname.value;
-				}
-				
-				switch(scan_index)
-				{
+				history();
+
+				var hostname = document.getElementById('hostname'), scan_type = document
+						.getElementById('scan_type'), command = document
+						.getElementById('command');
+
+				function updateCommand() {
+
+					var hostname_txt = '';
+					var scan_txt = '';
+					var command_string = '';
+					var scan_index = scan_type.selectedIndex;
+
+					if (hostname.value.length == 0) {
+						hostname_txt = '&lt;hostname&gt;';
+					} else {
+						hostname_txt = hostname.value;
+					}
+
+					switch (scan_index) {
 					case 0:
 						scan_txt = '-T4 -A -v';
 						break;
@@ -194,49 +206,54 @@
 						break;
 					default:
 						scan_txt = '&lt;scan_type&gt;';
-				}
-				
-				command_string ='> nmap ' + hostname_txt + ' ' + scan_txt;
-				command.innerHTML = command_string ;
-			}
-			
-			updateCommand();
-			
-			function request(callback) {
-				var xhr = getXMLHttpRequest();
-
-				setTimeout(function(){
-					xhr.onreadystatechange = function() {
-						if (xhr.readyState == 4
-								&& (xhr.status == 200 || xhr.status == 0)) {
-							callback(xhr.responseText);
-						}
-					};
-
-					xhr.open("GET", "<c:url value='/asyncrequest?tool=zenmap' ></c:url>", true);
-					xhr.send(null);
-					if(document.getElementById('response').innerHTML == ''){
-						request(readData);
 					}
-					}, 1000);
-			}
 
-			function readData(sData) {
-				// On peut maintenant traiter les données sans encombrer l'objet XHR.
-				if(sData != response.innerHTML){
-					response.innerHTML = sData;
-					switcher(response_btn);
+					command_string = '> nmap ' + hostname_txt + ' ' + scan_txt;
+					command.innerHTML = command_string;
 				}
-			}
-			
-			request(readData);
-			
-			$(document).ready(function(){
-			    $('[data-toggle="tooltip"]').tooltip();
-			});
-		</script>
+
+				updateCommand();
+
+				function request(callback) {
+					var xhr = getXMLHttpRequest();
+
+					setTimeout(
+							function() {
+								xhr.onreadystatechange = function() {
+									if (xhr.readyState == 4
+											&& (xhr.status == 200 || xhr.status == 0)) {
+										callback(xhr.responseText);
+									}
+								};
+
+								xhr
+										.open(
+												"GET",
+												"<c:url value='/asyncrequest?tool=zenmap' ></c:url>",
+												true);
+								xhr.send(null);
+								if (document.getElementById('response').innerHTML == '') {
+									request(readData);
+								}
+							}, 1000);
+				}
+
+				function readData(sData) {
+					// On peut maintenant traiter les données sans encombrer l'objet XHR.
+					if (sData != response.innerHTML) {
+						response.innerHTML = sData;
+						switcher(response_btn);
+					}
+				}
+
+				request(readData);
+
+				$(document).ready(function() {
+					$('[data-toggle="tooltip"]').tooltip();
+				});
+			</script>
 	</section>
-	
+
 	<c:import url="credits.jsp"></c:import>
 </body>
 </html>

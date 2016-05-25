@@ -53,4 +53,8 @@
 	<description>Description</description>
 	<form>Form</form>
 	<response>Response</response>
+	
+	<actions>
+		<bouton-envoyer>Send</bouton-envoyer>
+	</actions>
 </default>

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <zenmap>
-	<desc-tool>Description de zenmap, quand il est apparu, qui l'a créé, à
-		quoi il sert, quel contexte on l'utilise ... =) On peut aussi mettre
-		la description dans l'info-bulle du point d'interrogration près du
-		titre !</desc-tool>
+	<desc-tool> Zenmap est un outils de simplification de Nmap. ce dernier est un outils de Scan et de recherche d'information sur un hote. Le simple fait de récupérer des informations peux vous donner de informations précieuse si vous désirer mener un exploit ( port en écoute, version os, protocole de transport, etc).</desc-tool>
 	<options>
 		<cible>Cible ou adresse IP</cible>
 		<scan-type>
@@ -26,8 +23,5 @@
 			machine à cibler (target.com)</cible>
 		<scan-type>Veuillez indiquer le type de scan souhaité</scan-type>
 	</aide>
-	<actions>
-		<bouton-envoyer>Envoyer</bouton-envoyer>
-	</actions>
 </zenmap>
 		

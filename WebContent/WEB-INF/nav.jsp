@@ -103,7 +103,7 @@
 						value="${language.getLanguageValue('default', '/default/nav/dns-recon')}" /></li>
 			</a>
 
-			<a href="<c:url value="/dnsrecon"></c:url>">
+			<a href="<c:url value="/"></c:url>">
 				<li><i class="fa fa-terminal fa-lg"></i> <c:out
 						value="${language.getLanguageValue('default', '/default/nav/terminal')}" /></li>
 			</a>

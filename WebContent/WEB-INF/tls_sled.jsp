@@ -102,7 +102,7 @@
 							<button type="submit" class="btn btn-default"
 								aria-label="Right Align">
 								<c:out
-									value="${language.getLanguageValue('tls-sled', '/tls-sled/actions/bouton-envoyer')}" />
+									value="${language.getLanguageValue('default', '/default/actions/bouton-envoyer')}" />
 							</button>
 						</div>
 

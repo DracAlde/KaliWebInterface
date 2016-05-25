@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <tls-sled>
-	<desc-tool>Description de tsl sled, quand il est apparu, qui l'a créé,
-		à quoi il sert, quel contexte on l'utilise ... =) On peut aussi mettre
-		la description dans l'info-bulle du point d'interrogration près du
-		titre !</desc-tool>
+	<desc-tool>It’s a script inspired by its older brother SSLScan used to 
+		evalue the security level of a web site with its IP and port in the 
+		parameters. It use the libuary OpennSSL. IT test if the web site accept 
+		connexions with old protocol like SSLv2 or old ciphers suits like RC4 
+		or MD5 for example.
+	</desc-tool>
 	<options>
 		<cible>Target or IP address</cible>
 		<port>Port</port>
@@ -15,7 +17,4 @@
 		<port>Indicate port to target (between 0 and 65535). Default port is
 			443</port>
 	</aide>
-	<actions>
-		<bouton-envoyer>Send</bouton-envoyer>
-	</actions>
 </tls-sled>

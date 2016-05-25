@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <hydra>
-	<desc-tool>Description d'hydra, quand il est apparu, qui l'a créé, à
-		quoi il sert, quel contexte on l'utilise ... =) On peut aussi mettre
-		la description dans l'info-bulle du point d'interrogration près du
-		titre !</desc-tool>
+	<desc-tool>It’s a bruteforce script for enable a connexion. Targets 
+	can be mail accounts or website accounts. This is a list of services 
+	who Hydra can exploit : asterisk cisco cisco-enable cvs firebird ftp 
+	ftps http[s]-{head|get} http[s]-{get|post}-form http-proxy http-proxy-urlenum 
+	icq imap[s] irc ldap2[s] ldap3[-{cram|digest}md5][s] mssql mysql nntp 
+	oracle-listener oracle-sid pcanywhere pcnfs pop3[s] postgres rdp redis rexec 
+	rlogin rsh s7-300 sip smb smtp[s] smtp-enum snmp socks5 ssh sshkey svn teamspeak 
+	telnet[s] vmauthd vnc xmpp
+	It can be use to find account’s password or just find a backdoor on a webservice 
+	with a dictionnary.
+	</desc-tool>
 	<options>
 		<cible>Target or IP address</cible>
 		<account-group>
@@ -31,7 +38,4 @@
 			(target.com)</cible>
 		<dico>Select the dictionary size</dico>
 	</aide>
-	<actions>
-		<bouton-envoyer>Send</bouton-envoyer>
-	</actions>
 </hydra>
