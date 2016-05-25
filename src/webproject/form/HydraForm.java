@@ -99,7 +99,7 @@ public class HydraForm {
 		}
 
 		
-		String commandString = "hydra " + target + " " + accountArg + " " + passwordArg;
+		String commandString = "hydra " + accountArg + " " + passwordArg + " " + target;
 		System.out.println(commandString);
 		
 		Command command = new Command(ToolName.Hydra);
