@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dns-recon>
+	<desc-tool>
+	</desc-tool>
+	
+	<options>
+		<domaine>Domaine ciblé</domaine>
+		<optional-options>Options (optionnel)</optional-options>
+		<enum-type>Type d'énumération</enum-type>
+		<enum-type-options>
+			<reverse-lookup>Vérification inverse</reverse-lookup>
+			<brute-force>Brute force avec dictionnaire (-D)</brute-force>
+			<srv-records>Regarder les enregistrements serveur</srv-records>
+			<axfr>Regarder tous les serveur NS</axfr>
+			<google>Rechercher avec Google</google>
+			<cache-snoop>Fouiller dans les caches avec dictionnaire (-D)</cache-snoop>
+			<tld>Rechcher avec les Top Level Domain</tld>
+			<zonewalk>Transfert de zone DNSSEC</zonewalk>
+		</enum-type-options>
+	</options>
+	
+	<aide>
+		<domaine>Spécifiez le serveur DNS ciblé. Cette option peut être utilisée seule pour réaliser une simple reconnaissance DNS</domaine>
+		<optional-options>Ce groupe d'option est optionnel. Enumération peut être utilisé pour effectuer diverses opérations d'énumération tandis que Transfert peut être utilisé pour réaliser des transfert de zone DNS</optional-options>
+		<enum-type>Type d'énumération à réaliser</enum-type>
+	</aide>
+</dns-recon>

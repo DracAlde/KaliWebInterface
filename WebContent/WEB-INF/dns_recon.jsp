@@ -4,6 +4,7 @@
 
 <c:import url="nav.jsp"></c:import>
 <link href="bootstrap/css/bootstrap-multiselect.css" media="screen" rel="stylesheet" type="text/css">
+<link href="css/dns_recon.css" media="screen" rel="stylesheet" type="text/css">
 
 <body>
 	
@@ -42,7 +43,7 @@
 										value="${language.getLanguageValue('default', '/default/response')}" />
 							</a></li>
 							<li><a data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/desc-tool')}" />"
+								title="<c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/desc-tool')}" />"
 								data-placement="right">?</a></li>
 						</ul>
 
@@ -52,8 +53,8 @@
 				<form method="POST" action="<c:url value="/theharvester" ></c:url>">
 						<div class="col-lg-12 col-mg-12 col-sm-12">
 							<label for="domain" data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/domaine')}" />"
-								data-placement="right"> <c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/domaine')}" />
+								title="<c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/aide/domaine')}" />"
+								data-placement="right"> <c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/options/domaine')}" />
 							</label>
 							<div class="input-group col-lg-2 col-mg-4 col-sm-6">
 								<input type="text" class="form-control" placeholder="google.com"
@@ -62,7 +63,7 @@
 								<span
 									class="input-group-addon" id="basic-addon2"
 									data-toggle="tooltip"
-									title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/domaine')}" />"
+									title="<c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/aide/domaine')}" />"
 									data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
 								</span>
 							</div>
@@ -70,60 +71,57 @@
 						</div>
 						
 						<div class="col-lg-12 col-mg-12 col-sm-12">
-						<label for="domain" data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/domaine')}" />"
-								data-placement="right"> <c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/options/domaine')}" />
+							<label for="optional" data-toggle="tooltip"
+									title="<c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/aide/optional-options')}" />"
+									data-placement="right"> <c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/options/optional-options')}" />
 							</label>
-						</div>
-						
-						<div class="col-lg-12 col-mg-12 col-sm-12">
-							<div class="checkbox input-group">
-										<label><input type="checkbox" id="use-dns" name="use-dns" onclick="updateCommand()">${language.getLanguageValue('the-harvester', '/the-harvester/options/options/use-dns')}</label>
-										<div class="input-group" id="dns-name" style="display: none;">
-											<input type="text" class="form-control" placeholder="my-dns.com" 
-													name="dns" id="dns"
-													onkeyup="updateCommand()" onselect="updateCommand()"
-													> 
-													<span class="input-group-addon"
-													id="basic-addon2" data-toggle="tooltip"
-													title="<c:out value="${language.getLanguageValue('the-harvester', '/the-harvester/aide/use-dns')}" />"
-													data-placement="bottom"> <i
-													class="fa fa-question fa-lg"></i>
-												</span>
-										</div>
-								<p class="error">${form.errors['dictionary']}</p>
+							
+							<div class="switch">
+							    <input type="checkbox" name="switch" class="switch-checkbox" id="myswitch" onclick="updateCommand()" checked="checked">
+							    <label class="switch-label" for="myswitch">
+							        <span class="switch-inner"></span>
+							        <span class="switch-switch"></span>
+							    </label>
 							</div>
 						</div>
 						
-						<div class="input-group col-lg-4 col-mg-4 col-sm-6 btn-group">
-							<span
-								class="input-group-addon" id="basic-addon2"
-								data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('nikto', '/nikto/aide/evasion')}" />"
-								data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
-							</span>
-							
-							<div class="btn-group">
-								<button type="button" id="unselect_all" name="unselect_all" value="unselect_all" class="btn btn-danger" onclick="removeAllItems()"><span class="glyphicon glyphicon-remove"></span> ${language.getLanguageValue('the-harvester', '/the-harvester/actions/tout-supprimer')}</button>
+						
+						
+						<div class="col-lg-12 col-mg-12 col-sm-12" id="enumeration">
+							<div class="col-lg-12 col-mg-12 col-sm-12">
+							<label for="enum" data-toggle="tooltip"
+									title="<c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/aide/enum-type')}" />"
+									data-placement="right"> <c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/options/enum-type')}" />
+								</label>
 							</div>
 							
-							<select name="evasion-type" id="evasion-type" onchange="updateCommand()" autofocus multiple="multiple">
-									<option value="1" id="random-uri"><c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion-grp/uri')}" /></option>
-									<option value="2" id="directory-self-reference"><c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion-grp/rep-autoref')}" /></option>
-									<option value="3" id="premature-url-ending"><c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion-grp/url-fin')}" /></option>
-									<option value="4" id="long-random-string"><c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion-grp/long-random')}" /></option>
-									<option value="5" id="fake-parameter"><c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion-grp/faux-parametres')}" /></option>
-									<option value="6" id="tab-request-spacer"><c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion-grp/tab')}" /></option>
-									<option value="7" id="change-case"><c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion-grp/change-case')}" /></option>
-									<option value="8" id="directory-separator"><c:out value="${language.getLanguageValue('nikto', '/nikto/options/evasion-grp/windows-url')}" /></option>
-							</select>
+							<div class="input-group col-lg-4 col-mg-4 col-sm-6 btn-group">
+								<span
+									class="input-group-addon" id="basic-addon2"
+									data-toggle="tooltip"
+									title="<c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/aide/enum-type')}" />"
+									data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
+								</span>
+								
+								<select name="enum-type" id="enum-type" onchange="updateCommand()">
+										<option value="rvl" id="reverse-lookup"><c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/options/enum-type-options/reverse-lookup')}" /></option>
+										<option value="brt" id="brute-force"><c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/options/enum-type-options/brute-force')}" /></option>
+										<option value="srv" id="srv-record"><c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/options/enum-type-options/srv-records')}" /></option>
+										<option value="axfr" id="axfr"><c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/options/enum-type-options/axfr')}" /></option>
+										<option value="goo" id="google"><c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/options/enum-type-options/google')}" /></option>
+										<option value="snoop" id="cache-snooping"><c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/options/enum-type-options/cache-snoop')}" /></option>
+										<option value="tld" id="tld"><c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/options/enum-type-options/tld')}" /></option>
+										<option value="zonewalk" id="zone-walk"><c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/options/enum-type-options/zonewalk')}" /></option>
+								</select>
+							</div>
 						</div>
-
-					<br>
+						
+						
+						
 				<div class="col-lg-12 col-mg-12 col-sm-12">
+					<br>
 					<div 	class=command id=command 
-						data-toggle="tooltip" 
-						title="C'est la ligne qui sera envoyée dans le terminal de notre système Kali Linux"
+						data-toggle="tooltip"
 						data-placement="bottom">
 					> dnsrecon
 					</div>
@@ -158,41 +156,8 @@
 		<script type="text/javascript" src="js/async.js"></script>
 		<!-- Include switcher -->
 		<script type="text/javascript" src="js/switcher.js"></script>
-		
-		<script type="text/javascript">
-		
-		/*
-		 * That function permits to unselect all items selected in the 'info-source'
-		 * multiselect box
-		 */
-		function removeAllItems(){
-			$('option', $('#evasion-type')).each(function(element) {
-				$(this).removeAttr('selected').prop('selected', false);
-			});
-			$("#evasion-type").multiselect('refresh');
-			updateCommand();
-		}
-		
-		
-		$(document).ready(function() {
-			$('[data-toggle="tooltip"]').tooltip();
-		});
-
-
-		/*
-		 * Create the multiselct view
-		 */
-		$(document).ready(function() {
-			$('#evasion-type').multiselect({
-				includeSelectAllOption: true,
-				enableFiltering: true,
-				enableCaseInsensitiveFiltering: true
-			});
-		}); 
-
-		
-		
-		</script>
+		<!-- Include DNSrecon script file -->
+		<script type="text/javascript" src="js/dns_recon.js"></script>
 	</section>
 	
 	<c:import url="credits.jsp"></c:import>

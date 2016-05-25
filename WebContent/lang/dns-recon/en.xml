@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dns-recon>
+	<desc-tool>
+	</desc-tool>
+	
+	<options>
+		<domaine>Target domain</domaine>
+		<optional-options>Options (optional)</optional-options>
+		<enum-type>Enumeration type</enum-type>
+		<enum-type-options>
+			<reverse-lookup>Reverse lookup</reverse-lookup>
+			<brute-force>Brute force with dictionary (-D)</brute-force>
+			<srv-records>Check for server records</srv-records>
+			<axfr>Check all NS server</axfr>
+			<google>Search with Google</google>
+			<cache-snoop>Perform cache snooping (-D)</cache-snoop>
+			<tld>Search with Top Level Domain</tld>
+			<zonewalk>DNSSEC zone walk</zonewalk>
+		</enum-type-options>
+	</options>
+	
+	<aide>
+		<domaine>Specify the domain to target. That option is required and could be used alone to perform a simple DNS recognition</domaine>
+		<optional-options>Those option groups are optional. Enumeration must be used to enumerate on DNS server targeted meanwhile Transfer must be used to perform DNS transfer zone</optional-options>
+		<enum-type>Enumeration type to perform</enum-type>
+	</aide>
+</dns-recon>
