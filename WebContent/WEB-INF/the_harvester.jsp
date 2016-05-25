@@ -233,7 +233,7 @@
 		<script type="text/javascript" src="bootstrap/js/angularjs-multiple-select.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap-multiselect.js"></script>
 		<!-- Include history script -->
-		<script src="js/history.js"></script>
+		<script type="text/javascript" src="js/history.js"></script>
 		<!-- Include tools for asynchrone requests -->
 		<script type="text/javascript" src="js/async.js"></script>
 		<!-- Include switcher -->
