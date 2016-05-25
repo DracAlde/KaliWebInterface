@@ -4,6 +4,6 @@
 <link rel="stylesheet" type="text/css" href="css/credits.css">
 <section>
 		<div class="padding col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			Credits <a href="https://github.com/arn0f">arn0f</a> Hoel <a href="https://github.com/KilianSeznec">Kilian</a> Julien
+			Credits <a href="https://github.com/arn0f">arn0f</a> Hoel <a href="https://github.com/KilianSeznec">Kilian</a> Julien  -  <a href="http://www.gnu.org/licenses/gpl-3.0.en.html">GNU General Public License v3.0</a>
 		</div>
 </section>
