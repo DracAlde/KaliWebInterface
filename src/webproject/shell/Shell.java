@@ -1,6 +1,7 @@
 package webproject.shell;
 
 import java.io.InputStream;
+import java.util.LinkedList;
 
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -82,13 +83,35 @@ public class Shell extends Thread{
 				while(in.available()>0){
 					int i=in.read(tmp, 0, 1024);
 					if(i<0)break;
-					res += new String(tmp, 0, i) + "<br>";
+					res += new String(tmp, 0, i);
 				}
 				if(channel.isClosed()){
 					if(in.available()>0) continue; 
 					break;
 				}
 			}
+			
+			
+			String sTemp = "";
+			
+			for (int i = 0; i < res.length(); i++) 
+			{
+				if((int)res.charAt(i) == 10)
+				{
+					sTemp += "<br>";
+				}
+				else if (false)
+				{
+					sTemp += "&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				else
+				{
+					System.out.println(res.charAt(i) + " " + (int)res.charAt(i));
+					sTemp += res.charAt(i);
+				}
+			}
+			
+			res = sTemp;
 			
 			channel.disconnect();
 			session.disconnect();
