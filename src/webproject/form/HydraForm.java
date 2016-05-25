@@ -41,6 +41,7 @@ public class HydraForm {
 	 */
 	public Command validateHydra(HttpServletRequest request){
 		String target = Tools.getFieldValue(request, Constants.FIELD_TARGET);
+		String protocol = Tools.getFieldValue(request, Constants.SLCT_PROTOCOL);
 		String accountRadio = Tools.getFieldValue(request, Constants.RADIO_ACCOUNT);
 		String accountValue = null;
 		String passwordRadio = Tools.getFieldValue(request, Constants.RADIO_PASSWORD);
@@ -54,6 +55,13 @@ public class HydraForm {
 			Tools.hostnameValidation(target);
 		} catch (Exception e) {
 			setError(Constants.FIELD_TARGET, e.getMessage());
+		}
+		
+		try{
+			protocolValidation(protocol);
+			protocol += "://";
+		} catch (Exception e) {
+			setError(Constants.SLCT_PROTOCOL, e.getMessage());
 		}
 		
 		try{
@@ -99,7 +107,7 @@ public class HydraForm {
 		}
 
 		
-		String commandString = "hydra " + accountArg + " " + passwordArg + " " + target;
+		String commandString = "hydra " + accountArg + " " + passwordArg + " " + protocol + target;
 		System.out.println(commandString);
 		
 		Command command = new Command(ToolName.Hydra);
@@ -135,6 +143,13 @@ public class HydraForm {
 		if(accountRadio.equals("known") || accountRadio.equals("dictionary")){
 			return 0;
 		}
+		throw new Exception("You must choose one of these options");
+	}
+	
+	private int protocolValidation(String protocol)  throws Exception{
+		if(protocol.equals("ftp")){ return 0; }
+		if(protocol.equals("http")){ return 0; }
+		if(protocol.equals("ssh")){ return 0; }
 		throw new Exception("You must choose one of these options");
 	}
 

@@ -51,7 +51,7 @@
 
 					<!-- Target -->
 
-					<div class="col-md-6 col-lg-6">
+					<div>
 						<label for="target" data-toggle="tooltip"
 							title="<c:out value="${language.getLanguageValue('hydra', '/hydra/aide/cible')}" />"
 							data-placement="right"> <c:out
@@ -71,16 +71,17 @@
 					</div>
 					
 					<!-- Protocol -->
-					<div  class="col-md-6 col-lg-6">
-						<label for="account_dico_type" data-toggle="tooltip"
+					
+					<div>
+						<label for="protocol" data-toggle="tooltip"
 							title="help" />Protocol
 						</label>
-						<div class="input-group col-lg-6 col-mg-6 col-sm-6">
-							<select class="form-control" name="account_dico_type" id="account_dico_type"
-								onchange="updateCommand()" autofocus required>
+						<div class="input-group col-lg-2 col-mg-4 col-sm-6"">
+							<select class="form-control" name="protocol" id="protocol"
+								onchange="updateCommand()" autofocus>
 								<option value="ftp" id="ftp" title="dictionary">FTP</option>
 								<option value="http" id="http" title="dictionary">HTTP</option>
-								<option value="tcp" id="tcp" title="dictionary">TCP</option>
+								<option value="ssh" id="http" title="dictionary">SSH</option>
 							</select> <span class="input-group-addon" id="basic-addon2"
 								data-toggle="tooltip"
 								title="help"
@@ -89,7 +90,7 @@
 						</div>
 					</div>
 
-					<!-- Account Group-->
+				<!-- Account Group-->
 
 					<fieldset class="col-sm-6 col-md-6 col-lg-6">
 						<legend>
@@ -273,10 +274,12 @@
 				password = document.getElementById('password'),
 				password_field = document.getElementById('password_field'),
 				password_dictionary = document.getElementById('password_dictionary'),
-				command = document.getElementById('command');
+				command = document.getElementById('command'),
+				protocol = document.getElementById('protocol');
 
 			function updateCommand() {
 				var target_txt = '';
+				var protocol_txt = '';
 				var command_string = '';
 				var account_opt = '';
 				var password_opt = '';
@@ -285,6 +288,14 @@
 					target_txt = '&lt;target&gt;';
 				} else {
 					target_txt = target.value;
+				}
+				
+				if(protocol.options[protocol.selectedIndex].value == 'ftp'){
+					protocol_txt = 'ftp://';
+				}else if(protocol.options[protocol.selectedIndex].value == 'http'){
+					protocol_txt = 'http://';
+				}else if(protocol.options[protocol.selectedIndex].value == 'ssh'){
+					protocol_txt = 'ssh://';
 				}
 
 				if(account_radio_name.checked){
@@ -307,7 +318,7 @@
 					password_opt = '-P [dictionary path]';
 				}
 				
-				command_string = '> hydra ' + target_txt + ' ' + account_opt + ' ' + password_opt;
+				command_string = '> hydra ' + account_opt + ' ' + password_opt + ' ' + protocol_txt + target_txt;
 				command.innerHTML = command_string;
 			}
 			

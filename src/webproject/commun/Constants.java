@@ -77,6 +77,7 @@ public class Constants {
 	// Hydra
 	
 	public static final String FIELD_TARGET         = "target";
+	public static final String SLCT_PROTOCOL        = "protocol";
 	public static final String FIELD_ACCOUNT_NAME   = "account_name_field";
 	public static final String FIELD_PASSWORD       = "password_field";
 	public static final String RADIO_ACCOUNT        = "account";
