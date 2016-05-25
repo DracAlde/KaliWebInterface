@@ -100,8 +100,7 @@
 							<div class="input-group">
 								<input type="text" class="form-control"
 									placeholder="Nom du compte" name="account_name_field" id="account_name_field"
-									onkeyup="updateCommand()" onselect="updateCommand()" autofocus
-									required> <span class="input-group-addon"
+									onkeyup="updateCommand()" onselect="updateCommand()" autofocus> <span class="input-group-addon"
 									id="basic-addon2" data-toggle="tooltip"
 									title="<c:out value="${language.getLanguageValue('hydra', '/hydra/aide/cible')}" />"
 									data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
@@ -166,8 +165,7 @@
 							<div class="input-group">
 								<input type="text" class="form-control"
 									placeholder="Mot de passe" name="password_field" id="password_field"
-									onkeyup="updateCommand()" onselect="updateCommand()" autofocus
-									required> <span class="input-group-addon"
+									onkeyup="updateCommand()" onselect="updateCommand()" autofocus> <span class="input-group-addon"
 									id="basic-addon2" data-toggle="tooltip"
 									title="<c:out value="${language.getLanguageValue('hydra', '/hydra/aide/cible')}" />"
 									data-placement="bottom"> <i class="fa fa-question fa-lg"></i>

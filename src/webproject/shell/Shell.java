@@ -89,6 +89,7 @@ public class Shell extends Thread{
 					break;
 				}
 			}
+			
 			channel.disconnect();
 			session.disconnect();
 

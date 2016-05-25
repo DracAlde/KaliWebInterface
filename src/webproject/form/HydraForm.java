@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import webproject.commun.Command;
+import webproject.commun.Config;
 import webproject.commun.Constants;
 import webproject.commun.ToolName;
 import webproject.commun.Tools;
@@ -59,11 +60,17 @@ public class HydraForm {
 			radioValidation(accountRadio);
 			
 			if(accountRadio.equals("known")){
-				accountArg = "-l";
 				accountValue = Tools.getFieldValue(request, Constants.FIELD_ACCOUNT_NAME);
+				accountArg = "-l "+accountValue;
 			}else if(accountRadio.equals("dictionary")){
-				accountArg = "-L "+Constants.DICO_MEDIUM;
 				accountValue = Tools.getFieldValue(request, Constants.SLCT_ACCOUNT_DICO);
+				if(accountValue.equals("big-dico")){
+					accountArg = "-L "+Config.getProperties("big_dictionary_path");
+				}else if(accountValue.equals("small-dico")){
+					accountArg = "-L "+Config.getProperties("small_dictionary_path");
+				}else{
+					accountArg = "-L "+Config.getProperties("medium_dictionary_path");
+				}
 			}
 			
 		}catch(Exception e){
@@ -74,11 +81,17 @@ public class HydraForm {
 			radioValidation(accountRadio);
 			
 			if(passwordRadio.equals("known")){
-				passwordArg = "-p";
 				passwordValue = Tools.getFieldValue(request, Constants.FIELD_PASSWORD);
+				passwordArg = "-p "+passwordValue;
 			}else if(passwordRadio.equals("dictionary")){
-				passwordArg = "-P"+Constants.DICO_MEDIUM;
 				passwordValue = Tools.getFieldValue(request, Constants.SLCT_PASSWORD_DICO);
+				if(passwordValue.equals("bid-dico")){
+					passwordArg = "-P "+Config.getProperties("big_dictionary_path");
+				}else if(passwordValue.equals("small-dico")){
+					passwordArg = "-P "+Config.getProperties("small_dictionary_path");
+				}else{
+					passwordArg = "-P "+Config.getProperties("medium_dictionary_path");
+				}
 			}
 			
 		}catch(Exception e){
@@ -86,7 +99,7 @@ public class HydraForm {
 		}
 
 		
-		String commandString = "hydra " + target + " " + accountArg + " " + accountValue + " " + passwordArg + " " + passwordValue;
+		String commandString = "hydra " + target + " " + accountArg + " " + passwordArg;
 		System.out.println(commandString);
 		
 		Command command = new Command(ToolName.Hydra);
