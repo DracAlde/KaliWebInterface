@@ -100,13 +100,12 @@ public class Shell extends Thread{
 				{
 					sTemp += "<br>";
 				}
-				else if (false)
+				else if ((int)res.charAt(i) == 32)
 				{
-					sTemp += "&nbsp;&nbsp;&nbsp;&nbsp;";
+					sTemp += "&nbsp;";
 				}
 				else
 				{
-					System.out.println(res.charAt(i) + " " + (int)res.charAt(i));
 					sTemp += res.charAt(i);
 				}
 			}

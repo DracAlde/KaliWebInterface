@@ -136,7 +136,6 @@
 			var port = document.getElementById('port');
 			var command = document.getElementById('command');
 			var form = document.getElementById('form');
-			var response = document.getElementById('response');
 			var response_btn = document.getElementById('response_btn');
 
 			function updateCommand() {
@@ -176,14 +175,16 @@
 
 					xhr.open("GET", "<c:url value='/asyncrequest?tool=tls-sled' ></c:url>", true);
 					xhr.send(null);
-					request(readData);
+					if(document.getElementById('response').innerHTML == ''){
+						request(readData);
+					}
 					}, 1000);
 			}
 
 			function readData(sData) {
 				// On peut maintenant traiter les données sans encombrer l'objet XHR.
-				if(sData != response.innerHTML){
-					response.innerHTML = sData;
+				if(sData != document.getElementById('response').innerHTML){
+					document.getElementById('response').innerHTML = sData;
 					switcher(response_btn);
 				}
 			}

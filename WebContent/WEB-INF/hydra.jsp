@@ -51,7 +51,7 @@
 
 					<!-- Target -->
 
-					<div>
+					<div class="col-md-6 col-lg-6">
 						<label for="target" data-toggle="tooltip"
 							title="<c:out value="${language.getLanguageValue('hydra', '/hydra/aide/cible')}" />"
 							data-placement="right"> <c:out
@@ -68,6 +68,25 @@
 							</span>
 						</div>
 						<p class="error">${form.errors['hostname']}</p>
+					</div>
+					
+					<!-- Protocol -->
+					<div  class="col-md-6 col-lg-6">
+						<label for="account_dico_type" data-toggle="tooltip"
+							title="help" />Protocol
+						</label>
+						<div class="input-group col-lg-6 col-mg-6 col-sm-6">
+							<select class="form-control" name="account_dico_type" id="account_dico_type"
+								onchange="updateCommand()" autofocus required>
+								<option value="ftp" id="ftp" title="dictionary">FTP</option>
+								<option value="http" id="http" title="dictionary">HTTP</option>
+								<option value="tcp" id="tcp" title="dictionary">TCP</option>
+							</select> <span class="input-group-addon" id="basic-addon2"
+								data-toggle="tooltip"
+								title="help"
+								data-placement="bottom"> <i class="fa fa-question fa-lg"></i>
+							</span>
+						</div>
 					</div>
 
 					<!-- Account Group-->
@@ -330,7 +349,9 @@
 
 					xhr.open("GET", "<c:url value='/asyncrequest?tool=hydra' ></c:url>", true);
 					xhr.send(null);
-					request(readData);
+					if(document.getElementById('response').innerHTML == ''){
+						request(readData);
+					}
 					}, 1000);
 			}
 

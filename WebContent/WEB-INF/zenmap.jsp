@@ -215,7 +215,9 @@
 
 					xhr.open("GET", "<c:url value='/asyncrequest?tool=zenmap' ></c:url>", true);
 					xhr.send(null);
-					request(readData);
+					if(document.getElementById('response').innerHTML == ''){
+						request(readData);
+					}
 					}, 1000);
 			}
 
