@@ -3,14 +3,14 @@ package webproject.commun;
 import java.io.InputStream;
 import java.util.Properties;
 
-import webproject.main.Home;
+import webproject.main.Index;
 
 public class Config{
 	
 	public static String getProperties(String name){
 		String value = null;
 		Properties properties = new Properties();
-		String path = Home.path+"config/config.properties";
+		String path = Index.path+"config/config.properties";
 		
 		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         InputStream fichierProperties = classLoader.getResourceAsStream("/webproject/shell/config.properties");

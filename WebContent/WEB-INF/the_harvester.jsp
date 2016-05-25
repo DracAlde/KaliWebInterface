@@ -40,9 +40,6 @@
 								onclick="switcher(this)"><a> <c:out
 										value="${language.getLanguageValue('default', '/default/response')}" />
 							</a></li>
-							<li><a data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('tls-sled', '/tls-sled/desc-tool')}" />"
-								data-placement="right">?</a></li>
 						</ul>
 
 					</div>
@@ -275,5 +272,8 @@
 		request(readData);
 		</script>
 	</section>
+	
+	<c:import url="credits.jsp"></c:import>
+	
 </body>
 </html>

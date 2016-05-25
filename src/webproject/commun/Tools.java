@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.validator.routines.DomainValidator;
 import org.apache.commons.validator.routines.InetAddressValidator;
 
-import webproject.main.Home;
+import webproject.main.Index;
 
 /**
  * Tools witch can be used in other classes
@@ -94,7 +94,7 @@ public class Tools {
 	 * @param request
 	 */
 	public static void initiatePath(HttpServletRequest request){
-		Home.path = request.getSession().getServletContext().getRealPath("");
+		Index.path = request.getSession().getServletContext().getRealPath("");
 	}
 
 	/**

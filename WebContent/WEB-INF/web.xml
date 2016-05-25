@@ -6,8 +6,8 @@
 	<!--                                                              SERVLETS -->
 	
 	<servlet>
-		<servlet-name>Home</servlet-name>
-		<servlet-class>webproject.main.Home</servlet-class>
+		<servlet-name>Index</servlet-name>
+		<servlet-class>webproject.main.Index</servlet-class>
 	</servlet>
 	
 	<servlet>
@@ -53,7 +53,7 @@
 	<!--                                                              SERVLET-MAPPING -->
 	
 	<servlet-mapping>
-		<servlet-name>Home</servlet-name>
+		<servlet-name>Index</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	

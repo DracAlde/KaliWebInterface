@@ -11,7 +11,7 @@ public class Constants {
 	/**
 	 * JSP path constants
 	 */
-	public static final String VIEW_HOME         	= "/WEB-INF/home.jsp";
+	public static final String VIEW_HOME         	= "/WEB-INF/index.jsp";
 	public static final String VIEW_NIKTO        	= "/WEB-INF/nikto.jsp";
 	public static final String VIEW_ZENMAP       	= "/WEB-INF/zenmap.jsp";
 	public static final String VIEW_THEHARVESTER 	= "/WEB-INF/the_harvester.jsp";

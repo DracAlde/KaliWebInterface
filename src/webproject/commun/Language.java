@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.xml.parsers.*;
 import javax.xml.xpath.*;
 import webproject.commun.Constants;
-import webproject.main.Home;
+import webproject.main.Index;
 
 /**
  * That class is defined to permits loading of language terms from XML files
@@ -58,7 +58,7 @@ public class Language {
 	private String determineLanguagePath(String folder)
 	{
 		String langPath = Constants.LANG_PATH_FR;
-		String longPath = Home.path;
+		String longPath = Index.path;
 
 		longPath += "/lang/" + folder;
 

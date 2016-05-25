@@ -18,7 +18,7 @@ import webproject.commun.Tools;
  *
  */
 
-public class Home extends HttpServlet {
+public class Index extends HttpServlet {
 
 	/**
 	 * 
