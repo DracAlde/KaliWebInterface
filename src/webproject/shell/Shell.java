@@ -51,7 +51,7 @@ public class Shell extends Thread{
 	 */
 	public void run(){
 
-		String res = "";
+		String res = "> "+ command + "<br>";
 		try{
 			JSch jsch=new JSch();  
 
@@ -76,8 +76,6 @@ public class Shell extends Thread{
 
 			channel.connect();
 			System.out.println("SHELL: "+command);
-
-			res = "> "+ command + "<br>";
 			
 			byte[] tmp=new byte[1024];
 			while(true){

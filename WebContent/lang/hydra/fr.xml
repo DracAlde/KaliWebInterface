@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <hydra>
-	<desc-tool>C’est un script de bruteforce de tentative de connexion. Les cibles peuvent être des comptes mails ou des connexions à des sites. Voici la liste des services qu’Hydra traitre :
+	<desc-tool><![CDATA[C’est un script de <br />
+	bruteforce de tentative de connexion. Les cibles peuvent être des comptes mails ou des connexions à des sites. Voici la liste des services qu’Hydra traitre :
 asterisk cisco cisco-enable cvs firebird ftp ftps http[s]-{head|get} http[s]-{get|post}-form http-proxy http-proxy-urlenum icq imap[s] irc ldap2[s] ldap3[-{cram|digest}md5][s] mssql mysql nntp oracle-listener oracle-sid pcanywhere pcnfs pop3[s] postgres rdp redis rexec rlogin rsh s7-300 sip smb smtp[s] smtp-enum snmp socks5 ssh sshkey svn teamspeak telnet[s] vmauthd vnc xmpp.
 On peut l’utiliser pour trouver le mot de passe d’un compte ou juste trouver une porte d’entrée sur un service avec un dictionnaire de compte.
-</desc-tool>
+]]></desc-tool>
 	<options>
 		<cible>Cible ou adresse IP</cible>
 		<account-group>
