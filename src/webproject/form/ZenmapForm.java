@@ -5,10 +5,12 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import webproject.commun.AsyncItem;
 import webproject.commun.Command;
 import webproject.commun.Constants;
 import webproject.commun.ToolName;
 import webproject.commun.Tools;
+import webproject.main.AsyncRequest;
 import webproject.shell.Shell;
 
 /**
@@ -70,6 +72,9 @@ public class ZenmapForm {
 			// pas d'erreur, on envois la requete
 			command.setSuccess(true);
 			result = "Succès de la commande";
+			
+			AsyncItem item = new AsyncItem(request.getSession().getId(), Constants.TOOL_ZENMAP, "");
+			AsyncRequest.addAsyncItem(item);
 			
 			@SuppressWarnings("unused")
 			Shell shell = new Shell(request.getSession().getId(), Constants.TOOL_ZENMAP, commandString);
