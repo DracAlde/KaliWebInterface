@@ -95,6 +95,11 @@ public class Constants {
 	public static final String CHK_FORCE_SSL		= "force-ssl";
 	public static final String CHK_SINGLE_REQ		= "single-request";
 	
+	// DNSrecon
+	
+	public static final String CHK_ENUM_SWITCH		= "myswitch";
+	public static final String SLCT_ENUM_TYPE		= "enum-type";
+	
 	
 	/**
 	 * SSH session constants
