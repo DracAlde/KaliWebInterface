@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <zenmap>
-	<desc-tool> Zenmap est un outils de simplification de Nmap. ce dernier est un outils de Scan et de recherche d'information sur un hote. Le simple fait de récupérer des informations peux vous donner de informations précieuse si vous désirer mener un exploit ( port en écoute, version os, protocole de transport, etc).</desc-tool>
+	<desc-tool> Zenmap est un outils de simplification de Nmap. ce dernier est un outils de Scan et de recherche d'information sur un hote. Le simple fait de récupérer des informations peut vous donner de précieuses informations si vous désirez réaliser un audit (port en écoute, version os, protocole de transport, etc).</desc-tool>
 	<options>
 		<cible>Cible ou adresse IP</cible>
 		<scan-type>

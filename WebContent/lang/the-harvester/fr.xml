@@ -2,7 +2,7 @@
 
 <the-harvester>
 	<desc-tool>L'objectif de ce programme est de rassembler des e-mails, des sous-domaines, des hôtes, des noms d'employés, des ports ouverts et des bannières à partir de différentes sources publiques comme les moteurs de recherche, les serveurs de clés PGP et base de données de l'ordinateur SHODAN.
-Cet outil est destiné à aider le pentester dans les premiers stades de son pentest afin de comprendre l'empreinte de la clientèle sur Internet. Il est également utile pour toute personne qui veut savoir ce qu'un attaquant peut voir au sujet de son organisation.</desc-tool>
+Cet outil est destiné à aider le pentesteur dans les premiers stades de son pentest afin de comprendre l'empreinte de la clientèle sur Internet. Il est également utile pour toute personne qui veut savoir ce qu'un attaquant peut voir au sujet de son organisation.</desc-tool>
 	<options>
 		<domaine>Domaine ou nom de société</domaine>
 		<info-source>
