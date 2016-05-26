@@ -75,6 +75,7 @@ public class Shell extends Thread{
 			InputStream in=channel.getInputStream();
 
 			channel.connect();
+			System.out.println("SHELL: "+command);
 
 			res = "> "+ command + "<br>";
 			
@@ -120,6 +121,8 @@ public class Shell extends Thread{
 			res += "ERROR: failed to execute request";
 			System.err.println(e.getMessage());
 		}
+		
+		System.out.println(res);
 		
 		AsyncItem item = new AsyncItem(sessionID, tool, res);
 		AsyncRequest.addAsyncItem(item);

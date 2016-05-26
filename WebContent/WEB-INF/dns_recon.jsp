@@ -45,9 +45,6 @@
 								onclick="switcher(this)"><a> <c:out
 										value="${language.getLanguageValue('default', '/default/response')}" />
 							</a></li>
-							<li><a data-toggle="tooltip"
-								title="<c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/desc-tool')}" />"
-								data-placement="right">?</a></li>
 						</ul>
 
 					</div>
@@ -171,6 +168,36 @@
 		<script type="text/javascript" src="js/switcher.js"></script>
 		<!-- Include DNSrecon script file -->
 		<script type="text/javascript" src="js/dns_recon.js"></script>
+		<script>
+		function request(callback) {
+			var xhr = getXMLHttpRequest();
+
+			setTimeout(function(){
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState == 4
+							&& (xhr.status == 200 || xhr.status == 0)) {
+						callback(xhr.responseText);
+					}
+				};
+
+				xhr.open("GET", "<c:url value='/asyncrequest?tool=dns-recon' ></c:url>", true);
+				xhr.send(null);
+				if(document.getElementById('response').innerHTML == ''){
+					request(readData);
+				}
+				}, 1000);
+		}
+
+		function readData(sData) {
+			// On peut maintenant traiter les données sans encombrer l'objet XHR.
+			if(sData != document.getElementById('response').innerHTML){
+				document.getElementById('response').innerHTML = sData;
+				switcher(response_btn);
+			}
+		}
+		
+		request(readData);
+		</script>
 	</section>
 
 	<c:import url="credits.jsp"></c:import>

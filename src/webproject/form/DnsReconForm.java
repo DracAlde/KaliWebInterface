@@ -12,6 +12,12 @@ import webproject.commun.ToolName;
 import webproject.commun.Tools;
 import webproject.shell.Shell;
 
+/**
+ * This class is used to validate the POST request form DNS Recon.
+ * It will return a shell command and a Map with form errors
+ * @author arn0f
+ *
+ */
 public class DnsReconForm {
 
 	private String 				result = "";
