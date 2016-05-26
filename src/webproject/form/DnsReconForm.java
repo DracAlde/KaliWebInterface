@@ -45,7 +45,7 @@ public class DnsReconForm {
 	 */
 	public Command validateDnsRecon(HttpServletRequest request)
 	{
-		Command command = new Command(ToolName.Nikto);
+		Command command = new Command(ToolName.DnsRecon);
 		String commandString = "dnsrecon";
 		String domain = Tools.getFieldValue(request, Constants.FIELD_DOMAIN);
 		boolean chkEnum = getCheckboxInfo(request, Constants.CHK_ENUM_SWITCH);

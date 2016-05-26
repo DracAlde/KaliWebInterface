@@ -92,6 +92,8 @@ public class Shell extends Thread{
 				}
 			}
 			
+			System.out.println(res);
+			
 			
 			String sTemp = "";
 			
@@ -121,8 +123,6 @@ public class Shell extends Thread{
 			res += "ERROR: failed to execute request";
 			System.err.println(e.getMessage());
 		}
-		
-		System.out.println(res);
 		
 		AsyncItem item = new AsyncItem(sessionID, tool, res);
 		AsyncRequest.addAsyncItem(item);
