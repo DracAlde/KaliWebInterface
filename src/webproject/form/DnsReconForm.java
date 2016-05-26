@@ -57,7 +57,7 @@ public class DnsReconForm {
 			LinkedList<String> enumType = Tools.getListFieldValue(request, Constants.SLCT_ENUM_TYPE);
 			if (!enumType.isEmpty())
 			{
-				if (enumType.get(0) == "brt" || enumType.get(0) == "snoop")
+				if ("brt".equals(enumType.get(0).toString()) || "snoop".equals(enumType.get(0).toString()))
 				{
 					commandString += " -D /usr/share/dnsrecon/namelist.txt -t " + enumType.get(0);
 				}

@@ -53,7 +53,7 @@
 					</div>
 				</nav>
 				<div id="form">
-					<form method="POST" action="<c:url value="/theharvester" ></c:url>">
+					<form method="POST" action="<c:url value="/dnsrecon" ></c:url>">
 						<div class="col-lg-12 col-mg-12 col-sm-12">
 							<label for="domain" data-toggle="tooltip"
 								title="<c:out value="${language.getLanguageValue('dns-recon', '/dns-recon/aide/domaine')}" />"
@@ -81,7 +81,7 @@
 							</label>
 
 							<div class="switch">
-								<input type="checkbox" name="switch" class="switch-checkbox"
+								<input type="checkbox" name="myswitch" class="switch-checkbox" value="chk-enum"
 									id="myswitch" onclick="updateCommand()" checked="checked">
 								<label class="switch-label" for="myswitch"> <span
 									class="switch-inner"></span> <span class="switch-switch"></span>
