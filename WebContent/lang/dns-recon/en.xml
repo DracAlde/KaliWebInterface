@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <dns-recon>
-	<desc-tool>t’s a script use the DNS features to find informations or cartography. It can be use to find domains with IP pool, find servers’ IP with a words dictionnary.
+	<desc-tool>DNS Recon is a script use the DNS features to find informations or cartography. It can be use to find domains with IP pool, find servers’ IP with a words dictionnary.
 	</desc-tool>
 	
 	<options>
