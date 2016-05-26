@@ -117,7 +117,6 @@
 						<br>
 
 						<div class=command id=command data-toggle="tooltip"
-							title="C'est la ligne qui sera envoyée dans le terminal de notre système Kali Linux"
 							data-placement="bottom">> nmap</div>
 
 						<div style="text-align: right">
